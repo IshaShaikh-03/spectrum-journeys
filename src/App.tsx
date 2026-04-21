@@ -172,7 +172,7 @@ function Reveal({
   const { ref, inView } = useInView();
   return (
     <div
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={`${className} ${inView ? `${animation} ${delay}` : "opacity-0"}`}
     >
       {children}
