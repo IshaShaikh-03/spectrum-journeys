@@ -7,6 +7,9 @@
   **A conversion-ready, mobile-first travel agency website — built to turn visitors into bookings.**
 
   <p align="center">
+    <a href="https://www.spectrumtourandtravels.in">
+      <img src="https://img.shields.io/badge/Live%20Site-spectrumtourandtravels.in-f97316?style=flat-square&logo=google-chrome&logoColor=white&labelColor=0f172a" alt="Live Site" />
+    </a>
     <a href="https://github.com/IshaShaikh-03/spectrum-journeys/commits/main">
       <img src="https://img.shields.io/github/last-commit/IshaShaikh-03/spectrum-journeys?style=flat-square&color=f97316&labelColor=0f172a" alt="Last Commit" />
     </a>
@@ -32,7 +35,7 @@
 
 **Spectrum Tours & Travels** is a premium travel agency based in Ahmedabad, Gujarat — serving customers since 2010 with a fleet of Tempo Travellers, Innova SUVs, and Luxury Buses.
 
-This website is their complete digital presence: a fast, beautiful, single-page application that showcases the fleet, services, and trust signals — and converts visitors into WhatsApp leads and bookings in under two clicks.
+This website is their complete digital presence, live at **[spectrumtourandtravels.in](https://www.spectrumtourandtravels.in)**: a fast, beautiful, single-page application that showcases the fleet, services, and trust signals — and converts visitors into WhatsApp leads and bookings in under two clicks.
 
 Built from scratch with **React 19**, **Tailwind CSS v4**, and **TypeScript** — zero dependencies for the UI layer, every animation hand-crafted in vanilla CSS.
 

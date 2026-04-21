@@ -494,9 +494,9 @@ export default function App() {
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
               <Phone className="w-3 h-3 text-orange-500" />+91 98765 12345
             </a>
-            <a href="mailto:info@spectrumtours.in"
+            <a href="mailto:info@spectrumtourandtravels.in"
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
-              <Mail className="w-3 h-3 text-orange-500" />info@spectrumtours.in
+              <Mail className="w-3 h-3 text-orange-500" />info@spectrumtourandtravels.in
             </a>
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3 h-3 text-orange-500" />Ahmedabad, Gujarat
@@ -1054,8 +1054,8 @@ export default function App() {
                   title: "Email",
                   content: (
                     <div className="space-y-1">
-                      <a href="mailto:info@spectrumtours.in" className="block text-orange-500 hover:text-orange-600 transition text-sm">info@spectrumtours.in</a>
-                      <a href="mailto:bookings@spectrumtours.in" className="block text-orange-500 hover:text-orange-600 transition text-sm">bookings@spectrumtours.in</a>
+                      <a href="mailto:info@spectrumtourandtravels.in" className="block text-orange-500 hover:text-orange-600 transition text-sm">info@spectrumtourandtravels.in</a>
+                      <a href="mailto:bookings@spectrumtourandtravels.in" className="block text-orange-500 hover:text-orange-600 transition text-sm">bookings@spectrumtourandtravels.in</a>
                     </div>
                   ),
                 },
