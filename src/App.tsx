@@ -484,26 +484,28 @@ export default function App() {
 
       {/* ── Top Info Bar ──────────────────────────────────────────────────────── */}
       <div
-        className={`hidden md:flex bg-(--surface-950) text-gray-400 text-xs justify-between items-center px-8 transition-all duration-300 overflow-hidden ${
+        className={`hidden md:flex bg-(--surface-950) text-gray-400 text-xs transition-all duration-300 overflow-hidden ${
           scrolled ? "max-h-0 py-0" : "max-h-12 py-2.5"
         }`}
       >
-        <div className="flex items-center gap-6">
-          <a href="tel:+919876512345"
-            className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
-            <Phone className="w-3 h-3 text-orange-500" />+91 98765 12345
-          </a>
-          <a href="mailto:info@spectrumtours.in"
-            className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
-            <Mail className="w-3 h-3 text-orange-500" />info@spectrumtours.in
-          </a>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <a href="tel:+919876512345"
+              className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
+              <Phone className="w-3 h-3 text-orange-500" />+91 98765 12345
+            </a>
+            <a href="mailto:info@spectrumtours.in"
+              className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
+              <Mail className="w-3 h-3 text-orange-500" />info@spectrumtours.in
+            </a>
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 text-orange-500" />Ahmedabad, Gujarat
+            </span>
+          </div>
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3 h-3 text-orange-500" />Ahmedabad, Gujarat
+            <Clock className="w-3 h-3 text-orange-500" />Open 24 × 7 — Always Here for You
           </span>
         </div>
-        <span className="flex items-center gap-1.5">
-          <Clock className="w-3 h-3 text-orange-500" />Open 24 × 7 — Always Here for You
-        </span>
       </div>
 
       {/* ── Navbar ────────────────────────────────────────────────────────────── */}
@@ -995,7 +997,7 @@ export default function App() {
       {/* ── CTA Banner ─────────────────────────────────────────────────────────── */}
       <Section className="py-20 bg-linear-to-br from-orange-500 via-orange-500 to-amber-500 relative overflow-hidden">
         {/* Subtle dot pattern */}
-        <div className="absolute inset-0 opacity-[0.06]" aria-hidden="true" style={{
+        <div className="absolute inset-0 opacity-6" aria-hidden="true" style={{
           backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }} />

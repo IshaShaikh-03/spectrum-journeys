@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* ── Container: re-enable auto-centering (Tailwind v4 removed it) ── */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 80rem; /* 1280px = 7xl */
+}
+
 /* ═══════════════════════════════════════════════════════
    SPECTRUM TOURS — DESIGN SYSTEM
    ═══════════════════════════════════════════════════════ */
