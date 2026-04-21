@@ -868,7 +868,7 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyUs.map((w, i) => (
               <Reveal key={w.title} animation="animate-fade-up" delay={`delay-${(i % 3) * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
-                <div className="group bg-white/[0.04] hover:bg-white/[0.07] border border-white/[0.07] hover:border-orange-500/30 rounded-3xl p-7 transition-all card-lift shimmer-hover h-full">
+                <div className="group bg-white/4 hover:bg-white/7 border border-white/7 hover:border-orange-500/30 rounded-3xl p-7 transition-all card-lift shimmer-hover h-full">
                   <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-400/10 text-orange-400 group-hover:from-orange-500/30 flex items-center justify-center mb-5 transition">
                     {w.icon}
                   </div>
