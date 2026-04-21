@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Phone, Mail, MapPin, Clock, Star, ChevronDown, Menu, X,
-  CheckCircle, Users, Shield, Headphones
+  CheckCircle, Users, Shield, Headphones, ArrowRight, Sparkles,
+  Send, MessageSquare,
 } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
