@@ -1,10 +1,39 @@
 @import "tailwindcss";
 
-/* ── Container: re-enable auto-centering (Tailwind v4 removed it) ── */
+/* ══════════════════════════════════════════════════════════
+   CENTERING FIX — Plain CSS, outside Tailwind layers.
+   Tailwind v4 purges utility re-definitions inside @layer.
+   This lives outside any layer so it is never stripped.
+   ══════════════════════════════════════════════════════════ */
+
+/* The wrapper div pattern "max-w-7xl mx-auto px-5 md:px-12" in JSX
+   translates max-width + centering.  We anchor it here with a
+   concrete class that the components use instead.              */
+.page-wrap {
+  max-width: 80rem;        /* 1280px */
+  width: 100%;
+  margin-left:  auto;
+  margin-right: auto;
+  padding-left:  1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .page-wrap {
+    padding-left:  3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ── Container utility ── */
 @utility container {
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-  max-width: 80rem; /* 1280px = 7xl */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  max-width: 80rem;
+  width: 100%;
 }
 
 /* ═══════════════════════════════════════════════════════

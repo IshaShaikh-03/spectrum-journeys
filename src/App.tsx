@@ -488,7 +488,7 @@ export default function App() {
           scrolled ? "max-h-0 py-0" : "max-h-12 py-2.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full flex items-center justify-between">
+        <div className="page-wrap flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="tel:+919876512345"
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
@@ -516,7 +516,7 @@ export default function App() {
             : "bg-white/96 shadow-sm backdrop-blur-md"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16" aria-label="Main navigation">
+        <nav className="page-wrap flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group" aria-label="Spectrum Tours Home">
             <div className="w-10 h-10 rounded-[14px] bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-(--shadow-brand) group-hover:scale-105 transition-transform">
@@ -591,14 +591,14 @@ export default function App() {
         {/* Background */}
         <div className="absolute inset-0 hero-bg" aria-hidden="true" />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-linear-to-r from-gray-950/92 via-gray-900/75 to-gray-900/35" aria-hidden="true" />
+        <div className="absolute inset-0 bg-linear-to-r from-gray-950/90 via-gray-950/55 to-transparent" aria-hidden="true" />
         {/* Ambient orbs */}
         <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] rounded-full bg-orange-500/8 blur-3xl orb pointer-events-none" aria-hidden="true" />
         <div className="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full bg-amber-400/6 blur-2xl orb-2 pointer-events-none" aria-hidden="true" />
         <div className="absolute top-3/4 left-1/4 w-56 h-56 rounded-full bg-orange-600/5 blur-2xl orb-3 pointer-events-none" aria-hidden="true" />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 py-20 md:py-28 flex flex-col md:flex-row items-center gap-10 md:gap-14">
+        <div className="relative z-10 page-wrap py-20 md:py-28 flex flex-col md:flex-row items-center gap-10 md:gap-14">
           {/* Left text */}
           <div className="flex-1 text-white">
             <div className="inline-flex items-center gap-2 bg-orange-500/18 border border-orange-400/25 text-orange-300 text-xs font-bold px-4 py-1.5 rounded-full mb-6 animate-fade-up delay-50">
@@ -701,17 +701,17 @@ export default function App() {
       </div>
 
       {/* ── Fleet ──────────────────────────────────────────────────────────────── */}
-      <Section id="fleet" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-5 md:px-12">
+      <Section id="fleet" className="py-28 bg-gray-50">
+        <div className="page-wrap">
           {/* Heading */}
-          <Reveal animation="animate-fade-up" className="text-center mb-14">
+          <Reveal animation="animate-fade-up" className="text-center mb-16">
             <div className="section-badge justify-center mb-3">
               <span />Our Fleet<span />
             </div>
-            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-1">
+            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-2">
               Choose Your <span className="text-gradient">Perfect Ride</span>
             </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            <p className="text-gray-500 mt-5 max-w-xl mx-auto text-base leading-relaxed">
               From intimate SUV transfers to large group buses, our modern fleet covers every travel need.
             </p>
           </Reveal>
@@ -781,8 +781,8 @@ export default function App() {
           )}
 
           {/* Fleet mini grid */}
-          <Reveal animation="animate-fade-up" delay="delay-100" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Reveal animation="animate-fade-up" delay="delay-100" className="mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {fleet.map((v, i) => (
                 <button key={v.name} onClick={() => setActiveFleet(i)}
                   className={`text-left bg-white rounded-2xl border transition-all p-4 flex items-center gap-4 card-lift shimmer-hover ${
@@ -813,23 +813,23 @@ export default function App() {
       </Section>
 
       {/* ── Services ───────────────────────────────────────────────────────────── */}
-      <Section id="services" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-5 md:px-12">
-          <Reveal animation="animate-fade-up" className="text-center mb-14">
+      <Section id="services" className="py-28 bg-white">
+        <div className="page-wrap">
+          <Reveal animation="animate-fade-up" className="text-center mb-16">
             <div className="section-badge justify-center mb-3">
               <span />What We Offer<span />
             </div>
-            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-1">
+            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-2">
               Our <span className="text-gradient">Services</span>
             </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            <p className="text-gray-500 mt-5 max-w-xl mx-auto text-base leading-relaxed">
               From daily airport runs to multi-day pilgrimages — Spectrum Tours covers every journey across Ahmedabad and India.
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <Reveal key={s.title} animation="animate-fade-up" delay={`delay-${(i % 3) * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
-                <div className="group h-full bg-gray-50 hover:bg-linear-to-br hover:from-orange-50/80 hover:to-amber-50/60 border border-gray-100 hover:border-orange-200 rounded-3xl p-7 transition-all card-lift shimmer-hover cursor-default">
+                <div className="group h-full bg-gray-50 hover:bg-white border border-gray-100 hover:border-orange-200 rounded-3xl p-8 transition-all card-lift shimmer-hover cursor-default">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-gray-100 group-hover:border-orange-100 group-hover:shadow-md flex items-center justify-center text-3xl mb-5 transition">
                     {s.icon}
                   </div>
@@ -848,29 +848,29 @@ export default function App() {
       </Section>
 
       {/* ── Why Us ─────────────────────────────────────────────────────────────── */}
-      <Section id="why-us" className="py-24 bg-(--surface-950) text-white relative overflow-hidden">
+      <Section id="why-us" className="py-28 bg-(--surface-950) text-white relative overflow-hidden">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 w-full h-[3px] bg-linear-to-r from-transparent via-orange-500 to-transparent" />
-        {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-orange-500/4 blur-3xl pointer-events-none" aria-hidden="true" />
+        {/* Ambient glow — much more subtle */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-orange-500/3 blur-3xl pointer-events-none" aria-hidden="true" />
 
-        <div className="relative max-w-7xl mx-auto px-5 md:px-12">
-          <Reveal animation="animate-fade-up" className="text-center mb-14">
+        <div className="relative page-wrap">
+          <Reveal animation="animate-fade-up" className="text-center mb-16">
             <div className="section-badge justify-center mb-3 text-orange-400">
               <span className="bg-orange-500/40" />Why Choose Us<span className="bg-orange-500/40" />
             </div>
-            <h2 className="section-title text-3xl md:text-5xl font-extrabold mt-1">
+            <h2 className="section-title text-3xl md:text-5xl font-extrabold mt-2">
               The <span className="text-gradient">Spectrum</span> Advantage
             </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            <p className="text-gray-400 mt-5 max-w-xl mx-auto text-base leading-relaxed">
               We go beyond providing vehicles — we deliver peace of mind on every journey.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {whyUs.map((w, i) => (
               <Reveal key={w.title} animation="animate-fade-up" delay={`delay-${(i % 3) * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
-                <div className="group bg-white/4 hover:bg-white/7 border border-white/7 hover:border-orange-500/30 rounded-3xl p-7 transition-all card-lift shimmer-hover h-full">
+                <div className="group bg-white/5 hover:bg-white/8 border border-white/8 hover:border-orange-500/30 rounded-3xl p-8 transition-all card-lift shimmer-hover h-full">
                   <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-400/10 text-orange-400 group-hover:from-orange-500/30 flex items-center justify-center mb-5 transition">
                     {w.icon}
                   </div>
@@ -884,8 +884,8 @@ export default function App() {
       </Section>
 
       {/* ── Driver Section ──────────────────────────────────────────────────────── */}
-      <Section className="py-24 bg-linear-to-br from-orange-50 to-amber-50/40">
-        <div className="max-w-7xl mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <Section className="py-28 bg-gray-50">
+        <div className="page-wrap flex flex-col md:flex-row items-center gap-14 md:gap-20">
           {/* Image */}
           <Reveal animation="animate-slide-left" className="md:w-1/2 w-full">
             <div className="relative">
@@ -938,24 +938,24 @@ export default function App() {
       </Section>
 
       {/* ── Testimonials ────────────────────────────────────────────────────────── */}
-      <Section id="testimonials" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-5 md:px-12">
-          <Reveal animation="animate-fade-up" className="text-center mb-14">
+      <Section id="testimonials" className="py-28 bg-white">
+        <div className="page-wrap">
+          <Reveal animation="animate-fade-up" className="text-center mb-16">
             <div className="section-badge justify-center mb-3">
               <span />Testimonials<span />
             </div>
-            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-1">
+            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-2">
               What Our <span className="text-gradient">Customers Say</span>
             </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            <p className="text-gray-500 mt-5 max-w-xl mx-auto text-base leading-relaxed">
               Thousands of happy travellers across Ahmedabad trust Spectrum Tours for every journey.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} animation="animate-fade-up" delay={`delay-${i * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
-                <div className="bg-gray-50 hover:bg-white border border-gray-100 hover:border-orange-100 rounded-3xl p-6 flex flex-col transition-all card-lift shimmer-hover h-full">
+                <div className="bg-gray-50 hover:bg-white border border-gray-100 hover:border-orange-100 rounded-3xl p-7 flex flex-col transition-all card-lift shimmer-hover h-full">
                   <StarRating count={t.rating} />
                   <blockquote className="text-gray-600 text-sm leading-relaxed mt-4 mb-5 flex-1 italic">
                     "{t.review}"
@@ -976,8 +976,8 @@ export default function App() {
           </div>
 
           {/* Aggregate trust bar */}
-          <Reveal animation="animate-fade-up" delay="delay-200" className="mt-10">
-            <div className="bg-linear-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-3xl p-6 flex flex-wrap items-center justify-center gap-8 text-center">
+          <Reveal animation="animate-fade-up" delay="delay-200" className="mt-12">
+            <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 flex flex-wrap items-center justify-center gap-10 text-center">
               {[
                 { value: "4.9★", label: "Average Rating" },
                 { value: "50,000+", label: "Happy Customers" },
@@ -995,13 +995,13 @@ export default function App() {
       </Section>
 
       {/* ── CTA Banner ─────────────────────────────────────────────────────────── */}
-      <Section className="py-20 bg-linear-to-br from-orange-500 via-orange-500 to-amber-500 relative overflow-hidden">
+      <Section className="py-24 bg-orange-500 relative overflow-hidden">
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 opacity-6" aria-hidden="true" style={{
           backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }} />
-        <div className="relative max-w-4xl mx-auto px-5 text-center text-white">
+        <div className="relative page-wrap text-center text-white">
           <Reveal animation="animate-fade-up">
             <h2 className="section-title text-3xl md:text-5xl font-extrabold mb-4">
               Ready to Plan Your Next Journey?
@@ -1024,18 +1024,19 @@ export default function App() {
       </Section>
 
       {/* ── Contact ─────────────────────────────────────────────────────────────── */}
-      <Section id="contact" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-5 md:px-12">
-          <Reveal animation="animate-fade-up" className="text-center mb-14">
+      <Section id="contact" className="py-28 bg-gray-50">
+        <div className="page-wrap">
+          <Reveal animation="animate-fade-up" className="text-center mb-16">
             <div className="section-badge justify-center mb-3">
               <span />Get in Touch<span />
             </div>
-            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-1">
+            <h2 className="section-title text-3xl md:text-5xl font-extrabold text-gray-900 mt-2">
               Contact <span className="text-gradient">Us</span>
             </h2>
+            <p className="text-gray-500 mt-5 max-w-xl mx-auto text-base leading-relaxed">We're here 24/7 — drop a message or give us a call and we'll confirm your ride within 15 minutes.</p>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Info cards */}
             <Reveal animation="animate-slide-left" className="space-y-4">
               {[
@@ -1106,10 +1107,10 @@ export default function App() {
       </Section>
 
       {/* ── Footer ──────────────────────────────────────────────────────────────── */}
-      <footer className="bg-(--surface-950) text-gray-400 pt-16 pb-6">
+      <footer className="bg-(--surface-950) text-gray-400 pt-20 pb-8">
         {/* Top gradient border */}
         <div className="h-[3px] bg-linear-to-r from-transparent via-orange-500/50 to-transparent mb-16" />
-        <div className="max-w-7xl mx-auto px-5 md:px-12">
+        <div className="page-wrap">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
             {/* Brand */}
             <div>
