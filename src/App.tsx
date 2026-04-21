@@ -377,7 +377,7 @@ function ContactForm() {
 
   if (sent) {
     return (
-      <div className="bg-white rounded-3xl border border-gray-100 shadow-[var(--shadow-card)] p-12 flex flex-col items-center justify-center text-center h-full min-h-72">
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-() p-12 flex flex-col items-center justify-center text-center h-full min-h-72">
         <div className="w-16 h-16 rounded-full bg-linear-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 animate-bounce-in shadow-lg">
           <CheckCircle className="w-8 h-8 text-white" />
         </div>
@@ -395,7 +395,7 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}
-      className="bg-white rounded-3xl border border-gray-100 shadow-[var(--shadow-card)] p-7 md:p-8 space-y-5">
+      className="bg-white rounded-3xl border border-gray-100 shadow-() p-7 md:p-8 space-y-5">
       <div>
         <h3 className="text-xl font-extrabold text-gray-900 font-display">Send Us a Message</h3>
         <p className="text-gray-400 text-sm mt-1">We'll reply within 24 hours.</p>
@@ -484,7 +484,7 @@ export default function App() {
 
       {/* ── Top Info Bar ──────────────────────────────────────────────────────── */}
       <div
-        className={`hidden md:flex bg-[var(--surface-950)] text-gray-400 text-xs justify-between items-center px-8 transition-all duration-300 overflow-hidden ${
+        className={`hidden md:flex bg-() text-gray-400 text-xs justify-between items-center px-8 transition-all duration-300 overflow-hidden ${
           scrolled ? "max-h-0 py-0" : "max-h-12 py-2.5"
         }`}
       >
@@ -517,7 +517,7 @@ export default function App() {
         <nav className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group" aria-label="Spectrum Tours Home">
-            <div className="w-10 h-10 rounded-[14px] bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-[var(--shadow-brand)] group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-[14px] bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-() group-hover:scale-105 transition-transform">
               <span className="text-white font-black text-xl leading-none">S</span>
             </div>
             <div className="text-left">
@@ -643,7 +643,7 @@ export default function App() {
           </div>
 
           {/* Hero glass card */}
-          <div className="flex-shrink-0 w-full max-w-xs md:max-w-[300px] animate-slide-right delay-200">
+          <div className="shrink-0 w-full max-w-xs md:max-w-[300px] animate-slide-right delay-200">
             <div className="glass rounded-3xl p-7 text-white shadow-2xl">
               <div className="flex items-center gap-2.5 mb-5">
                 <div className="w-9 h-9 rounded-xl bg-orange-500/25 flex items-center justify-center">
@@ -687,7 +687,7 @@ export default function App() {
       </section>
 
       {/* ── Trust Marquee ────────────────────────────────────────────────────── */}
-      <div className="bg-[var(--surface-950)] py-4 overflow-hidden border-t border-white/5">
+      <div className="bg-() py-4 overflow-hidden border-t border-white/5">
         <div className="marquee-track" aria-hidden="true">
           {[...trustItems, ...trustItems].map((item, i) => (
             <span key={i} className="mx-8 text-sm font-semibold text-gray-300 whitespace-nowrap flex items-center gap-2">
@@ -721,7 +721,7 @@ export default function App() {
                 <button key={v.name} onClick={() => setActiveFleet(i)}
                   className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all ${
                     activeFleet === i
-                      ? "bg-linear-to-r from-orange-500 to-amber-400 text-white shadow-[var(--shadow-brand)] scale-105"
+                      ? "bg-linear-to-r from-orange-500 to-amber-400 text-white shadow-() scale-105"
                       : "bg-white text-gray-600 hover:bg-orange-50 border border-gray-200 hover:border-orange-200"
                   }`}
                   aria-pressed={activeFleet === i}
@@ -786,11 +786,11 @@ export default function App() {
                   className={`text-left bg-white rounded-2xl border transition-all p-4 flex items-center gap-4 card-lift shimmer-hover ${
                     activeFleet === i
                       ? "border-orange-400 ring-2 ring-orange-200 shadow-md"
-                      : "border-gray-100 hover:border-orange-200 shadow-[var(--shadow-card)]"
+                      : "border-gray-100 hover:border-orange-200 shadow-()"
                   }`}
                   aria-pressed={activeFleet === i}
                 >
-                  <div className="relative flex-shrink-0">
+                  <div className="relative shrink-0">
                     <img src={v.image} alt={v.name} className="w-20 h-[3.75rem] object-cover rounded-xl" />
                     {activeFleet === i && (
                       <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center">
@@ -846,7 +846,7 @@ export default function App() {
       </Section>
 
       {/* ── Why Us ─────────────────────────────────────────────────────────────── */}
-      <Section id="why-us" className="py-24 bg-[var(--surface-950)] text-white relative overflow-hidden">
+      <Section id="why-us" className="py-24 bg-() text-white relative overflow-hidden">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 w-full h-[3px] bg-linear-to-r from-transparent via-orange-500 to-transparent" />
         {/* Ambient glow */}
@@ -1069,8 +1069,8 @@ export default function App() {
                 },
               ].map((item) => (
                 <div key={item.title}
-                  className="bg-white rounded-2xl shadow-[var(--shadow-card)] border border-gray-100 hover:border-orange-100 p-5 flex items-start gap-4 transition card-lift">
-                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-100 to-amber-50 text-orange-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+                  className="bg-white rounded-2xl shadow-() border border-gray-100 hover:border-orange-100 p-5 flex items-start gap-4 transition card-lift">
+                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-100 to-amber-50 text-orange-500 flex items-center justify-center shrink-0 shadow-sm">
                     {item.icon}
                   </div>
                   <div>
@@ -1086,12 +1086,12 @@ export default function App() {
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white rounded-2xl p-5 transition-colors card-lift shadow-md shadow-green-200"
               >
-                <MessageSquare className="w-5 h-5 flex-shrink-0" />
+                <MessageSquare className="w-5 h-5 shrink-0" />
                 <div>
                   <div className="font-extrabold text-sm">Chat on WhatsApp</div>
                   <div className="text-green-100 text-xs mt-0.5">Instant replies available</div>
                 </div>
-                <ArrowRight className="w-4 h-4 ml-auto flex-shrink-0" />
+                <ArrowRight className="w-4 h-4 ml-auto shrink-0" />
               </a>
             </Reveal>
 
@@ -1104,7 +1104,7 @@ export default function App() {
       </Section>
 
       {/* ── Footer ──────────────────────────────────────────────────────────────── */}
-      <footer className="bg-[var(--surface-950)] text-gray-400 pt-16 pb-6">
+      <footer className="bg-() text-gray-400 pt-16 pb-6">
         {/* Top gradient border */}
         <div className="h-[3px] bg-linear-to-r from-transparent via-orange-500/50 to-transparent mb-16" />
         <div className="max-w-7xl mx-auto px-5 md:px-12">
