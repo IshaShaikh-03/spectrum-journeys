@@ -1,0 +1,185 @@
+/* Spectrum Tours - Responsive Overrides */
+
+/* Large Desktop & Tablet Landscape */
+@media (max-width: 1200px) {
+  :root {
+    --section-padding: 80px;
+  }
+  
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+  
+  .stats-grid {
+    gap: 16px;
+  }
+  
+  .stat-item h3 {
+    font-size: 2.5rem;
+  }
+  
+  .fleet-grid, .services-grid, .testi-grid {
+    gap: 20px;
+  }
+  
+  .why-us-grid, .contact-grid {
+    gap: 40px;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 992px) {
+  .fleet-grid, .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .why-us-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    flex-direction: column;
+    padding-top: 140px;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subtitle {
+    margin: 16px auto;
+  }
+  
+  .hero-image {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 80%;
+    margin: 40px auto 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    z-index: 1001;
+    cursor: pointer;
+  }
+  
+  /* Make CTA full width on mobile nav */
+  .nav-links .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile Landscape & Standard Phone */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.75rem; }
+  
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-features {
+    grid-template-columns: 1fr;
+  }
+  
+  .marquee-content {
+    font-size: 1.75rem;
+  }
+  
+  .cta-banner {
+    padding: 60px 20px;
+  }
+}
+
+/* Small Phone */
+@media (max-width: 576px) {
+  .fleet-grid, .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-btns .btn {
+    width: 100%;
+  }
+  
+  .hero-image {
+    width: 100%;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .contact-form {
+    padding: 32px 20px;
+  }
+}
