@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Phone, Mail, MapPin, Clock, Star, ChevronDown, Menu, X,
-  CheckCircle, Users, Shield, Headphones, ArrowRight, Sparkles,
-  Send, MessageSquare,
+  CheckCircle, Users, Shield, Headphones
 } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -14,8 +13,8 @@ interface FleetItem {
 
 // ─── Scroll‑reveal hook ───────────────────────────────────────────────────────
 
-function useInView(threshold = 0.12) {
-  const ref = useRef<HTMLElement>(null);
+function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.12) {
+  const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -150,11 +149,11 @@ function Section({
   id?: string; className?: string; animation?: string; delay?: string;
   children: React.ReactNode;
 }) {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView<HTMLElement>();
   return (
     <section
       id={id}
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref}
       className={`${className ?? ""} ${inView ? `${animation} ${delay}` : "opacity-0"}`}
     >
       {children}
@@ -169,10 +168,10 @@ function Reveal({
 }: {
   animation?: string; delay?: string; className?: string; children: React.ReactNode;
 }) {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView<HTMLDivElement>();
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`${className} ${inView ? `${animation} ${delay}` : "opacity-0"}`}
     >
       {children}
