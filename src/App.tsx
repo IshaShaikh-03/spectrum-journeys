@@ -238,7 +238,7 @@ function BookingModal({
     >
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[95dvh] overflow-y-auto animate-scale-in">
         {/* Header */}
-        <div className="bg-gradient-to-br from-orange-500 via-orange-500 to-amber-400 rounded-t-3xl px-7 py-6">
+        <div className="bg-linear-to-br from-orange-500 via-orange-500 to-amber-400 rounded-t-3xl px-7 py-6">
           <div className="flex items-start justify-between">
             <div>
               <div className="text-orange-100 text-xs font-bold uppercase tracking-widest mb-1">Spectrum Tours & Travels</div>
@@ -257,7 +257,7 @@ function BookingModal({
 
         {submitted ? (
           <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 shadow-lg animate-bounce-in">
+            <div className="w-20 h-20 rounded-full bg-linear-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 shadow-lg animate-bounce-in">
               <CheckCircle className="w-10 h-10 text-white" />
             </div>
             <h3 className="text-2xl font-extrabold text-gray-900 mb-2 font-display">Booking Request Sent!</h3>
@@ -378,7 +378,7 @@ function ContactForm() {
   if (sent) {
     return (
       <div className="bg-white rounded-3xl border border-gray-100 shadow-[var(--shadow-card)] p-12 flex flex-col items-center justify-center text-center h-full min-h-72">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 animate-bounce-in shadow-lg">
+        <div className="w-16 h-16 rounded-full bg-linear-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 animate-bounce-in shadow-lg">
           <CheckCircle className="w-8 h-8 text-white" />
         </div>
         <h3 className="text-xl font-extrabold text-gray-900 mb-2 font-display">Message Received!</h3>
@@ -517,7 +517,7 @@ export default function App() {
         <nav className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16" aria-label="Main navigation">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group" aria-label="Spectrum Tours Home">
-            <div className="w-10 h-10 rounded-[14px] bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-[var(--shadow-brand)] group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-[14px] bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-[var(--shadow-brand)] group-hover:scale-105 transition-transform">
               <span className="text-white font-black text-xl leading-none">S</span>
             </div>
             <div className="text-left">
@@ -589,7 +589,7 @@ export default function App() {
         {/* Background */}
         <div className="absolute inset-0 hero-bg" aria-hidden="true" />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/92 via-gray-900/75 to-gray-900/35" aria-hidden="true" />
+        <div className="absolute inset-0 bg-linear-to-r from-gray-950/92 via-gray-900/75 to-gray-900/35" aria-hidden="true" />
         {/* Ambient orbs */}
         <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] rounded-full bg-orange-500/8 blur-3xl orb pointer-events-none" aria-hidden="true" />
         <div className="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full bg-amber-400/6 blur-2xl orb-2 pointer-events-none" aria-hidden="true" />
@@ -721,7 +721,7 @@ export default function App() {
                 <button key={v.name} onClick={() => setActiveFleet(i)}
                   className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all ${
                     activeFleet === i
-                      ? "bg-gradient-to-r from-orange-500 to-amber-400 text-white shadow-[var(--shadow-brand)] scale-105"
+                      ? "bg-linear-to-r from-orange-500 to-amber-400 text-white shadow-[var(--shadow-brand)] scale-105"
                       : "bg-white text-gray-600 hover:bg-orange-50 border border-gray-200 hover:border-orange-200"
                   }`}
                   aria-pressed={activeFleet === i}
@@ -741,7 +741,7 @@ export default function App() {
                   <div className="md:w-1/2 relative overflow-hidden">
                     <img src={v.image} alt={v.name}
                       className="w-full h-72 md:h-full object-cover transition-transform duration-700 hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                     <span className={`absolute top-4 left-4 ${v.badgeColor} text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-lg`}>
                       {v.badge}
                     </span>
@@ -827,7 +827,7 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <Reveal key={s.title} animation="animate-fade-up" delay={`delay-${(i % 3) * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
-                <div className="group h-full bg-gray-50 hover:bg-gradient-to-br hover:from-orange-50/80 hover:to-amber-50/60 border border-gray-100 hover:border-orange-200 rounded-3xl p-7 transition-all card-lift shimmer-hover cursor-default">
+                <div className="group h-full bg-gray-50 hover:bg-linear-to-br hover:from-orange-50/80 hover:to-amber-50/60 border border-gray-100 hover:border-orange-200 rounded-3xl p-7 transition-all card-lift shimmer-hover cursor-default">
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-gray-100 group-hover:border-orange-100 group-hover:shadow-md flex items-center justify-center text-3xl mb-5 transition">
                     {s.icon}
                   </div>
@@ -848,7 +848,7 @@ export default function App() {
       {/* ── Why Us ─────────────────────────────────────────────────────────────── */}
       <Section id="why-us" className="py-24 bg-[var(--surface-950)] text-white relative overflow-hidden">
         {/* Top accent line */}
-        <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-[3px] bg-linear-to-r from-transparent via-orange-500 to-transparent" />
         {/* Ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-orange-500/4 blur-3xl pointer-events-none" aria-hidden="true" />
 
@@ -869,7 +869,7 @@ export default function App() {
             {whyUs.map((w, i) => (
               <Reveal key={w.title} animation="animate-fade-up" delay={`delay-${(i % 3) * 100 + 100}` as React.ComponentProps<typeof Reveal>["delay"]}>
                 <div className="group bg-white/[0.04] hover:bg-white/[0.07] border border-white/[0.07] hover:border-orange-500/30 rounded-3xl p-7 transition-all card-lift shimmer-hover h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-400/10 text-orange-400 group-hover:from-orange-500/30 flex items-center justify-center mb-5 transition">
+                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-500/20 to-amber-400/10 text-orange-400 group-hover:from-orange-500/30 flex items-center justify-center mb-5 transition">
                     {w.icon}
                   </div>
                   <h3 className="text-base font-extrabold mb-2 text-white font-display">{w.title}</h3>
@@ -882,7 +882,7 @@ export default function App() {
       </Section>
 
       {/* ── Driver Section ──────────────────────────────────────────────────────── */}
-      <Section className="py-24 bg-gradient-to-br from-orange-50 to-amber-50/40">
+      <Section className="py-24 bg-linear-to-br from-orange-50 to-amber-50/40">
         <div className="max-w-7xl mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Image */}
           <Reveal animation="animate-slide-left" className="md:w-1/2 w-full">
@@ -891,7 +891,7 @@ export default function App() {
                 className="rounded-3xl shadow-2xl w-full object-cover max-h-[520px]" />
               {/* Floating stat badge */}
               <div className="absolute -bottom-5 -right-5 md:-right-7 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-orange-100/60">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-xl shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center text-white text-xl shadow-md">
                   ⭐
                 </div>
                 <div>
@@ -959,7 +959,7 @@ export default function App() {
                     "{t.review}"
                   </blockquote>
                   <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                    <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${t.color} text-white flex items-center justify-center font-black text-base shadow-sm`}
+                    <div className={`w-11 h-11 rounded-2xl bg-linear-to-br ${t.color} text-white flex items-center justify-center font-black text-base shadow-sm`}
                       aria-hidden="true">
                       {t.avatar}
                     </div>
@@ -975,7 +975,7 @@ export default function App() {
 
           {/* Aggregate trust bar */}
           <Reveal animation="animate-fade-up" delay="delay-200" className="mt-10">
-            <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-3xl p-6 flex flex-wrap items-center justify-center gap-8 text-center">
+            <div className="bg-linear-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-3xl p-6 flex flex-wrap items-center justify-center gap-8 text-center">
               {[
                 { value: "4.9★", label: "Average Rating" },
                 { value: "50,000+", label: "Happy Customers" },
@@ -993,7 +993,7 @@ export default function App() {
       </Section>
 
       {/* ── CTA Banner ─────────────────────────────────────────────────────────── */}
-      <Section className="py-20 bg-gradient-to-br from-orange-500 via-orange-500 to-amber-500 relative overflow-hidden">
+      <Section className="py-20 bg-linear-to-br from-orange-500 via-orange-500 to-amber-500 relative overflow-hidden">
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 opacity-[0.06]" aria-hidden="true" style={{
           backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
@@ -1070,7 +1070,7 @@ export default function App() {
               ].map((item) => (
                 <div key={item.title}
                   className="bg-white rounded-2xl shadow-[var(--shadow-card)] border border-gray-100 hover:border-orange-100 p-5 flex items-start gap-4 transition card-lift">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-100 to-amber-50 text-orange-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-orange-100 to-amber-50 text-orange-500 flex items-center justify-center flex-shrink-0 shadow-sm">
                     {item.icon}
                   </div>
                   <div>
@@ -1106,13 +1106,13 @@ export default function App() {
       {/* ── Footer ──────────────────────────────────────────────────────────────── */}
       <footer className="bg-[var(--surface-950)] text-gray-400 pt-16 pb-6">
         {/* Top gradient border */}
-        <div className="h-[3px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent mb-16" />
+        <div className="h-[3px] bg-linear-to-r from-transparent via-orange-500/50 to-transparent mb-16" />
         <div className="max-w-7xl mx-auto px-5 md:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 rounded-[14px] bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                <div className="w-11 h-11 rounded-[14px] bg-linear-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-lg shadow-orange-500/20">
                   <span className="text-white font-black text-xl">S</span>
                 </div>
                 <div>
