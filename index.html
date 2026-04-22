@@ -88,10 +88,13 @@
         <a href="#home" class="active">Home</a>
         <a href="#fleet">Our Fleet</a>
         <a href="#services">Services</a>
-        <a href="#about">Why Us</a>
+        <a href="#how-it-works">How it Works</a>
         <a href="#contact">Contact</a>
-        <a href="#booking" class="btn btn-primary open-booking">Book Now</a>
       </nav>
+      
+      <div class="header-actions">
+        <a href="#booking" class="btn btn-primary open-booking">Get a Quote</a>
+      </div>
       
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
@@ -102,21 +105,20 @@
   <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1600&q=80" alt="Premium Luxury Car" />
+      </div>
       <div class="container">
         <div class="hero-content fade-up">
           <div class="hero-tag">Premium Travel in Gujarat</div>
-          <h1>Your Journey, <br /><span class="accent-text text-gradient">Our Priority</span></h1>
+          <h1>Premium Cab & Bus Rentals <br /><span class="accent-text text-gradient">in Ahmedabad</span></h1>
           <p class="subtitle">Experience luxury and comfort with Ahmedabad's top-rated cab and bus rental service. Perfect for corporate travel, family trips, and airport transfers.</p>
           
           <div class="hero-btns">
-            <a href="#fleet" class="btn btn-primary open-booking"><i class="fa-solid fa-calendar-check"></i> Book a Ride</a>
-            <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Call +91 98765 12345</a>
+            <a href="#fleet" class="btn btn-primary open-booking">Get an Instant Quote</a>
+            <a href="tel:+919876512345" class="btn btn-secondary">Call +91 98765 12345</a>
           </div>
         </div>
-      </div>
-      
-      <div class="hero-image fade-up stagger-2">
-        <img src="assets/img/hero-vehicle.jpg" alt="Luxury Fleet" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80'" />
       </div>
     </section>
 
@@ -144,42 +146,23 @@
       </div>
     </section>
 
-    <!-- Marquee -->
-    <section class="trust-marquee">
-      <div class="marquee-content">
-        <div class="marquee-item">
-          <span>Verified Drivers</span><span class="dot"></span>
-          <span>Clean & Sanitized</span><span class="dot"></span>
-          <span>No Hidden Costs</span><span class="dot"></span>
-          <span>On-Time Guarantee</span><span class="dot"></span>
-          <span>24/7 Support</span><span class="dot"></span>
-          <span>Premium Vehicles</span><span class="dot"></span>
-        </div>
-        <div class="marquee-item">
-          <span>Verified Drivers</span><span class="dot"></span>
-          <span>Clean & Sanitized</span><span class="dot"></span>
-          <span>No Hidden Costs</span><span class="dot"></span>
-          <span>On-Time Guarantee</span><span class="dot"></span>
-          <span>24/7 Support</span><span class="dot"></span>
-          <span>Premium Vehicles</span><span class="dot"></span>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Fleet Section -->
     <section id="fleet" class="gray-section">
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Premium Vehicles</div>
-          <h2>Our <span class="accent-text text-gradient">Fleet</span></h2>
+          <h2>Our Premium Cab & <span class="accent-text text-gradient">Tempo Traveller Fleet</span></h2>
           <p class="subtitle mx-auto">Choose from our wide range of well-maintained vehicles for any occasion.</p>
         </div>
         
         <div class="fleet-grid">
           <!-- Innova -->
           <div class="fleet-card fade-up stagger-1">
-            <div class="fleet-img">
-              <img src="assets/img/innova.jpg" alt="Toyota Innova Crysta" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80'" />
+            <div class="fleet-img" style="position: relative;">
+              <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹14/km</div>
+              <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Toyota Innova Crysta" />
             </div>
             <div class="fleet-content">
               <h3>Innova Crysta</h3>
@@ -189,17 +172,17 @@
                 <span><i class="fa-solid fa-snowflake"></i> AC</span>
               </div>
               <p>Premium SUV perfect for outstation trips and executive travel.</p>
-              <div class="fleet-price">
-                <span class="price-val">₹14/km</span>
-                <button class="btn btn-primary open-booking">Book Now</button>
+              <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
+                <button class="btn btn-primary open-booking w-full">Get a Quote</button>
               </div>
             </div>
           </div>
           
           <!-- Tempo -->
           <div class="fleet-card fade-up stagger-2">
-            <div class="fleet-img">
-              <img src="assets/img/tempo.jpg" alt="Tempo Traveller" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80'" />
+            <div class="fleet-img" style="position: relative;">
+              <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹22/km</div>
+              <img src="https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=600&q=80" alt="Tempo Traveller" />
             </div>
             <div class="fleet-content">
               <h3>Tempo Traveller</h3>
@@ -209,17 +192,17 @@
                 <span><i class="fa-solid fa-snowflake"></i> AC</span>
               </div>
               <p>Spacious vehicle for family trips, pilgrimages, and group tours.</p>
-              <div class="fleet-price">
-                <span class="price-val">₹22/km</span>
-                <button class="btn btn-primary open-booking">Book Now</button>
+              <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
+                <button class="btn btn-primary open-booking w-full">Get a Quote</button>
               </div>
             </div>
           </div>
           
           <!-- Mini Bus -->
           <div class="fleet-card fade-up stagger-3">
-            <div class="fleet-img">
-              <img src="assets/img/bus.jpg" alt="Luxury Mini Bus" onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80'" />
+            <div class="fleet-img" style="position: relative;">
+              <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹35/km</div>
+              <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80" alt="Luxury Mini Bus" />
             </div>
             <div class="fleet-content">
               <h3>Luxury Mini Bus</h3>
@@ -229,9 +212,8 @@
                 <span><i class="fa-solid fa-tv"></i> LED TV</span>
               </div>
               <p>Comfortable buses for corporate events and large group outings.</p>
-              <div class="fleet-price">
-                <span class="price-val">₹35/km</span>
-                <button class="btn btn-primary open-booking">Book Now</button>
+              <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
+                <button class="btn btn-primary open-booking w-full">Get a Quote</button>
               </div>
             </div>
           </div>
@@ -244,7 +226,7 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">What We Offer</div>
-          <h2>Our <span class="accent-text text-gradient">Services</span></h2>
+          <h2>Travel & Taxi <span class="accent-text text-gradient">Services in Gujarat</span></h2>
           <p class="subtitle mx-auto">Comprehensive travel solutions tailored to your specific needs.</p>
         </div>
         
@@ -288,35 +270,127 @@
       </div>
     </section>
 
-    <!-- Why Us (Dark Section) -->
-    <section id="about" class="dark-section">
+    <!-- Why Spectrum -->
+    <section class="differentiator">
       <div class="container">
-        <div class="why-us-grid">
-          <div class="why-content fade-up">
-            <div class="hero-tag" style="background: rgba(249, 115, 22, 0.2);">The Spectrum Difference</div>
-            <h2>Why Choose <br/><span class="accent-text text-gradient">Spectrum?</span></h2>
-            <p class="subtitle">We don't just provide cars; we deliver peace of mind. Our commitment to quality has made us Ahmedabad's most trusted travel partner.</p>
-            
-            <a href="#contact" class="btn btn-primary mt-8">Get a Quote</a>
+        <div class="diff-grid">
+          <div class="diff-item fade-up">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <h4>Verified Drivers</h4>
+              <p>Background checked professionals</p>
+            </div>
+          </div>
+          <div class="diff-item fade-up stagger-1">
+            <i class="fa-solid fa-tags"></i>
+            <div>
+              <h4>No Hidden Fees</h4>
+              <p>100% transparent pricing</p>
+            </div>
+          </div>
+          <div class="diff-item fade-up stagger-2">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4>On-Time Guarantee</h4>
+              <p>Punctuality is our priority</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section id="routes" class="gray-section">
+      <div class="container">
+        <div class="text-center mb-8 fade-up">
+          <div class="hero-tag">Top Destinations</div>
+          <h2>Popular Routes & <span class="accent-text text-gradient">Packages</span></h2>
+          <p class="subtitle mx-auto">Discover our most requested travel packages with transparent pricing and itinerary details.</p>
+        </div>
+        
+        <div class="routes-grid">
+          <!-- Statue of Unity -->
+          <div class="route-card fade-up stagger-1">
+            <div class="route-img">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Statue of Unity Taxi Tour" />
+              <div class="route-badge">Best Seller</div>
+            </div>
+            <div class="route-content">
+              <h3>Ahmedabad to Statue of Unity</h3>
+              <p>Experience the world's tallest statue with our comfortable same-day or overnight packages.</p>
+              <div class="route-features">
+                <span><i class="fa-solid fa-clock"></i> 1-2 Days</span>
+                <span><i class="fa-solid fa-car"></i> Cab / Tempo</span>
+              </div>
+              <a href="route-statue-of-unity.html" class="btn btn-secondary w-full">View Package Details</a>
+            </div>
           </div>
           
-          <div class="why-features">
-            <div class="feature-box fade-up stagger-1">
-              <h4>No Hidden Costs</h4>
-              <p>Transparent pricing with all tolls and taxes clearly communicated upfront.</p>
+          <!-- Chardham Yatra -->
+          <div class="route-card fade-up stagger-2">
+            <div class="route-img">
+              <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=600&q=80" alt="Chardham Yatra from Ahmedabad" />
+              <div class="route-badge spiritual">Spiritual</div>
             </div>
-            <div class="feature-box fade-up stagger-2">
-              <h4>Verified Drivers</h4>
-              <p>Experienced, background-checked professionals who know the routes inside out.</p>
+            <div class="route-content">
+              <h3>Chardham Yatra Packages</h3>
+              <p>Complete your spiritual journey with our hassle-free transport and accommodation solutions.</p>
+              <div class="route-features">
+                <span><i class="fa-solid fa-clock"></i> 10-14 Days</span>
+                <span><i class="fa-solid fa-bus"></i> Bus / Tempo</span>
+              </div>
+              <a href="route-chardham-yatra.html" class="btn btn-secondary w-full">View Package Details</a>
             </div>
-            <div class="feature-box fade-up stagger-3">
-              <h4>Sanitized Fleet</h4>
-              <p>Vehicles are thoroughly cleaned and sanitized before every single dispatch.</p>
+          </div>
+
+          <!-- Somnath Dwarka -->
+          <div class="route-card fade-up stagger-3">
+            <div class="route-img">
+              <img src="https://images.unsplash.com/photo-1564507592208-02826ae99587?auto=format&fit=crop&w=600&q=80" alt="Somnath Dwarka Tour Package" />
             </div>
-            <div class="feature-box fade-up stagger-4">
-              <h4>24/7 Support</h4>
-              <p>Our dedicated team is available around the clock to assist with your journey.</p>
+            <div class="route-content">
+              <h3>Somnath & Dwarka Tour</h3>
+              <p>Explore the majestic coastal temples of Gujarat with our specialized pilgrimage cabs.</p>
+              <div class="route-features">
+                <span><i class="fa-solid fa-clock"></i> 3-5 Days</span>
+                <span><i class="fa-solid fa-car"></i> Cab / Tempo</span>
+              </div>
+              <a href="#booking" class="btn btn-secondary w-full open-booking">Get a Quote</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Steps Section -->
+    <section id="how-it-works" class="dark-section">
+      <div class="container">
+        <div class="text-center mb-8 fade-up">
+          <div class="hero-tag" style="background: rgba(249, 115, 22, 0.2); color: var(--brand-300);">Simple Process</div>
+          <h2>How to Book Your <span class="accent-text text-gradient">Journey</span></h2>
+          <p class="subtitle mx-auto">Three simple steps to start your premium travel experience with Spectrum Tours & Travels.</p>
+        </div>
+        
+        <div class="journey-grid">
+          <div class="journey-step fade-up stagger-1">
+            <div class="step-number">01</div>
+            <div class="step-icon"><i class="fa-solid fa-car"></i></div>
+            <h3>Select Vehicle</h3>
+            <p>Choose from our premium fleet of Innovas, Sedans, and Tempo Travellers based on your group size.</p>
+          </div>
+          
+          <div class="journey-step step-highlight fade-up stagger-2">
+            <div class="step-number">02</div>
+            <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Book & Confirm</h3>
+            <p>Enter your details, get an instant transparent quote, and receive your booking confirmation immediately.</p>
+          </div>
+          
+          <div class="journey-step fade-up stagger-3">
+            <div class="step-number">03</div>
+            <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+            <h3>Enjoy the Ride</h3>
+            <p>Our verified professional driver will arrive on time. Sit back, relax, and enjoy your premium journey.</p>
           </div>
         </div>
       </div>
@@ -372,18 +446,65 @@
               </div>
             </div>
           </div>
+          
+          <div class="testi-card fade-up stagger-4">
+            <div class="testi-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-text">"Our group of 15 went to Mount Abu, and the 17-seater Tempo Traveller was in excellent condition. Great AC, comfortable pushing back seats. Truly a memorable trip."</p>
+            <div class="testi-author">
+              <div class="author-avatar">KR</div>
+              <div class="author-info">
+                <h4>Kavita Rao</h4>
+                <span>Group Vacation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card fade-up stagger-5">
+            <div class="testi-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-text">"We booked a multi-day trip for Statue of Unity. The driver guided us nicely, suggested good places to eat, and drove very smoothly. Very happy with the service!"</p>
+            <div class="testi-author">
+              <div class="author-avatar">NJ</div>
+              <div class="author-info">
+                <h4>Nitin Jain</h4>
+                <span>Outstation Tour</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
+    <!-- CTA Strip -->
     <div class="container fade-up">
-      <div class="cta-banner">
-        <h2>Ready for your next journey?</h2>
-        <p>Book your premium ride today and experience the difference.</p>
-        <button class="btn btn-dark open-booking" style="background: white; color: var(--brand-600);">Book Your Ride Now</button>
+      <div class="cta-strip">
+        <div class="cta-content">
+          <h2>Ready for your next journey?</h2>
+          <p>Book your premium ride today and experience the difference of traveling with professionals who care.</p>
+        </div>
+        <div class="cta-action">
+          <span class="cta-phone">+91 98765 12345</span>
+          <button class="btn btn-dark open-booking" style="background: var(--surface-dark); color: var(--text-inverse);">Get Your Free Quote</button>
+        </div>
       </div>
     </div>
+
+    <!-- Trusted By -->
+    <section class="trusted-by">
+      <div class="container fade-up">
+        <h4 class="trusted-title">Trusted By Leading Corporate Clients</h4>
+        <div class="logo-row">
+          <!-- Placeholder SVG logos -->
+          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10,15 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 M30,5 l20,0 l0,20 l-20,0 Z M60,15 l20,-10 l0,20 Z" /></svg>
+          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="10"/><rect x="35" y="5" width="20" height="20"/><polygon points="70,25 80,5 90,25"/></svg>
+          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5,15 Q25,5 45,15 T85,15" stroke="currentColor" stroke-width="4" fill="none"/></svg>
+          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="80" height="10" rx="5"/></svg>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact -->
     <section id="contact">
@@ -399,7 +520,7 @@
               <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
               <div>
                 <h4>Call Us 24/7</h4>
-                <p>+91 98765 12345<br>+91 98765 54321</p>
+                <p><a href="tel:+919876512345" style="color: inherit; text-decoration: none;">+91 98765 12345</a><br><a href="tel:+919876554321" style="color: inherit; text-decoration: none;">+91 98765 54321</a></p>
               </div>
             </div>
             <div class="info-card fade-up stagger-2">
@@ -463,7 +584,7 @@
           <h4>Quick Links</h4>
           <div class="footer-links">
             <a href="#home">Home</a>
-            <a href="#about">About Us</a>
+            <a href="#how-it-works">How it Works</a>
             <a href="#fleet">Our Fleet</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
@@ -483,8 +604,8 @@
         
         <div class="footer-col">
           <h4>Contact</h4>
-          <div class="footer-links" style="color: var(--text-light-muted);">
-            <p><i class="fa-solid fa-phone mr-2"></i> +91 98765 12345</p>
+          <div class="footer-links" style="color: var(--text-inverse-muted);">
+            <p><a href="tel:+919876512345" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone mr-2"></i> +91 98765 12345</a></p>
             <p><i class="fa-solid fa-envelope mr-2"></i> info@spectrumtourandtravels.in</p>
             <p><i class="fa-solid fa-location-dot mr-2"></i> Bodakdev, Ahmedabad</p>
           </div>
@@ -545,6 +666,17 @@
         <button type="submit" class="btn btn-primary w-full">Confirm Booking</button>
       </form>
     </div>
+  </div>
+
+  <!-- WhatsApp Floating Widget -->
+  <a href="https://wa.me/919876512345" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-sticky-cta">
+    <a href="tel:+919876512345" class="mobile-cta-btn btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="https://wa.me/919876512345" class="mobile-cta-btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
   </div>
 
   <script src="script.js"></script>

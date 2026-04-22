@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       header.classList.remove('scrolled');
     }
+
+    // Parallax hero bg
+    const heroBg = document.querySelector('.hero-bg img');
+    if (heroBg) {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.05)`;
+    }
     
     // Active navigation link
     let current = '';
@@ -115,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
           counter.innerText = Math.ceil(current) + (counter.hasAttribute('data-plus') ? '+' : '');
           requestAnimationFrame(updateCounter);
         } else {
-          counter.innerText = target + (counter.hasAttribute('data-plus') ? '+' : '');
+          // Format with K suffix
+          let displayVal = target >= 1000 ? (target / 1000) + 'K' : target;
+          counter.innerText = displayVal + (counter.hasAttribute('data-plus') ? '+' : '');
         }
       };
       
@@ -205,4 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (contactForm) contactForm.addEventListener('submit', (e) => handleForm(contactForm, e));
   if (bookingForm) bookingForm.addEventListener('submit', (e) => handleForm(bookingForm, e));
+
+  // Card Tilt Effect has been removed per user feedback
 });
