@@ -1,10 +1,11 @@
 /* Project Kagura - 2026 Premium Redesign */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Brand Palette — Premium Warm Amber-Gold */
   --brand-primary: #E8A838;
   --brand-primary-dark: #C28A1F;
+  --brand-300: #F2C97A;
+  --brand-500: #E8A838;
   
   /* Surfaces */
   --surface-dark: #141414;
@@ -14,7 +15,7 @@
   
   /* Text */
   --text-primary: #111111;
-  --text-muted: #6B6B6B;
+  --text-muted: #555555;
   --text-inverse: #FFFFFF;
   --text-inverse-muted: #A3A3A3;
   
@@ -22,8 +23,8 @@
   --accent-teal: #1A8077;
 
   /* Typography */
-  --font-heading: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Jost', sans-serif;
+  --font-body: 'Karla', sans-serif;
 
   /* Layout */
   --container-max: 1280px;
@@ -45,12 +46,36 @@
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
 
-  /* Animation */
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: 0.3s var(--ease-spring);
-  --transition-normal: 0.5s var(--ease-spring);
-  --transition-slow: 0.8s var(--ease-spring);
+  /* Animation — ease-out-quart: natural deceleration, no overshoot */
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 0.25s var(--ease-out);
+  --transition-normal: 0.45s var(--ease-out);
+  --transition-slow: 0.75s var(--ease-out);
 }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--surface-dark);
+  color: var(--text-inverse);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.skip-link:focus {
+  left: 24px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface-dark); }
+::-webkit-scrollbar-thumb { background: var(--brand-primary); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-primary-dark); }
 
 /* Reset & Base */
 *, *::before, *::after {
@@ -133,6 +158,10 @@ section {
   background-color: var(--surface-card);
 }
 
+.gray-section {
+  background-color: var(--surface-card);
+}
+
 /* Typography */
 h1, h2 {
   font-family: var(--font-heading);
@@ -206,6 +235,16 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
   transform: translateY(-4px);
 }
 
+.btn-dark {
+  background: var(--surface-dark);
+  color: var(--text-inverse);
+}
+
+.btn-dark:hover {
+  background: var(--surface-mid);
+  transform: translateY(-4px);
+}
+
 .dark-section .btn-secondary, .mid-section .btn-secondary {
   color: var(--text-inverse);
   border-color: var(--text-inverse);
@@ -256,6 +295,13 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 .logo span {
   color: var(--brand-primary);
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: invert(0.5) sepia(1) saturate(5) brightness(0.9);
 }
 
 .nav-links {
@@ -755,6 +801,26 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
   margin-top: 80px;
 }
 
+.testi-grid .testi-card:nth-child(4),
+.testi-grid .testi-card:nth-child(5) {
+  grid-column: span 1;
+}
+
+@media (min-width: 769px) {
+  .testi-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .testi-grid .testi-card:nth-child(1),
+  .testi-grid .testi-card:nth-child(2),
+  .testi-grid .testi-card:nth-child(3) {
+    grid-column: span 2;
+  }
+  .testi-grid .testi-card:nth-child(4),
+  .testi-grid .testi-card:nth-child(5) {
+    grid-column: span 3;
+  }
+}
+
 .testi-card {
   background: var(--surface-mid);
   padding: 48px 40px;
@@ -918,6 +984,21 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
   width: auto;
 }
 
+.client-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.logo-row:hover .client-name {
+  color: var(--text-primary);
+}
+
 /* Footer - Editorial */
 .site-footer {
   background: var(--surface-dark);
@@ -945,6 +1026,15 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 .footer-logo span {
   color: var(--brand-primary);
+}
+
+.footer-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 24px;
+  filter: invert(0.5) sepia(1) saturate(5) brightness(0.9);
 }
 
 .footer-col h4 {
@@ -1108,6 +1198,24 @@ textarea.form-control {
   resize: vertical;
 }
 
+.btn-success {
+  background: #16a34a;
+  color: #fff;
+  pointer-events: none;
+}
+
+.booking-datetime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .booking-datetime-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Utilities */
 .text-center { text-align: center; }
 .mb-2 { margin-bottom: 0.5rem; }
@@ -1120,7 +1228,7 @@ textarea.form-control {
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s var(--ease-spring), transform 1s var(--ease-spring);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 
 .fade-up.visible {
@@ -1132,6 +1240,7 @@ textarea.form-control {
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
 
 /* Modal */
 .modal-overlay {
@@ -1265,5 +1374,22 @@ textarea.form-control {
     display: flex;
   }
   /* mobile.css handles all other responsive rules */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-bg img {
+    transform: none !important;
+  }
 }
 

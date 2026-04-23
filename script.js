@@ -4,36 +4,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  
-  window.addEventListener('scroll', () => {
-    // Header blur effect
-    if (window.scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  const heroBg = document.querySelector('.hero-bg img');
 
-    // Parallax hero bg
-    const heroBg = document.querySelector('.hero-bg img');
-    if (heroBg) {
-      heroBg.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.05)`;
-    }
-    
-    // Active navigation link
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= (sectionTop - 200)) {
-        current = section.getAttribute('id');
+  let rafPending = false;
+
+  window.addEventListener('scroll', () => {
+    if (rafPending) return;
+    rafPending = true;
+
+    requestAnimationFrame(() => {
+      rafPending = false;
+
+      // Header blur effect
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current) && current !== '') {
-        link.classList.add('active');
+
+      // Parallax hero bg
+      if (heroBg) {
+        heroBg.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.05)`;
       }
+
+      // Active navigation link
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current) && current !== '') {
+          link.classList.add('active');
+        }
+      });
     });
   });
 
@@ -42,26 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('.nav-links');
   
   if (menuBtn && navMenu) {
+    const menuIcon = menuBtn.querySelector('i');
+
+    const openMenu = () => {
+      navMenu.classList.add('active');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      menuBtn.setAttribute('aria-label', 'Close navigation menu');
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-times');
+    };
+
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open navigation menu');
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    };
+
     menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = menuBtn.querySelector('i');
-      if(navMenu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
+      navMenu.classList.contains('active') ? closeMenu() : openMenu();
     });
-    
-    // Close menu when clicking a link
+
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = menuBtn.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 
@@ -88,21 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Scroll Animation (Intersection Observer)
   const fadeElements = document.querySelectorAll('.fade-up');
-  
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        fadeObserver.unobserve(entry.target);
-      }
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    fadeElements.forEach(el => el.classList.add('visible'));
+  } else {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
     });
-  }, {
-    root: null,
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  });
-  
-  fadeElements.forEach(el => fadeObserver.observe(el));
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  }
 
   // 5. Number Counters Animation
   const counterElements = document.querySelectorAll('.count-number');
@@ -149,32 +166,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.modal-close');
   
   if (modal) {
-    openBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-      });
-    });
-    
+    let lastFocused = null;
+
+    const getFocusable = () => [
+      ...modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ].filter(el => !el.disabled);
+
+    const openModal = (trigger) => {
+      lastFocused = trigger || document.activeElement;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      const focusable = getFocusable();
+      if (focusable.length) focusable[0].focus();
+    };
+
     const closeModal = () => {
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
     };
-    
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(btn);
+      });
     });
-    
-    // Close on ESC
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusable();
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
   }
@@ -188,18 +223,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
     
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processing...';
     btn.disabled = true;
-    
-    // Mock API call
+
     setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-check"></i> Success!';
-      btn.style.background = '#10b981'; // Green
+      btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Success!';
+      btn.classList.add('btn-success');
       form.reset();
-      
+
       setTimeout(() => {
         btn.innerHTML = originalText;
-        btn.style.background = '';
+        btn.classList.remove('btn-success');
         btn.disabled = false;
         
         // If booking form, close modal

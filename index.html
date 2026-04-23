@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
 
   <!-- Primary SEO -->
   <title>Spectrum Tours & Travels – #1 Cab & Bus Booking in Ahmedabad</title>
-  <meta name="description" content="Book Tempo Travellers, Premium SUVs & Luxury Buses in Ahmedabad. Airport transfers, outstation tours, pilgrimages & corporate travel with verified drivers. Available 24/7. Call +91 98765 12345." />
+  <meta name="description" content="Book Tempo Travellers, Premium SUVs & Luxury Buses in Ahmedabad. Airport transfers, outstation tours, pilgrimages & corporate travel with verified drivers. Available 24/7. Call +91 63567 93922." />
   <meta name="keywords" content="cab booking Ahmedabad, tempo traveller Ahmedabad, Innova hire Ahmedabad, luxury bus rental Gujarat, airport transfer Ahmedabad, pilgrimage tour Gujarat, corporate cab Ahmedabad, group travel Gujarat" />
   <meta name="author" content="Spectrum Tours & Travels" />
   <meta name="robots" content="index, follow" />
@@ -25,8 +25,13 @@
   <meta property="og:locale" content="en_IN" />
 
   <link rel="canonical" href="https://spectrumtourandtravels.in/" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/img/logos/S-Logo Favicon.png" />
   
+  <!-- Google Fonts — preconnect eliminates extra DNS round-trip -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Karla:wght@400;500;600&display=swap" />
+
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -41,14 +46,14 @@
     "@type": "TravelAgency",
     "name": "Spectrum Tours & Travels",
     "url": "https://spectrumtourandtravels.in",
-    "telephone": "+919876512345",
-    "email": "info@spectrumtourandtravels.in",
+    "telephone": "+916356793922",
+    "email": "traveldeskspectrum@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123, Swastik Society, Near SG Highway, Bodakdev",
+      "streetAddress": "E-101, Al Burooj, Makarba - Sarkhej Road, Opp. Police Head Quarter, Sarkhej",
       "addressLocality": "Ahmedabad",
       "addressRegion": "Gujarat",
-      "postalCode": "380054",
+      "postalCode": "380055",
       "addressCountry": "IN"
     },
     "geo": {
@@ -74,17 +79,17 @@
 <body>
 
   <!-- Skip link for accessibility -->
-  <a href="#main-content" style="position: absolute; left: -9999px;">Skip to content</a>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Header -->
   <header class="site-header">
     <div class="container">
       <a href="#" class="logo">
-        <i class="fa-solid fa-car-side"></i>
+        <img src="assets/img/logos/logo only.png" alt="Spectrum Tours logo" class="logo-img" />
         <span>Spectrum</span>
       </a>
       
-      <nav class="nav-links">
+      <nav id="main-nav" class="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="#fleet">Our Fleet</a>
         <a href="#services">Services</a>
@@ -96,9 +101,9 @@
         <a href="#booking" class="btn btn-primary open-booking">Get a Quote</a>
       </div>
       
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
+      <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open navigation menu" aria-controls="main-nav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
   </header>
 
@@ -106,17 +111,17 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1600&q=80" alt="Premium Luxury Car" />
+        <img src="assets/img/landing-page.png" alt="Premium Luxury Car" fetchpriority="high" />
       </div>
       <div class="container">
         <div class="hero-content fade-up">
           <div class="hero-tag">Premium Travel in Gujarat</div>
-          <h1>Premium Cab & Bus Rentals <br /><span class="accent-text text-gradient">in Ahmedabad</span></h1>
+          <h1>Premium Cab & Bus Rentals <br /><span class="accent-text">in Ahmedabad</span></h1>
           <p class="subtitle">Experience luxury and comfort with Ahmedabad's top-rated cab and bus rental service. Perfect for corporate travel, family trips, and airport transfers.</p>
           
           <div class="hero-btns">
             <a href="#fleet" class="btn btn-primary open-booking">Get an Instant Quote</a>
-            <a href="tel:+919876512345" class="btn btn-secondary">Call +91 98765 12345</a>
+            <a href="tel:+916356793922" class="btn btn-secondary">Call +91 63567 93922</a>
           </div>
         </div>
       </div>
@@ -153,7 +158,7 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Premium Vehicles</div>
-          <h2>Our Premium Cab & <span class="accent-text text-gradient">Tempo Traveller Fleet</span></h2>
+          <h2>Our Premium Cab & <span class="accent-text">Tempo Traveller Fleet</span></h2>
           <p class="subtitle mx-auto">Choose from our wide range of well-maintained vehicles for any occasion.</p>
         </div>
         
@@ -162,14 +167,14 @@
           <div class="fleet-card fade-up stagger-1">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹14/km</div>
-              <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Toyota Innova Crysta" />
+              <img src="assets/img/innova-crysta.png" alt="Toyota Innova Crysta" loading="lazy" />
             </div>
             <div class="fleet-content">
               <h3>Innova Crysta</h3>
               <div class="fleet-features">
-                <span><i class="fa-solid fa-users"></i> 6-7 Seats</span>
-                <span><i class="fa-solid fa-suitcase"></i> 4 Bags</span>
-                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+                <span><i class="fa-solid fa-users" aria-hidden="true"></i> 6-7 Seats</span>
+                <span><i class="fa-solid fa-suitcase" aria-hidden="true"></i> 4 Bags</span>
+                <span><i class="fa-solid fa-snowflake" aria-hidden="true"></i> AC</span>
               </div>
               <p>Premium SUV perfect for outstation trips and executive travel.</p>
               <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
@@ -182,14 +187,14 @@
           <div class="fleet-card fade-up stagger-2">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹22/km</div>
-              <img src="https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=600&q=80" alt="Tempo Traveller" />
+              <img src="assets/img/tempo-traveller.png" alt="Tempo Traveller" loading="lazy" />
             </div>
             <div class="fleet-content">
               <h3>Tempo Traveller</h3>
               <div class="fleet-features">
-                <span><i class="fa-solid fa-users"></i> 11-17 Seats</span>
-                <span><i class="fa-solid fa-suitcase"></i> 10 Bags</span>
-                <span><i class="fa-solid fa-snowflake"></i> AC</span>
+                <span><i class="fa-solid fa-users" aria-hidden="true"></i> 11-17 Seats</span>
+                <span><i class="fa-solid fa-suitcase" aria-hidden="true"></i> 10 Bags</span>
+                <span><i class="fa-solid fa-snowflake" aria-hidden="true"></i> AC</span>
               </div>
               <p>Spacious vehicle for family trips, pilgrimages, and group tours.</p>
               <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
@@ -202,14 +207,14 @@
           <div class="fleet-card fade-up stagger-3">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge" style="position: absolute; top: 16px; right: 16px; background: var(--brand-500); color: white; padding: 6px 12px; border-radius: var(--radius-pill); font-weight: bold; z-index: 10;">₹35/km</div>
-              <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80" alt="Luxury Mini Bus" />
+              <img src="assets/img/luxury-mini-bus.png" alt="Luxury Mini Bus" loading="lazy" />
             </div>
             <div class="fleet-content">
               <h3>Luxury Mini Bus</h3>
               <div class="fleet-features">
-                <span><i class="fa-solid fa-users"></i> 25-35 Seats</span>
-                <span><i class="fa-solid fa-suitcase"></i> 20+ Bags</span>
-                <span><i class="fa-solid fa-tv"></i> LED TV</span>
+                <span><i class="fa-solid fa-users" aria-hidden="true"></i> 25-35 Seats</span>
+                <span><i class="fa-solid fa-suitcase" aria-hidden="true"></i> 20+ Bags</span>
+                <span><i class="fa-solid fa-tv" aria-hidden="true"></i> LED TV</span>
               </div>
               <p>Comfortable buses for corporate events and large group outings.</p>
               <div class="fleet-price" style="display: block; padding-top: 16px; margin-bottom: 0;">
@@ -226,43 +231,43 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">What We Offer</div>
-          <h2>Travel & Taxi <span class="accent-text text-gradient">Services in Gujarat</span></h2>
+          <h2>Travel & Taxi <span class="accent-text">Services in Gujarat</span></h2>
           <p class="subtitle mx-auto">Comprehensive travel solutions tailored to your specific needs.</p>
         </div>
         
         <div class="services-grid">
           <div class="service-card fade-up stagger-1">
-            <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-plane-arrival" aria-hidden="true"></i></div>
             <h3>Airport Transfers</h3>
             <p>Punctual pick-up and drop-off at Ahmedabad International Airport with flight tracking.</p>
           </div>
           
           <div class="service-card fade-up stagger-2">
-            <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></div>
             <h3>Outstation Trips</h3>
             <p>Comfortable rides to Mount Abu, Udaipur, Somnath, Dwarka, and other destinations.</p>
           </div>
           
           <div class="service-card fade-up stagger-3">
-            <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
             <h3>Corporate Travel</h3>
             <p>Professional transportation solutions for executives, team outings, and daily commutes.</p>
           </div>
           
           <div class="service-card fade-up stagger-1">
-            <div class="service-icon"><i class="fa-solid fa-hands-praying"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-hands-praying" aria-hidden="true"></i></div>
             <h3>Pilgrimage Tours</h3>
             <p>Specialized packages for Chardham yatra, Jyotirlinga tours, and local Gujarat temples.</p>
           </div>
           
           <div class="service-card fade-up stagger-2">
-            <div class="service-icon"><i class="fa-solid fa-ring"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-ring" aria-hidden="true"></i></div>
             <h3>Wedding Transportation</h3>
             <p>Luxury cars for the couple and buses for guests, ensuring everyone arrives in style.</p>
           </div>
           
           <div class="service-card fade-up stagger-3">
-            <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+            <div class="service-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></div>
             <h3>Local Sightseeing</h3>
             <p>Explore Ahmedabad's heritage, Sabarmati Ashram, and Kankaria lake with expert local drivers.</p>
           </div>
@@ -275,21 +280,21 @@
       <div class="container">
         <div class="diff-grid">
           <div class="diff-item fade-up">
-            <i class="fa-solid fa-shield-halved"></i>
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
             <div>
               <h4>Verified Drivers</h4>
               <p>Background checked professionals</p>
             </div>
           </div>
           <div class="diff-item fade-up stagger-1">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags" aria-hidden="true"></i>
             <div>
               <h4>No Hidden Fees</h4>
               <p>100% transparent pricing</p>
             </div>
           </div>
           <div class="diff-item fade-up stagger-2">
-            <i class="fa-solid fa-clock"></i>
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
             <div>
               <h4>On-Time Guarantee</h4>
               <p>Punctuality is our priority</p>
@@ -304,7 +309,7 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Top Destinations</div>
-          <h2>Popular Routes & <span class="accent-text text-gradient">Packages</span></h2>
+          <h2>Popular Routes & <span class="accent-text">Packages</span></h2>
           <p class="subtitle mx-auto">Discover our most requested travel packages with transparent pricing and itinerary details.</p>
         </div>
         
@@ -312,15 +317,15 @@
           <!-- Statue of Unity -->
           <div class="route-card fade-up stagger-1">
             <div class="route-img">
-              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Statue of Unity Taxi Tour" />
+              <img src="assets/img/Statue of Unity.png" alt="Statue of Unity Taxi Tour" loading="lazy" />
               <div class="route-badge">Best Seller</div>
             </div>
             <div class="route-content">
               <h3>Ahmedabad to Statue of Unity</h3>
               <p>Experience the world's tallest statue with our comfortable same-day or overnight packages.</p>
               <div class="route-features">
-                <span><i class="fa-solid fa-clock"></i> 1-2 Days</span>
-                <span><i class="fa-solid fa-car"></i> Cab / Tempo</span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 1-2 Days</span>
+                <span><i class="fa-solid fa-car" aria-hidden="true"></i> Cab / Tempo</span>
               </div>
               <a href="route-statue-of-unity.html" class="btn btn-secondary w-full">View Package Details</a>
             </div>
@@ -329,15 +334,15 @@
           <!-- Chardham Yatra -->
           <div class="route-card fade-up stagger-2">
             <div class="route-img">
-              <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=600&q=80" alt="Chardham Yatra from Ahmedabad" />
+              <img src="assets/img/Chardham Yatra.png" alt="Chardham Yatra from Ahmedabad" loading="lazy" />
               <div class="route-badge spiritual">Spiritual</div>
             </div>
             <div class="route-content">
               <h3>Chardham Yatra Packages</h3>
               <p>Complete your spiritual journey with our hassle-free transport and accommodation solutions.</p>
               <div class="route-features">
-                <span><i class="fa-solid fa-clock"></i> 10-14 Days</span>
-                <span><i class="fa-solid fa-bus"></i> Bus / Tempo</span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 10-14 Days</span>
+                <span><i class="fa-solid fa-bus" aria-hidden="true"></i> Bus / Tempo</span>
               </div>
               <a href="route-chardham-yatra.html" class="btn btn-secondary w-full">View Package Details</a>
             </div>
@@ -346,14 +351,14 @@
           <!-- Somnath Dwarka -->
           <div class="route-card fade-up stagger-3">
             <div class="route-img">
-              <img src="https://images.unsplash.com/photo-1564507592208-02826ae99587?auto=format&fit=crop&w=600&q=80" alt="Somnath Dwarka Tour Package" />
+              <img src="assets/img/Somnath & Dwarka.png" alt="Somnath Dwarka Tour Package" loading="lazy" />
             </div>
             <div class="route-content">
               <h3>Somnath & Dwarka Tour</h3>
               <p>Explore the majestic coastal temples of Gujarat with our specialized pilgrimage cabs.</p>
               <div class="route-features">
-                <span><i class="fa-solid fa-clock"></i> 3-5 Days</span>
-                <span><i class="fa-solid fa-car"></i> Cab / Tempo</span>
+                <span><i class="fa-solid fa-clock" aria-hidden="true"></i> 3-5 Days</span>
+                <span><i class="fa-solid fa-car" aria-hidden="true"></i> Cab / Tempo</span>
               </div>
               <a href="#booking" class="btn btn-secondary w-full open-booking">Get a Quote</a>
             </div>
@@ -367,28 +372,28 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag" style="background: rgba(249, 115, 22, 0.2); color: var(--brand-300);">Simple Process</div>
-          <h2>How to Book Your <span class="accent-text text-gradient">Journey</span></h2>
+          <h2>How to Book Your <span class="accent-text">Journey</span></h2>
           <p class="subtitle mx-auto">Three simple steps to start your premium travel experience with Spectrum Tours & Travels.</p>
         </div>
         
         <div class="journey-grid">
           <div class="journey-step fade-up stagger-1">
             <div class="step-number">01</div>
-            <div class="step-icon"><i class="fa-solid fa-car"></i></div>
+            <div class="step-icon"><i class="fa-solid fa-car" aria-hidden="true"></i></div>
             <h3>Select Vehicle</h3>
             <p>Choose from our premium fleet of Innovas, Sedans, and Tempo Travellers based on your group size.</p>
           </div>
           
           <div class="journey-step step-highlight fade-up stagger-2">
             <div class="step-number">02</div>
-            <div class="step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="step-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
             <h3>Book & Confirm</h3>
             <p>Enter your details, get an instant transparent quote, and receive your booking confirmation immediately.</p>
           </div>
           
           <div class="journey-step fade-up stagger-3">
             <div class="step-number">03</div>
-            <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+            <div class="step-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></div>
             <h3>Enjoy the Ride</h3>
             <p>Our verified professional driver will arrive on time. Sit back, relax, and enjoy your premium journey.</p>
           </div>
@@ -401,13 +406,13 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Testimonials</div>
-          <h2>Happy <span class="accent-text text-gradient">Travelers</span></h2>
+          <h2>Happy <span class="accent-text">Travelers</span></h2>
         </div>
         
         <div class="testi-grid">
           <div class="testi-card fade-up stagger-1">
-            <div class="testi-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testi-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
             </div>
             <p class="testi-text">"Booked a Tempo Traveller for our family trip to Somnath. The vehicle was spotless, and the driver was extremely polite and drove safely. Highly recommended!"</p>
             <div class="testi-author">
@@ -420,8 +425,8 @@
           </div>
           
           <div class="testi-card fade-up stagger-2">
-            <div class="testi-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testi-stars" aria-label="4 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-regular fa-star" aria-hidden="true"></i>
             </div>
             <p class="testi-text">"We use Spectrum for all our corporate guest pickups. Their Innova Crystas are always on time, and they maintain a highly professional standard."</p>
             <div class="testi-author">
@@ -434,8 +439,8 @@
           </div>
           
           <div class="testi-card fade-up stagger-3">
-            <div class="testi-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testi-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
             </div>
             <p class="testi-text">"The booking process was seamless. No last-minute cancellations or hidden charges. The best cab service I've used in Ahmedabad so far."</p>
             <div class="testi-author">
@@ -448,8 +453,8 @@
           </div>
           
           <div class="testi-card fade-up stagger-4">
-            <div class="testi-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testi-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
             </div>
             <p class="testi-text">"Our group of 15 went to Mount Abu, and the 17-seater Tempo Traveller was in excellent condition. Great AC, comfortable pushing back seats. Truly a memorable trip."</p>
             <div class="testi-author">
@@ -462,8 +467,8 @@
           </div>
 
           <div class="testi-card fade-up stagger-5">
-            <div class="testi-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <div class="testi-stars" aria-label="4 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-regular fa-star" aria-hidden="true"></i>
             </div>
             <p class="testi-text">"We booked a multi-day trip for Statue of Unity. The driver guided us nicely, suggested good places to eat, and drove very smoothly. Very happy with the service!"</p>
             <div class="testi-author">
@@ -486,8 +491,8 @@
           <p>Book your premium ride today and experience the difference of traveling with professionals who care.</p>
         </div>
         <div class="cta-action">
-          <span class="cta-phone">+91 98765 12345</span>
-          <button class="btn btn-dark open-booking" style="background: var(--surface-dark); color: var(--text-inverse);">Get Your Free Quote</button>
+          <span class="cta-phone">+91 63567 93922</span>
+          <button class="btn btn-dark open-booking">Get Your Free Quote</button>
         </div>
       </div>
     </div>
@@ -497,11 +502,10 @@
       <div class="container fade-up">
         <h4 class="trusted-title">Trusted By Leading Corporate Clients</h4>
         <div class="logo-row">
-          <!-- Placeholder SVG logos -->
-          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10,15 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 M30,5 l20,0 l0,20 l-20,0 Z M60,15 l20,-10 l0,20 Z" /></svg>
-          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="10"/><rect x="35" y="5" width="20" height="20"/><polygon points="70,25 80,5 90,25"/></svg>
-          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5,15 Q25,5 45,15 T85,15" stroke="currentColor" stroke-width="4" fill="none"/></svg>
-          <svg viewBox="0 0 100 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="80" height="10" rx="5"/></svg>
+          <span class="client-name">Adani Group</span>
+          <span class="client-name">Torrent Power</span>
+          <span class="client-name">Zydus Lifesciences</span>
+          <span class="client-name">Arvind Ltd.</span>
         </div>
       </div>
     </section>
@@ -511,30 +515,30 @@
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Get in Touch</div>
-          <h2>Contact <span class="accent-text text-gradient">Us</span></h2>
+          <h2>Contact <span class="accent-text">Us</span></h2>
         </div>
         
         <div class="contact-grid">
           <div class="contact-info-cards">
             <div class="info-card fade-up stagger-1">
-              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
               <div>
                 <h4>Call Us 24/7</h4>
-                <p><a href="tel:+919876512345" style="color: inherit; text-decoration: none;">+91 98765 12345</a><br><a href="tel:+919876554321" style="color: inherit; text-decoration: none;">+91 98765 54321</a></p>
+                <p><a href="tel:+916356793922" style="color: inherit; text-decoration: none;">+91 63567 93922</a><br><a href="tel:+917861850634" style="color: inherit; text-decoration: none;">+91 78618 50634</a></p>
               </div>
             </div>
             <div class="info-card fade-up stagger-2">
-              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
               <div>
                 <h4>Email Us</h4>
-                <p>info@spectrumtourandtravels.in<br>bookings@spectrumtourandtravels.in</p>
+                <p>traveldeskspectrum@gmail.com</p>
               </div>
             </div>
             <div class="info-card fade-up stagger-3">
-              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
               <div>
                 <h4>Our Office</h4>
-                <p>123, Swastik Society, Near SG Highway,<br>Bodakdev, Ahmedabad - 380054</p>
+                <p>E-101, Al Burooj, Makarba – Sarkhej Road,<br>Opp. Police Head Quarter, Sarkhej,<br>Ahmedabad - Gujarat 380 055</p>
               </div>
             </div>
           </div>
@@ -542,20 +546,20 @@
           <div class="contact-form fade-up stagger-2">
             <form id="contact-form">
               <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" class="form-control" required placeholder="John Doe">
+                <label for="contact-name">Your Name</label>
+                <input id="contact-name" type="text" class="form-control" required placeholder="John Doe">
               </div>
               <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" class="form-control" required placeholder="+91 98765 43210">
+                <label for="contact-phone">Phone Number</label>
+                <input id="contact-phone" type="tel" class="form-control" required placeholder="+91 63567 93922">
               </div>
               <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" class="form-control" required placeholder="john@example.com">
+                <label for="contact-email">Email Address</label>
+                <input id="contact-email" type="email" class="form-control" required placeholder="john@example.com">
               </div>
               <div class="form-group">
-                <label>Message</label>
-                <textarea class="form-control" required placeholder="How can we help you?"></textarea>
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-control" required placeholder="How can we help you?"></textarea>
               </div>
               <button type="submit" class="btn btn-primary w-full">Send Message</button>
             </form>
@@ -570,13 +574,15 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="#" class="footer-logo">Spectrum</a>
+          <a href="#" class="footer-logo">
+            <img src="assets/img/logos/Spectrum Full Logo with texts.png" alt="Spectrum Tours & Travels" class="footer-logo-img" />
+          </a>
           <p class="mb-4">Premium travel experiences across Gujarat and beyond. Your safety and comfort are our top priorities.</p>
           <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
         
@@ -605,30 +611,30 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <div class="footer-links" style="color: var(--text-inverse-muted);">
-            <p><a href="tel:+919876512345" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone mr-2"></i> +91 98765 12345</a></p>
-            <p><i class="fa-solid fa-envelope mr-2"></i> info@spectrumtourandtravels.in</p>
-            <p><i class="fa-solid fa-location-dot mr-2"></i> Bodakdev, Ahmedabad</p>
+            <p><a href="tel:+916356793922" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone mr-2" aria-hidden="true"></i> +91 63567 93922</a></p>
+            <p><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i> traveldeskspectrum@gmail.com</p>
+            <p><i class="fa-solid fa-location-dot mr-2" aria-hidden="true"></i> Sarkhej, Ahmedabad</p>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
         <p>&copy; 2026 Spectrum Tours & Travels. All rights reserved.</p>
-        <p>Designed with ❤️ for a better journey.</p>
+        <p>designed by the algothrim</p>
       </div>
     </div>
   </footer>
 
   <!-- Booking Modal -->
-  <div class="modal-overlay" id="booking-modal">
+  <div class="modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <button class="modal-close"><i class="fa-solid fa-times"></i></button>
-      <h3 style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px;">Book Your <span class="accent-text text-gradient">Ride</span></h3>
+      <button class="modal-close" aria-label="Close booking modal"><i class="fa-solid fa-times" aria-hidden="true"></i></button>
+      <h3 id="modal-title" style="font-size: 2rem; font-family: var(--font-heading); margin-bottom: 24px;">Book Your <span class="accent-text">Ride</span></h3>
       
       <form id="booking-form">
         <div class="form-group">
-          <label>Select Vehicle</label>
-          <select class="form-control" required>
+          <label for="book-vehicle">Select Vehicle</label>
+          <select id="book-vehicle" class="form-control" required>
             <option value="" disabled selected>Choose a vehicle type...</option>
             <option value="innova">Innova Crysta (6-7 Seats)</option>
             <option value="tempo">Tempo Traveller (11-17 Seats)</option>
@@ -636,49 +642,53 @@
             <option value="sedan">Premium Sedan (4 Seats)</option>
           </select>
         </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+        <div class="booking-datetime-grid">
           <div class="form-group">
-            <label>Pickup Date</label>
-            <input type="date" class="form-control" required>
+            <label for="book-date">Pickup Date</label>
+            <input id="book-date" type="date" class="form-control" required>
           </div>
           <div class="form-group">
-            <label>Pickup Time</label>
-            <input type="time" class="form-control" required>
+            <label for="book-time">Pickup Time</label>
+            <input id="book-time" type="time" class="form-control" required>
           </div>
         </div>
-        
+
         <div class="form-group">
-          <label>Trip Type</label>
-          <select class="form-control" required>
+          <label for="book-trip">Trip Type</label>
+          <select id="book-trip" class="form-control" required>
             <option value="outstation">Outstation Trip</option>
             <option value="local">Local Hourly Rental</option>
             <option value="airport">Airport Transfer</option>
           </select>
         </div>
-        
+
         <div class="form-group">
-          <label>Your Details</label>
-          <input type="text" class="form-control mb-2" required placeholder="Full Name">
-          <input type="tel" class="form-control" required placeholder="Phone Number">
+          <label for="book-name">Full Name</label>
+          <input id="book-name" type="text" class="form-control mb-2" required placeholder="Full Name">
         </div>
-        
+        <div class="form-group">
+          <label for="book-phone">Phone Number</label>
+          <input id="book-phone" type="tel" class="form-control" required placeholder="Phone Number">
+        </div>
+
         <button type="submit" class="btn btn-primary w-full">Confirm Booking</button>
       </form>
     </div>
   </div>
 
   <!-- WhatsApp Floating Widget -->
-  <a href="https://wa.me/919876512345" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-whatsapp"></i>
+  <a href="https://wa.me/916356793922" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <!-- Mobile Sticky CTA -->
   <div class="mobile-sticky-cta">
-    <a href="tel:+919876512345" class="mobile-cta-btn btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
-    <a href="https://wa.me/919876512345" class="mobile-cta-btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="tel:+916356793922" class="mobile-cta-btn btn-call"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
+    <a href="https://wa.me/916356793922" class="mobile-cta-btn btn-wa"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+

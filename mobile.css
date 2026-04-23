@@ -1,8 +1,24 @@
 /* ============================================================
    Project Kagura — Mobile Responsive Overrides
-   Breakpoints: 768px (tablet/mobile), 576px (small phone)
-   Desktop view (>768px) is NEVER touched here.
+   Breakpoints: 1024px (tablet), 768px (tablet/mobile), 480px (small phone)
    ============================================================ */
+
+/* ---- 769px–1024px tablet only ---- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-info-cards,
+  .contact-form {
+    grid-column: span 1 !important;
+  }
+
+  .fleet-grid,
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* ---- 768px and below ---- */
 @media (max-width: 768px) {
@@ -164,12 +180,23 @@
   /* ---- Differentiator strip ---- */
   .diff-grid {
     flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
+    gap: 0;
+    align-items: stretch;
   }
 
   .diff-item {
     width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .diff-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .diff-item:first-child {
+    padding-top: 0;
   }
 
   /* ---- Fleet & Routes Cards ---- */
