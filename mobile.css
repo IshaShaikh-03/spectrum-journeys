@@ -18,6 +18,11 @@
   .routes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 
 /* ---- 768px and below ---- */
@@ -222,48 +227,44 @@
     font-size: 1.4rem;
   }
 
-  /* ---- Services Grid ---- */
-  .services-grid {
+  /* ---- Services List ---- */
+  .services-list {
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 48px;
   }
 
-  .service-card {
-    padding: 36px 28px;
+  .service-item {
+    padding: 28px 24px;
+    gap: 20px;
   }
 
-  .service-card h3 {
-    font-size: 1.4rem;
+  .service-num {
+    font-size: 2.2rem;
+    min-width: 52px;
+  }
+
+  .service-body h3 {
+    font-size: 1.15rem;
   }
 
   /* ---- Journey Steps (How it Works) ---- */
   .journey-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
     margin-top: 40px;
   }
 
   .journey-step {
-    padding: 28px 20px;
-    margin-top: 0;
+    padding: 32px 28px;
   }
 
   .step-number {
-    font-size: 1rem;
-    padding: 4px 12px;
+    font-size: 3rem;
   }
 
-  .step-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 1.4rem;
-    margin-bottom: 16px;
-  }
-
-  .journey-step h3 {
+  .journey-step h3,
+  .step-body h3 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   /* ---- Testimonials ---- */

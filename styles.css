@@ -21,6 +21,7 @@
   
   /* Accents */
   --accent-teal: #1A8077;
+  --color-success: #16a34a;
 
   /* Typography */
   --font-heading: 'Jost', sans-serif;
@@ -445,10 +446,8 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 .hero-btns .btn-secondary {
   color: var(--text-inverse);
-  border-color: var(--text-inverse);
-  background: rgba(20, 20, 20, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   font-weight: 600;
 }
 
@@ -657,56 +656,56 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 }
 
 /* Services */
-.services-grid {
+/* Services — editorial numbered list */
+.services-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
   margin-top: 80px;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  border-left: 1px solid rgba(17, 17, 17, 0.08);
 }
 
-.service-card {
-  background: var(--surface-card);
-  padding: 48px 40px;
-  border-radius: var(--radius-lg) var(--radius-md) var(--radius-sm) var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-  border: 1px solid rgba(17, 17, 17, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-}
-
-.service-icon {
-  width: 72px;
-  height: 72px;
-  background: rgba(232, 168, 56, 0.1);
-  color: var(--brand-primary);
-  border-radius: 50%;
+.service-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 32px;
-  transition: all var(--transition-normal);
+  gap: 28px;
+  padding: 44px 48px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  border-right: 1px solid rgba(17, 17, 17, 0.08);
+  transition: background var(--transition-fast);
+  align-items: flex-start;
 }
 
-.service-card:hover .service-icon {
-  background: var(--brand-primary);
-  color: var(--surface-dark);
+.service-item:hover {
+  background: rgba(232, 168, 56, 0.04);
 }
 
-.service-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
+.service-num {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(232, 168, 56, 0.22);
+  line-height: 1;
+  min-width: 68px;
+  letter-spacing: -0.04em;
+  transition: color var(--transition-fast);
 }
 
-.service-card p {
+.service-item:hover .service-num {
+  color: var(--brand-primary);
+}
+
+.service-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.service-body p {
   color: var(--text-muted);
-  margin-bottom: 24px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .pill-tags {
@@ -733,64 +732,60 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 }
 
 .journey-step {
-  text-align: center;
   position: relative;
-  padding: 32px 24px;
-  background: var(--surface-card);
+  padding: 48px 40px;
+  background: var(--surface-mid);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color var(--transition-normal);
 }
 
-.dark-section .journey-step {
-  background: var(--surface-mid);
+.journey-step:hover {
+  border-color: rgba(232, 168, 56, 0.3);
+}
+
+.step-highlight {
+  background: var(--brand-primary);
+}
+
+.step-highlight h3,
+.step-highlight p {
+  color: var(--surface-dark) !important;
 }
 
 .step-number {
-  font-family: var(--font-body);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--brand-primary);
-  margin-bottom: 16px;
-  display: inline-block;
-  background: rgba(232, 168, 56, 0.1);
-  padding: 4px 16px;
-  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  display: block;
 }
 
-.step-icon {
-  width: 72px;
-  height: 72px;
-  background: var(--surface-dark);
-  color: var(--brand-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin: 0 auto 24px;
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: var(--shadow-sm);
+.step-highlight .step-number {
+  color: rgba(20, 20, 20, 0.15);
 }
 
-.step-highlight .step-icon {
-  background: var(--brand-primary);
-  color: var(--surface-dark);
+.step-body h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--text-inverse);
 }
 
 .journey-step h3 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--text-inverse);
 }
 
 .journey-step p {
   color: var(--text-inverse-muted);
-  position: relative;
-  z-index: 1;
+  font-size: 0.97rem;
+  line-height: 1.7;
 }
 
 /* Testimonials - Quote heavy */
@@ -1199,9 +1194,29 @@ textarea.form-control {
 }
 
 .btn-success {
-  background: #16a34a;
-  color: #fff;
+  background: var(--color-success);
+  color: var(--text-inverse);
   pointer-events: none;
+}
+
+.price-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--brand-500);
+  color: var(--surface-dark);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  margin-bottom: 24px;
+  font-weight: 800;
 }
 
 .booking-datetime-grid {
@@ -1223,6 +1238,8 @@ textarea.form-control {
 .mb-8 { margin-bottom: 2rem; }
 .mt-8 { margin-top: 2rem; }
 .w-full { width: 100%; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mr-2 { margin-right: 0.5rem; }
 
 /* Scroll Animation Classes */
 .fade-up {
