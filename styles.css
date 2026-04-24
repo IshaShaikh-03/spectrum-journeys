@@ -1410,3 +1410,202 @@ textarea.form-control {
   }
 }
 
+/* ============================================================
+   Route / Package Pages
+   ============================================================ */
+
+/* Shorter hero for route pages */
+.hero--route {
+  min-height: 55vh;
+  text-align: center;
+}
+
+.hero--route .container {
+  padding-top: 120px;
+  padding-bottom: 64px;
+  grid-template-columns: 1fr;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--route .hero-content h1 {
+  margin-bottom: 20px;
+}
+
+.hero--route .hero-btns {
+  justify-content: center;
+}
+
+/* Package two-column layout */
+.package-section {
+  padding: 96px 0;
+  background: var(--surface-light);
+}
+
+.package-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.package-main > h2 {
+  font-size: 2.2rem;
+  margin-bottom: 28px;
+  margin-top: 0;
+}
+
+.package-main > h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  margin-top: 56px;
+}
+
+.package-main > p {
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+/* Itinerary cards (no border-left stripe) */
+.itinerary-card {
+  background: var(--surface-card);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
+  margin-bottom: 20px;
+  transition: border-color var(--transition-fast);
+}
+
+.itinerary-card:hover {
+  border-color: rgba(232, 168, 56, 0.3);
+}
+
+.itinerary-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.itinerary-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check-list li {
+  color: var(--text-secondary);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.check-list li i {
+  color: var(--brand-primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Sidebar sticky card */
+.package-sidebar-card {
+  background: var(--surface-card);
+  border: 1px solid rgba(17, 17, 17, 0.07);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  position: sticky;
+  top: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  color: var(--text-primary);
+}
+
+/* Pricing rows */
+.price-table {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+  font-size: 0.95rem;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+  margin-bottom: 4px;
+}
+
+.price-row span {
+  color: var(--text-secondary);
+}
+
+.price-row strong {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.price-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Block buttons for sidebar */
+.btn-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Generic btn-secondary for use outside hero */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid rgba(17, 17, 17, 0.2);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  background: rgba(232, 168, 56, 0.05);
+}
+

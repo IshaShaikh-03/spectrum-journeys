@@ -23,6 +23,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
+
+  /* Route pages */
+  .package-layout {
+    grid-template-columns: 3fr 2fr;
+    gap: 36px;
+  }
 }
 
 /* ---- 768px and below ---- */
@@ -395,6 +401,37 @@
   .modal-content {
     padding: 40px 24px;
     border-radius: var(--radius-md);
+  }
+
+  /* ---- Route package layout — stack on mobile ---- */
+  .package-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .package-sidebar-card {
+    position: static;
+  }
+
+  .hero--route {
+    min-height: 60svh;
+  }
+
+  .hero--route .container {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .package-section {
+    padding: 64px 0;
+  }
+
+  .package-main > h3 {
+    margin-top: 40px;
+  }
+
+  .itinerary-card {
+    padding: 24px 20px;
   }
 
   /* ---- WhatsApp float — hidden on mobile (sticky bar is used instead) ---- */
