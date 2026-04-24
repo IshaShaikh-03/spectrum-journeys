@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let rafPending = false;
 
+  // Cache section tops once; refresh on resize to avoid reading layout in scroll RAF
+  let sectionTops = [...sections].map(s => ({ id: s.getAttribute('id'), top: s.offsetTop }));
+  window.addEventListener('resize', () => {
+    sectionTops = [...sections].map(s => ({ id: s.getAttribute('id'), top: s.offsetTop }));
+  });
+
   window.addEventListener('scroll', () => {
     if (rafPending) return;
     rafPending = true;
@@ -27,12 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         heroBg.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.05)`;
       }
 
-      // Active navigation link
+      // Active navigation link (uses cached tops — no layout read in RAF)
       let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
+      sectionTops.forEach(({ id, top }) => {
+        if (window.scrollY >= (top - 200)) {
+          current = id;
         }
       });
 
@@ -52,8 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuBtn && navMenu) {
     const menuIcon = menuBtn.querySelector('.icon');
 
+    const navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    document.body.appendChild(navOverlay);
+
     const openMenu = () => {
       navMenu.classList.add('active');
+      navOverlay.classList.add('active');
       menuBtn.setAttribute('aria-expanded', 'true');
       menuBtn.setAttribute('aria-label', 'Close navigation menu');
       menuIcon.classList.remove('icon-bars');
@@ -62,11 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMenu = () => {
       navMenu.classList.remove('active');
+      navOverlay.classList.remove('active');
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.setAttribute('aria-label', 'Open navigation menu');
       menuIcon.classList.remove('icon-times');
       menuIcon.classList.add('icon-bars');
     };
+
+    navOverlay.addEventListener('click', closeMenu);
 
     menuBtn.addEventListener('click', () => {
       navMenu.classList.contains('active') ? closeMenu() : openMenu();
