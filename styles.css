@@ -179,9 +179,6 @@ section {
   background-color: var(--surface-card);
 }
 
-.gray-section {
-  background-color: var(--surface-card);
-}
 
 /* Typography */
 h1, h2 {
@@ -484,7 +481,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 
 
-/* Stats Ribbon */
+/* Stats Ribbon — editorial asymmetric layout */
 .stats-ribbon {
   background: var(--surface-dark);
   padding: 80px 0;
@@ -492,51 +489,68 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  text-align: center;
+.stats-inline {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap;
 }
 
-.stat-item {
-  position: relative;
-  padding: 0 32px;
+.stat-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-.stat-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 20%;
-  height: 60%;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.stat-item h3 {
-  font-size: 4rem;
+.stat-primary .count-number {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 900;
   color: var(--brand-primary);
-  margin-bottom: 8px;
-  line-height: 1;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
 }
 
-.stat-item p {
-  color: var(--text-inverse-muted);
-  font-size: 0.85rem;
+.stat-primary-label {
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
+  color: var(--text-inverse-muted);
   font-weight: 600;
 }
 
-@media (max-width: 1024px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 0;
-  }
-  .stat-item:nth-child(2)::after {
-    display: none;
-  }
+.stats-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 64px;
+  flex: 1;
+}
+
+.stat-secondary-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.stat-secondary-item b {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  min-width: 68px;
+}
+
+.stat-secondary-item span {
+  font-size: 0.8rem;
+  color: var(--text-inverse-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
 }
 
 /* Why Spectrum / Differentiator Strip */
@@ -951,6 +965,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
   margin-bottom: 24px;
   display: block;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 @media (max-width: 1024px) {
@@ -1420,7 +1435,7 @@ textarea.form-control {
 
 .btn-wa {
   background: #25d366;
-  color: white;
+  color: var(--text-inverse);
 }
 
 @media (max-width: 768px) {

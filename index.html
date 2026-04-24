@@ -38,6 +38,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile.css" />
+  <noscript><style>.fade-up{opacity:1;transform:none}</style></noscript>
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -111,7 +112,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-bg">
-        <img src="assets/img/landing-page.png" alt="Premium Luxury Car" width="1536" height="1024" fetchpriority="high" />
+        <picture>
+          <source type="image/webp" srcset="assets/img/landing-page-400.webp 400w, assets/img/landing-page-800.webp 800w, assets/img/landing-page-1200.webp 1200w" sizes="100vw" />
+          <img src="assets/img/landing-page.png" alt="Spectrum Tours premium cab ready for departure in Ahmedabad" width="1536" height="1024" fetchpriority="high" />
+        </picture>
       </div>
       <div class="container">
         <div class="hero-content fade-up">
@@ -130,22 +134,24 @@
     <!-- Stats Ribbon -->
     <section class="stats-ribbon">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item fade-up">
-            <h3><span class="count-number" data-target="15" data-plus>0</span></h3>
-            <p>Years Experience</p>
+        <div class="stats-inline fade-up">
+          <div class="stat-primary">
+            <span class="count-number" data-target="10000" data-plus>0</span>
+            <span class="stat-primary-label">happy clients</span>
           </div>
-          <div class="stat-item fade-up stagger-1">
-            <h3><span class="count-number" data-target="50" data-plus>0</span></h3>
-            <p>Premium Vehicles</p>
-          </div>
-          <div class="stat-item fade-up stagger-2">
-            <h3><span class="count-number" data-target="10000" data-plus>0</span></h3>
-            <p>Happy Clients</p>
-          </div>
-          <div class="stat-item fade-up stagger-3">
-            <h3><span class="count-number" data-target="24">0</span>/7</h3>
-            <p>Support Available</p>
+          <div class="stats-secondary">
+            <div class="stat-secondary-item">
+              <b><span class="count-number" data-target="15" data-plus>0</span></b>
+              <span>years on Gujarat's roads</span>
+            </div>
+            <div class="stat-secondary-item">
+              <b><span class="count-number" data-target="50" data-plus>0</span></b>
+              <span>premium vehicles</span>
+            </div>
+            <div class="stat-secondary-item">
+              <b>24/7</b>
+              <span>support, always</span>
+            </div>
           </div>
         </div>
       </div>
@@ -154,7 +160,7 @@
 
 
     <!-- Fleet Section -->
-    <section id="fleet" class="gray-section">
+    <section id="fleet" class="white-section">
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Premium Vehicles</div>
@@ -167,7 +173,10 @@
           <div class="fleet-card fade-up stagger-1">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge">₹14/km</div>
-              <img src="assets/img/innova-crysta.png" alt="Toyota Innova Crysta" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/innova-crysta-400.webp 400w, assets/img/innova-crysta-800.webp 800w, assets/img/innova-crysta-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/innova-crysta.png" alt="Toyota Innova Crysta" width="1536" height="1024" loading="lazy" />
+              </picture>
             </div>
             <div class="fleet-content">
               <h3>Innova Crysta</h3>
@@ -187,7 +196,10 @@
           <div class="fleet-card fade-up stagger-2">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge">₹22/km</div>
-              <img src="assets/img/tempo-traveller.png" alt="Tempo Traveller" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/tempo-traveller-400.webp 400w, assets/img/tempo-traveller-800.webp 800w, assets/img/tempo-traveller-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/tempo-traveller.png" alt="Tempo Traveller" width="1536" height="1024" loading="lazy" />
+              </picture>
             </div>
             <div class="fleet-content">
               <h3>Tempo Traveller</h3>
@@ -207,7 +219,10 @@
           <div class="fleet-card fade-up stagger-3">
             <div class="fleet-img" style="position: relative;">
               <div class="price-badge">₹35/km</div>
-              <img src="assets/img/luxury-mini-bus.png" alt="Luxury Mini Bus" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/luxury-mini-bus-400.webp 400w, assets/img/luxury-mini-bus-800.webp 800w, assets/img/luxury-mini-bus-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/luxury-mini-bus.png" alt="Luxury Mini Bus" width="1536" height="1024" loading="lazy" />
+              </picture>
             </div>
             <div class="fleet-content">
               <h3>Luxury Mini Bus</h3>
@@ -312,7 +327,7 @@
     </section>
 
     <!-- Popular Routes Section -->
-    <section id="routes" class="gray-section">
+    <section id="routes" class="white-section">
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Top Destinations</div>
@@ -324,7 +339,10 @@
           <!-- Statue of Unity -->
           <div class="route-card fade-up stagger-1">
             <div class="route-img">
-              <img src="assets/img/Statue of Unity.png" alt="Statue of Unity Taxi Tour" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/Statue of Unity-400.webp 400w, assets/img/Statue of Unity-800.webp 800w, assets/img/Statue of Unity-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/Statue of Unity.png" alt="Statue of Unity Taxi Tour" width="1536" height="1024" loading="lazy" />
+              </picture>
               <div class="route-badge">Best Seller</div>
             </div>
             <div class="route-content">
@@ -341,7 +359,10 @@
           <!-- Chardham Yatra -->
           <div class="route-card fade-up stagger-2">
             <div class="route-img">
-              <img src="assets/img/Chardham Yatra.png" alt="Chardham Yatra from Ahmedabad" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/Chardham Yatra-400.webp 400w, assets/img/Chardham Yatra-800.webp 800w, assets/img/Chardham Yatra-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/Chardham Yatra.png" alt="Chardham Yatra from Ahmedabad" width="1536" height="1024" loading="lazy" />
+              </picture>
               <div class="route-badge spiritual">Spiritual</div>
             </div>
             <div class="route-content">
@@ -358,7 +379,10 @@
           <!-- Somnath Dwarka -->
           <div class="route-card fade-up stagger-3">
             <div class="route-img">
-              <img src="assets/img/Somnath & Dwarka.png" alt="Somnath Dwarka Tour Package" width="1536" height="1024" loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="assets/img/Somnath & Dwarka-400.webp 400w, assets/img/Somnath & Dwarka-800.webp 800w, assets/img/Somnath & Dwarka-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 33vw" />
+                <img src="assets/img/Somnath & Dwarka.png" alt="Somnath Dwarka Tour Package" width="1536" height="1024" loading="lazy" />
+              </picture>
             </div>
             <div class="route-content">
               <h3>Somnath & Dwarka Tour</h3>
@@ -412,7 +436,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="gray-section">
+    <section class="white-section">
       <div class="container">
         <div class="text-center mb-8 fade-up">
           <div class="hero-tag">Testimonials</div>
@@ -501,7 +525,7 @@
           <p>Book your premium ride today and experience the difference of traveling with professionals who care.</p>
         </div>
         <div class="cta-action">
-          <span class="cta-phone">+91 63567 93922</span>
+          <a href="tel:+916356793922" class="cta-phone">+91 63567 93922</a>
           <button class="btn btn-dark open-booking">Get Your Free Quote</button>
         </div>
       </div>
@@ -557,15 +581,15 @@
             <form id="contact-form">
               <div class="form-group">
                 <label for="contact-name">Your Name</label>
-                <input id="contact-name" type="text" class="form-control" required placeholder="John Doe">
+                <input id="contact-name" type="text" class="form-control" required placeholder="John Doe" autocomplete="name">
               </div>
               <div class="form-group">
                 <label for="contact-phone">Phone Number</label>
-                <input id="contact-phone" type="tel" class="form-control" required placeholder="+91 63567 93922">
+                <input id="contact-phone" type="tel" class="form-control" required placeholder="+91 63567 93922" autocomplete="tel">
               </div>
               <div class="form-group">
                 <label for="contact-email">Email Address</label>
-                <input id="contact-email" type="email" class="form-control" required placeholder="john@example.com">
+                <input id="contact-email" type="email" class="form-control" required placeholder="john@example.com" autocomplete="email">
               </div>
               <div class="form-group">
                 <label for="contact-message">Message</label>
@@ -675,11 +699,11 @@
 
         <div class="form-group">
           <label for="book-name">Full Name</label>
-          <input id="book-name" type="text" class="form-control mb-2" required placeholder="Full Name">
+          <input id="book-name" type="text" class="form-control mb-2" required placeholder="Full Name" autocomplete="name">
         </div>
         <div class="form-group">
           <label for="book-phone">Phone Number</label>
-          <input id="book-phone" type="tel" class="form-control" required placeholder="Phone Number">
+          <input id="book-phone" type="tel" class="form-control" required placeholder="Phone Number" autocomplete="tel">
         </div>
 
         <button type="submit" class="btn btn-primary w-full">Confirm Booking</button>
