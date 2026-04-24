@@ -1416,7 +1416,7 @@ textarea.form-control {
 
 /* Shorter hero for route pages */
 .hero--route {
-  min-height: 55vh;
+  min-height: 55svh;
   text-align: center;
 }
 
@@ -1607,5 +1607,37 @@ textarea.form-control {
   border-color: var(--brand-primary);
   color: var(--brand-primary);
   background: rgba(232, 168, 56, 0.05);
+}
+
+/* Sidebar body text & bullet list (Chardham sidebar) */
+.sidebar-body-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.sidebar-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-bullet-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.sidebar-bullet-icon {
+  color: var(--brand-primary);
+  font-size: 0.65rem;
+  flex-shrink: 0;
 }
 

@@ -1,13 +1,13 @@
 # spectrum audit — internal fix tracker
-# score: 11/20 acceptable → target 17+/20
+# score: index.html 17/20 → route pages 17/20 → target 20/20 all pages
 # format: [x] = done, [ ] = pending, [~] = partial
 
 ---
 
 ## META
 - stack: vanilla html/css/js
-- fonts: Urbanist (headings) + Karla (body) — Syne/DM Sans replaced
-- pages: index.html, route-statue-of-unity.html, route-chardham-yatra.html
+- fonts: Jost (headings) + Karla (body)
+- pages: index.html, route-statue-of-unity.html, route-chardham-yatra.html, route-somnath-dwarka.html (NEW)
 - css: styles.css, mobile.css
 - js: script.js
 
@@ -15,62 +15,95 @@
 
 ## P0 — BLOCKING
 
-- [x] `gray-section` class used on 4 sections (fleet, routes, testimonials, contact) but NEVER DEFINED in styles.css → all sections same cream bg
+- [x] `gray-section` class used on 4 sections but NEVER DEFINED in styles.css
+- [x] `var(--surface-off)` undefined — used in `.itinerary-card` background → cards render transparent (route pages) → fixed to `var(--surface-card)`
 
 ---
 
 ## P1 — MAJOR / WCAG AA
 
-- [x] form labels have no `for` attr + inputs have no `id` → screen readers blind (index.html:544-559 contact, 629-666 booking modal)
-- [x] "Your Details" label covers TWO inputs (name + phone) in booking modal → split into two labelled groups
-- [x] mobile menu is a `<div>` not `<button>` → not keyboard focusable, no aria-expanded, no aria-label (index.html:99)
-- [x] booking modal: no `role="dialog"`, no `aria-modal="true"`, no `aria-labelledby`, no focus trap (index.html:623)
-- [x] skip link uses `left:-9999px` with no `:focus` reveal → invisible to keyboard users (index.html:77)
-- [x] icon-only links: 4 social links + whatsapp float + modal close = no aria-label (index.html:576-580, 672, 625)
-- [x] no `loading="lazy"` on any img; hero missing `fetchpriority="high"` (index.html:109,165,184,204,315,332,349)
-- [x] fonts: replace DM Sans + Syne with Urbanist + Karla
+- [x] form labels have no `for` attr + inputs have no `id` → screen readers blind
+- [x] "Your Details" label covers TWO inputs in booking modal → split into two labelled groups
+- [x] mobile menu is a `<div>` not `<button>` → not keyboard focusable, no aria-expanded
+- [x] booking modal: no `role="dialog"`, no `aria-modal`, no `aria-labelledby`, no focus trap
+- [x] skip link uses `left:-9999px` with no `:focus` reveal → invisible to keyboard users
+- [x] icon-only links: social links + whatsapp float + modal close = no aria-label
+- [x] no `loading="lazy"` on any img; hero missing `fetchpriority="high"`
+- [x] fonts: replace DM Sans + Syne → now Jost + Karla
+- [x] OG image URLs contain literal spaces and `&` — social crawlers fail to load preview images (all route pages) → URL-encoded
 
 ---
 
 ## P2 — MINOR
 
-- [x] `--brand-500` and `--brand-300` referenced inline in HTML but not defined in :root (index.html:164,369)
-- [x] `.stagger-5` class used (index.html:464) but not defined in styles.css (only stagger-1→4 exist)
-- [x] google fonts loaded as css `@import` inside styles.css → render-blocking (styles.css:2)
-- [ ] fontawesome full CDN library ~80kb for ~15 icons used (index.html:31) — low priority, skip
-- [x] scroll parallax handler writes transform without requestAnimationFrame (script.js:17-19)
-- [x] booking modal date+time grid is hardcoded inline `style="display:grid;grid-template-columns:1fr 1fr"` → no mobile override possible (index.html:640)
-- [x] all hex colors, no oklch; `--text-muted` #6B6B6B on cream #F9F6F0 ≈ 4.4:1 (just below 4.5:1 WCAG AA) → raised to #555555 ~5.4:1
-- [x] `#10b981` hardcoded in js success state (script.js:198) → replaced with .btn-success CSS class
-- [x] all 5 testimonials are 5-stars → looks fake, kills trust → cards 2+5 now 4 stars, all have aria-label
+- [x] `--brand-500` and `--brand-300` referenced inline in HTML but not defined in :root
+- [x] `.stagger-5` class used but not defined in styles.css
+- [x] google fonts loaded as css `@import` → render-blocking → preconnect + `<link>`
+- [ ] fontawesome full CDN library ~80kb for ~15 icons used — low priority, skip
+- [x] scroll parallax handler writes transform without requestAnimationFrame
+- [x] booking modal date+time grid hardcoded inline style → `.booking-datetime-grid` class
+- [x] `--text-muted` #6B6B6B on cream ≈ 4.4:1 (below WCAG AA) → raised to #555555
+- [x] `#10b981` hardcoded in JS success state → replaced with `.btn-success` CSS class
+- [x] all 5 testimonials 5-stars → looks fake → cards 2+5 now 4 stars
+- [x] Chardham sidebar inline styles (font-size, color, margin on `<p>` and bullet icons) → extracted to CSS classes
 
 ---
 
 ## P3 — POLISH
 
-- [x] footer logo html has no `<span>` but css targets `.footer-logo span` → amber accent never renders
-- [x] no `prefers-reduced-motion` media query anywhere → added to styles.css + JS guard
-- [x] `--ease-spring` springy easing → replaced with ease-out-quart cubic-bezier(0.25,1,0.5,1)
-- [x] 5 testimonials in 3-col grid → orphaned bottom row → fixed with 6-col grid span-3 for last 2
-- [x] hero image missing `fetchpriority="high"` (done in P1 images task)
-- [x] `.btn-dark` class referenced in index.html:490 but not defined in styles.css
+- [x] footer logo html missing `<span>` for amber accent
+- [x] no `prefers-reduced-motion` media query → added to styles.css + JS guard
+- [x] `--ease-spring` → replaced with `--ease-out` cubic-bezier(0.25,1,0.5,1)
+- [x] 5 testimonials in 3-col grid → orphaned row → fixed with 6-col grid span-3 for last 2
+- [x] `.btn-dark` class referenced but not defined in styles.css
+- [x] `.hero--route { min-height: 55vh }` → `55svh` for mobile chrome awareness
 
 ---
 
-## RE-AUDIT REGRESSIONS & NEW ISSUES (post-11/20)
+## RE-AUDIT REGRESSIONS & NEW ISSUES (post-11/20 index.html)
 
-- [x] `.fade-up` still references undefined `--ease-spring` (styles.css:1194) → transitions fall back to browser default
-- [ ] footer credit text corrupted `â¤ï¸` → replace with "designed by the algothrim"
-- [x] `.btn-dark` button has redundant inline style override (index.html:495) → remove inline style
-- [x] `.text-gradient` orphaned class on 7 headings — gradient text is banned anti-pattern → remove class, keep `.accent-text`
-- [x] `.hero-bg img` DOM query inside RAF callback → cache outside scroll handler (script.js)
-- [ ] contact grid missing 769–1024px tablet breakpoint (mobile.css)
-- [x] section images: replace Unsplash URLs with local `/assets/img/` files
-- [x] diff-item mobile layout needs better visual treatment (Verified Drivers / No Hidden Fees / On-Time Guarantee)
-- [x] scrollbar unstyled → style to match amber/dark theme
-- [x] Trusted By section: replace placeholder SVGs with real logo images or text-based client names
-- [x] animations too harsh → ease-spring fixed + fade-up duration/distance tuned
-- [x] fonts toned down: Syne → Urbanist (less extreme), DM Sans → Karla (clean geometric)
+- [x] `.fade-up` still references undefined `--ease-spring` → `var(--ease-out)`
+- [x] footer credit `â¤ï¸` (encoding corruption) → "designed by the algothrim"
+- [x] `.btn-dark` redundant inline style override → removed
+- [x] `.text-gradient` orphaned on 7 headings — banned anti-pattern → removed
+- [x] `.hero-bg img` DOM query inside RAF callback → cached outside scroll handler
+- [x] contact grid missing 769–1024px tablet breakpoint → added to mobile.css
+- [x] section images: Unsplash URLs → local `/assets/img/` files
+- [x] diff-item mobile layout improved
+- [x] scrollbar unstyled → styled to amber/dark theme
+- [x] Trusted By: placeholder SVGs → real client text names
+- [x] animations too harsh → easing fixed, fade-up tuned
+- [x] fonts: Urbanist → Jost (wider premium geometric, not in reflex list)
+
+---
+
+## ROUTE PAGE REBUILD (new — all 3 pages)
+
+- [x] missing Google Fonts on route pages → Jost + Karla added
+- [x] old favicon `/favicon.svg` → `assets/img/logos/S-Logo Favicon.png`
+- [x] old `<i>` + text logo in header → image logo with `.logo-img` class
+- [x] mobile menu `<div>` → `<button>` with aria-expanded, aria-label, aria-controls
+- [x] nav missing `id` for aria-controls → `id="main-nav"` added
+- [x] no skip link → `<a href="#main-content" class="skip-link">` added
+- [x] no `<main>` landmark → `<main id="main-content">` added
+- [x] hero: `<div class="hero-bg"></div>` empty → real `<img>` with local asset + fetchpriority
+- [x] `class="text-gradient"` on h1 span — BANNED → removed, using `.accent-text`
+- [x] `border-left: 4px solid var(--brand-500)` on itinerary cards — BANNED → replaced with full-border `.itinerary-card`
+- [x] undefined classes: `relative z-10`, `hero-cta`, `btn-lg`, `btn-outline` → all removed
+- [x] `color: var(--text-main)` undefined token → using `var(--text-secondary)`
+- [x] `color: #666` hardcoded → using tokens
+- [x] fake phone `+91 98765 12345` (4+ instances) → `+91 63567 93922`
+- [x] fake email `info@spectrumtourandtravels.in` → `traveldeskspectrum@gmail.com`
+- [x] fake address `Bodakdev, Ahmedabad` → `E-101, Al Burooj, Makarba–Sarkhej Road, Sarkhej, Ahmedabad – 380055`
+- [x] footer text-only logo `Spectrum` → full logo image with `.footer-logo-img`
+- [x] footer social links: no aria-label → all aria-labels added
+- [x] footer icons: no aria-hidden → aria-hidden="true" on all decorative icons
+- [x] footer credit `Designed with ❤️...` → "designed by the algothrim"
+- [x] booking modal missing from route pages → full modal HTML included on each page
+- [x] Schema.org: added TouristTrip structured data on all route pages
+- [x] `route-somnath-dwarka.html` did not exist → created from scratch
+- [x] Somnath route card on index.html linked to `#booking` → now links to `route-somnath-dwarka.html`
+- [x] footer "Tour Packages" column added on all route pages linking all 3 routes
 
 ---
 
@@ -84,6 +117,8 @@
 - identical card grids repeated 4x → AI slop
 - all-5-star testimonials → breaks trust
 - DM Sans + Syne → both in reflex reject list
+- Urbanist → too simple, rejected by client
+- Jost → APPROVED, currently in use
 
 ---
 
@@ -116,6 +151,11 @@
 - all 6 section images replaced with local /assets/img/ files
 - diff-item mobile layout improved
 - scrollbar styled to amber/dark theme
-- Trusted By: SVG placeholders replaced with Spectrum logo images
-- footer credit replaced: "designed by the algothrim"
-- fonts: Urbanist + Karla (both non-banned, not reflex picks)
+- Trusted By: SVG placeholders replaced with client name text spans
+- footer credit: "designed by the algothrim"
+- fonts: Jost + Karla (premium geometric pairing, both non-banned)
+- route pages: complete rebuild (see ROUTE PAGE REBUILD section above)
+- var(--surface-off) → var(--surface-card) in .itinerary-card
+- OG image URLs URL-encoded on all route pages
+- Chardham sidebar inline styles → CSS classes
+- hero--route min-height 55vh → 55svh
