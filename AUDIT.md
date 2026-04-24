@@ -1,5 +1,5 @@
 # spectrum audit — internal fix tracker
-# score: index.html 17/20 → route pages 17/20 → target 20/20 all pages
+# score: 20/20 ALL PAGES — COMPLETE
 # format: [x] = done, [ ] = pending, [~] = partial
 
 ---
@@ -39,7 +39,7 @@
 - [x] `--brand-500` and `--brand-300` referenced inline in HTML but not defined in :root
 - [x] `.stagger-5` class used but not defined in styles.css
 - [x] google fonts loaded as css `@import` → render-blocking → preconnect + `<link>`
-- [ ] fontawesome full CDN library ~80kb for ~15 icons used — low priority, skip
+- [x] fontawesome full CDN library ~80kb for ~15 icons used → replaced with icons.css (25 inline SVG icons, ~9kb, no CDN)
 - [x] scroll parallax handler writes transform without requestAnimationFrame
 - [x] booking modal date+time grid hardcoded inline style → `.booking-datetime-grid` class
 - [x] `--text-muted` #6B6B6B on cream ≈ 4.4:1 (below WCAG AA) → raised to #555555

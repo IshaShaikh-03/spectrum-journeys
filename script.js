@@ -50,22 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('.nav-links');
   
   if (menuBtn && navMenu) {
-    const menuIcon = menuBtn.querySelector('i');
+    const menuIcon = menuBtn.querySelector('.icon');
 
     const openMenu = () => {
       navMenu.classList.add('active');
       menuBtn.setAttribute('aria-expanded', 'true');
       menuBtn.setAttribute('aria-label', 'Close navigation menu');
-      menuIcon.classList.remove('fa-bars');
-      menuIcon.classList.add('fa-times');
+      menuIcon.classList.remove('icon-bars');
+      menuIcon.classList.add('icon-times');
     };
 
     const closeMenu = () => {
       navMenu.classList.remove('active');
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.setAttribute('aria-label', 'Open navigation menu');
-      menuIcon.classList.remove('fa-times');
-      menuIcon.classList.add('fa-bars');
+      menuIcon.classList.remove('icon-times');
+      menuIcon.classList.add('icon-bars');
     };
 
     menuBtn.addEventListener('click', () => {
@@ -223,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
     
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processing...';
+    btn.innerHTML = '<span class="icon icon-spinner icon-spin" aria-hidden="true"></span> Processing...';
     btn.disabled = true;
 
     setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Success!';
+      btn.innerHTML = '<span class="icon icon-check" aria-hidden="true"></span> Success!';
       btn.classList.add('btn-success');
       form.reset();
 
