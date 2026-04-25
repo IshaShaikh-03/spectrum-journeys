@@ -30,7 +30,7 @@
   <!-- Google Fonts — preconnect eliminates extra DNS round-trip -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Karla:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800;900&family=Karla:wght@400;500;600&display=swap" />
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="icons.css" />
@@ -85,7 +85,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <a href="#" class="logo">
+      <a href="/" class="logo">
         <img src="assets/img/logos/logo only.png" alt="Spectrum Tours logo" class="logo-img" width="6614" height="4720" />
         <span>Spectrum</span>
       </a>
@@ -99,7 +99,7 @@
       </nav>
       
       <div class="header-actions">
-        <a href="#booking" class="btn btn-primary open-booking">Get a Quote</a>
+        <a href="#booking-modal" class="btn btn-primary open-booking">Get a Quote</a>
       </div>
       
       <button class="mobile-menu-btn" aria-expanded="false" aria-label="Open navigation menu" aria-controls="main-nav">
@@ -119,12 +119,12 @@
       </div>
       <div class="container">
         <div class="hero-content fade-up">
-          <div class="hero-tag">Premium Travel in Gujarat</div>
-          <h1>Premium Cab & Bus Rentals <br /><span class="accent-text">in Ahmedabad</span></h1>
-          <p class="subtitle">Experience luxury and comfort with Ahmedabad's top-rated cab and bus rental service. Perfect for corporate travel, family trips, and airport transfers.</p>
+          <p class="hero-eyebrow">Ahmedabad · Since 2008</p>
+          <h1>Gujarat's Cabs,<br /><span class="accent-text">Done Right</span></h1>
+          <p class="subtitle">Verified drivers. Upfront pricing. Every vehicle GPS-tracked and CCTV-fitted. We've run 10,000+ trips without a single missed pickup.</p>
           
           <div class="hero-btns">
-            <a href="#fleet" class="btn btn-primary open-booking">Get an Instant Quote</a>
+            <a href="#booking-modal" class="btn btn-primary open-booking">Get an Instant Quote</a>
             <a href="tel:+916356793922" class="btn btn-secondary">Call +91 63567 93922</a>
           </div>
         </div>
@@ -134,24 +134,22 @@
     <!-- Stats Ribbon -->
     <section class="stats-ribbon">
       <div class="container">
-        <div class="stats-inline fade-up">
-          <div class="stat-primary">
-            <span class="count-number" data-target="10000" data-plus>0</span>
-            <span class="stat-primary-label">happy clients</span>
+        <div class="stats-row fade-up">
+          <div class="stat-item" aria-label="10,000+ happy clients">
+            <span class="count-number stat-num stat-num--accent" data-target="10000" data-plus aria-hidden="true">0</span>
+            <span class="stat-label" aria-hidden="true">Happy clients</span>
           </div>
-          <div class="stats-secondary">
-            <div class="stat-secondary-item">
-              <b><span class="count-number" data-target="15" data-plus>0</span></b>
-              <span>years on Gujarat's roads</span>
-            </div>
-            <div class="stat-secondary-item">
-              <b><span class="count-number" data-target="50" data-plus>0</span></b>
-              <span>premium vehicles</span>
-            </div>
-            <div class="stat-secondary-item">
-              <b>24/7</b>
-              <span>support, always</span>
-            </div>
+          <div class="stat-item" aria-label="15+ years on Gujarat's roads">
+            <span class="count-number stat-num" data-target="15" data-plus aria-hidden="true">0</span>
+            <span class="stat-label" aria-hidden="true">Years on Gujarat's roads</span>
+          </div>
+          <div class="stat-item" aria-label="50+ premium vehicles">
+            <span class="count-number stat-num" data-target="50" data-plus aria-hidden="true">0</span>
+            <span class="stat-label" aria-hidden="true">Premium vehicles</span>
+          </div>
+          <div class="stat-item" aria-label="24/7 support, always available">
+            <span class="stat-num" aria-hidden="true">24/7</span>
+            <span class="stat-label" aria-hidden="true">Support, always</span>
           </div>
         </div>
       </div>
@@ -162,10 +160,11 @@
     <!-- Fleet Section -->
     <section id="fleet" class="white-section">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">Premium Vehicles</div>
-          <h2>Our Premium Cab & <span class="accent-text">Tempo Traveller Fleet</span></h2>
-          <p class="subtitle mx-auto">Choose from our wide range of well-maintained vehicles for any occasion.</p>
+        <div class="section-header-split fade-up">
+          <div>
+            <h2>Our <span class="accent-text">Fleet</span></h2>
+          </div>
+          <p class="section-aside">Three vehicle classes. Every group size, every route, every budget.</p>
         </div>
         
         <div class="fleet-grid">
@@ -187,7 +186,7 @@
               </div>
               <p>Premium SUV perfect for outstation trips and executive travel.</p>
               <div class="fleet-price">
-                <button class="btn btn-primary open-booking w-full">Get a Quote</button>
+                <button class="btn btn-secondary open-booking w-full">Get a Quote</button>
               </div>
             </div>
           </div>
@@ -233,7 +232,7 @@
               </div>
               <p>Comfortable buses for corporate events and large group outings.</p>
               <div class="fleet-price">
-                <button class="btn btn-primary open-booking w-full">Get a Quote</button>
+                <button class="btn btn-secondary open-booking w-full">Get a Quote</button>
               </div>
             </div>
           </div>
@@ -244,10 +243,11 @@
     <!-- Services -->
     <section id="services">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">What We Offer</div>
-          <h2>Travel & Taxi <span class="accent-text">Services in Gujarat</span></h2>
-          <p class="subtitle mx-auto">Comprehensive travel solutions tailored to your specific needs.</p>
+        <div class="section-header-split fade-up">
+          <div>
+            <h2>Travel & Taxi <span class="accent-text">Services</span></h2>
+          </div>
+          <p class="section-aside">Six services, one number to call. We handle the logistics — you travel.</p>
         </div>
         
         <div class="services-list">
@@ -301,25 +301,25 @@
     <section class="differentiator">
       <div class="container">
         <div class="diff-grid">
-          <div class="diff-item fade-up">
+          <div class="diff-item diff-item--featured fade-up">
             <span class="icon icon-shield" aria-hidden="true"></span>
             <div>
               <h4>Verified Drivers</h4>
-              <p>Background checked professionals</p>
+              <p>Every driver is ID-verified, police-clearance checked, and uniformed. No freelancers, no exceptions.</p>
             </div>
           </div>
           <div class="diff-item fade-up stagger-1">
             <span class="icon icon-tags" aria-hidden="true"></span>
             <div>
               <h4>No Hidden Fees</h4>
-              <p>100% transparent pricing</p>
+              <p>Toll, driver allowance, fuel — quoted upfront.</p>
             </div>
           </div>
           <div class="diff-item fade-up stagger-2">
             <span class="icon icon-clock" aria-hidden="true"></span>
             <div>
-              <h4>On-Time Guarantee</h4>
-              <p>Punctuality is our priority</p>
+              <h4>On-Time, Every Time</h4>
+              <p>Late arrivals are our problem, not yours.</p>
             </div>
           </div>
         </div>
@@ -329,10 +329,11 @@
     <!-- Popular Routes Section -->
     <section id="routes" class="white-section">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">Top Destinations</div>
-          <h2>Popular Routes & <span class="accent-text">Packages</span></h2>
-          <p class="subtitle mx-auto">Discover our most requested travel packages with transparent pricing and itinerary details.</p>
+        <div class="section-header-split fade-up">
+          <div>
+            <h2>Popular <span class="accent-text">Packages</span></h2>
+          </div>
+          <p class="section-aside">Somnath to Chardham — Gujarat's most-booked routes, with transparent pricing and verified drivers.</p>
         </div>
         
         <div class="routes-grid">
@@ -401,10 +402,8 @@
     <!-- Journey Steps Section -->
     <section id="how-it-works" class="dark-section">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">Simple Process</div>
-          <h2>How to Book Your <span class="accent-text">Journey</span></h2>
-          <p class="subtitle mx-auto">Three simple steps to start your premium travel experience with Spectrum Tours & Travels.</p>
+        <div class="section-header-left fade-up">
+          <h2>Booking takes <span class="accent-text">three minutes.</span><br />Your ride is ready.</h2>
         </div>
         
         <div class="journey-grid">
@@ -438,9 +437,11 @@
     <!-- Testimonials -->
     <section class="white-section">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">Testimonials</div>
-          <h2>Happy <span class="accent-text">Travelers</span></h2>
+        <div class="section-header-split fade-up">
+          <div>
+            <h2>What our <span class="accent-text">travelers say</span></h2>
+          </div>
+          <p class="section-aside">4.9 stars across 2,847 verified reviews.</p>
         </div>
         
         <div class="testi-grid">
@@ -521,8 +522,8 @@
     <div class="container fade-up">
       <div class="cta-strip">
         <div class="cta-content">
-          <h2>Ready for your next journey?</h2>
-          <p>Book your premium ride today and experience the difference of traveling with professionals who care.</p>
+          <h2>10,000+ trips. Zero missed pickups.</h2>
+          <p>Every booking confirmed within the hour. Every driver ID-verified. Call now or get an instant quote online.</p>
         </div>
         <div class="cta-action">
           <a href="tel:+916356793922" class="cta-phone">+91 63567 93922</a>
@@ -547,9 +548,11 @@
     <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <div class="text-center mb-8 fade-up">
-          <div class="hero-tag">Get in Touch</div>
-          <h2>Contact <span class="accent-text">Us</span></h2>
+        <div class="section-header-split fade-up">
+          <div>
+            <h2>Book your <span class="accent-text">ride</span></h2>
+          </div>
+          <p class="section-aside">Call, WhatsApp, or fill the form. Every booking confirmed within the hour.</p>
         </div>
         
         <div class="contact-grid">
@@ -608,15 +611,15 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="#" class="footer-logo">
+          <a href="/" class="footer-logo">
             <img src="assets/img/logos/Spectrum Full Logo with texts.png" alt="Spectrum Tours & Travels" class="footer-logo-img" width="9510" height="6655" />
           </a>
-          <p class="mb-4">Premium travel experiences across Gujarat and beyond. Your safety and comfort are our top priorities.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Follow us on Facebook"><span class="icon icon-facebook" aria-hidden="true"></span></a>
-            <a href="#" aria-label="Follow us on Instagram"><span class="icon icon-instagram" aria-hidden="true"></span></a>
-            <a href="#" aria-label="Follow us on Twitter"><span class="icon icon-twitter" aria-hidden="true"></span></a>
-            <a href="#" aria-label="Chat on WhatsApp"><span class="icon icon-whatsapp" aria-hidden="true"></span></a>
+          <p>Gujarat's trusted cab and bus service since 2008. Verified drivers, transparent pricing, and 24/7 support.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" tabindex="-1" aria-hidden="true"><span class="icon icon-facebook" aria-hidden="true"></span></a>
+            <a href="#" tabindex="-1" aria-hidden="true"><span class="icon icon-instagram" aria-hidden="true"></span></a>
+            <a href="#" tabindex="-1" aria-hidden="true"><span class="icon icon-twitter" aria-hidden="true"></span></a>
+            <a href="https://wa.me/916356793922" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><span class="icon icon-whatsapp" aria-hidden="true"></span></a>
           </div>
         </div>
         
@@ -634,11 +637,11 @@
         <div class="footer-col">
           <h4>Services</h4>
           <div class="footer-links">
-            <a href="#">Airport Transfers</a>
-            <a href="#">Local Sightseeing</a>
-            <a href="#">Outstation Tours</a>
-            <a href="#">Corporate Travel</a>
-            <a href="#">Wedding Cars</a>
+            <a href="#services">Airport Transfers</a>
+            <a href="#services">Local Sightseeing</a>
+            <a href="#services">Outstation Tours</a>
+            <a href="#services">Corporate Travel</a>
+            <a href="#services">Wedding Cars</a>
           </div>
         </div>
         
@@ -646,7 +649,7 @@
           <h4>Contact</h4>
           <div class="footer-links" style="color: var(--text-inverse-muted);">
             <p><a href="tel:+916356793922" style="color: inherit; text-decoration: none;"><span class="icon icon-phone mr-2" aria-hidden="true"></span> +91 63567 93922</a></p>
-            <p><span class="icon icon-envelope mr-2" aria-hidden="true"></span> traveldeskspectrum@gmail.com</p>
+            <p><a href="mailto:traveldeskspectrum@gmail.com" style="color: inherit; text-decoration: none;"><span class="icon icon-envelope mr-2" aria-hidden="true"></span> traveldeskspectrum@gmail.com</a></p>
             <p><span class="icon icon-location mr-2" aria-hidden="true"></span> Sarkhej, Ahmedabad</p>
           </div>
         </div>

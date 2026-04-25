@@ -1,5 +1,7 @@
 // Spectrum Tours - Core Interactivity
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // 1. Sticky Header & Active Nav
   const header = document.querySelector('.site-header');
   const sections = document.querySelectorAll('section[id]');
@@ -28,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('scrolled');
       }
 
-      // Parallax hero bg
-      if (heroBg) {
+      // Parallax hero bg — skip for users who prefer reduced motion
+      if (heroBg && !prefersReducedMotion) {
         heroBg.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.05)`;
       }
 
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Mobile Menu Toggle
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const navMenu = document.querySelector('.nav-links');
-  
+
   if (menuBtn && navMenu) {
     const menuIcon = menuBtn.querySelector('.icon');
 
@@ -95,17 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
         const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
-  
+
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: prefersReducedMotion ? 'instant' : 'smooth'
         });
       }
     });
@@ -113,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Scroll Animation (Intersection Observer)
   const fadeElements = document.querySelectorAll('.fade-up');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
     fadeElements.forEach(el => el.classList.add('visible'));
@@ -137,47 +138,69 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Number Counters Animation
   const counterElements = document.querySelectorAll('.count-number');
   let animationStarted = false;
-  
+
+  const getFinalDisplay = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const displayVal = target >= 1000 ? (target / 1000) + 'K' : target;
+    return displayVal + (counter.hasAttribute('data-plus') ? '+' : '');
+  };
+
   const animateCounters = () => {
+    const rafIds = [];
+
     counterElements.forEach(counter => {
       const target = +counter.getAttribute('data-target');
-      const duration = 2000; // 2 seconds
-      const increment = target / (duration / 16); // 60fps
+      const duration = 2000;
+      const increment = target / (duration / 16);
       let current = 0;
-      
+
       const updateCounter = () => {
         current += increment;
         if (current < target) {
           counter.innerText = Math.ceil(current) + (counter.hasAttribute('data-plus') ? '+' : '');
-          requestAnimationFrame(updateCounter);
+          rafIds.push(requestAnimationFrame(updateCounter));
         } else {
-          // Format with K suffix
-          let displayVal = target >= 1000 ? (target / 1000) + 'K' : target;
-          counter.innerText = displayVal + (counter.hasAttribute('data-plus') ? '+' : '');
+          counter.innerText = getFinalDisplay(counter);
         }
       };
-      
-      updateCounter();
+
+      rafIds.push(requestAnimationFrame(updateCounter));
+
+      // Clean up all rAF loops if the element leaves the viewport
+      const cleanupObserver = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) {
+          rafIds.forEach(id => cancelAnimationFrame(id));
+          cleanupObserver.disconnect();
+        }
+      });
+      cleanupObserver.observe(counter);
     });
   };
-  
+
   const statsSection = document.querySelector('.stats-ribbon');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !animationStarted) {
-        animationStarted = true;
-        animateCounters();
-      }
-    }, { threshold: 0.5 });
-    
-    statsObserver.observe(statsSection);
+    if (prefersReducedMotion) {
+      // Show final values immediately — no animation
+      counterElements.forEach(counter => {
+        counter.innerText = getFinalDisplay(counter);
+      });
+    } else {
+      const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !animationStarted) {
+          animationStarted = true;
+          animateCounters();
+        }
+      }, { threshold: 0.5 });
+
+      statsObserver.observe(statsSection);
+    }
   }
 
   // 6. Booking Modal
   const modal = document.getElementById('booking-modal');
   const openBtns = document.querySelectorAll('.open-booking');
   const closeBtn = document.querySelector('.modal-close');
-  
+
   if (modal) {
     let lastFocused = null;
 
@@ -230,12 +253,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. Form Submissions (Mock)
   const contactForm = document.getElementById('contact-form');
   const bookingForm = document.getElementById('booking-form');
-  
+
   const handleForm = (form, e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
-    
+
     btn.innerHTML = '<span class="icon icon-spinner icon-spin" aria-hidden="true"></span> Processing...';
     btn.disabled = true;
 
@@ -248,8 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.innerHTML = originalText;
         btn.classList.remove('btn-success');
         btn.disabled = false;
-        
-        // If booking form, close modal
+
         if (form.id === 'booking-form' && modal) {
           modal.classList.remove('active');
           document.body.style.overflow = '';
@@ -257,9 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
     }, 1500);
   };
-  
+
   if (contactForm) contactForm.addEventListener('submit', (e) => handleForm(contactForm, e));
   if (bookingForm) bookingForm.addEventListener('submit', (e) => handleForm(bookingForm, e));
-
-  // Card Tilt Effect has been removed per user feedback
 });
