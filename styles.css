@@ -593,6 +593,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   grid-template-columns: repeat(3, 1fr);
   gap: 48px;
   align-items: start;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
 .diff-item {

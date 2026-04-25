@@ -95,6 +95,8 @@
     z-index: 1002;
     gap: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.active {
