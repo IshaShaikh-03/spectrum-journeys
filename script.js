@@ -63,10 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.className = 'nav-overlay';
     document.body.appendChild(navOverlay);
 
+    let savedScrollY = 0;
+
     const openMenu = () => {
+      savedScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.width = '100%';
       navMenu.classList.add('active');
       navOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
       menuBtn.setAttribute('aria-expanded', 'true');
       menuBtn.setAttribute('aria-label', 'Close navigation menu');
       menuIcon.classList.remove('icon-bars');
@@ -74,9 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const closeMenu = () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, savedScrollY);
       navMenu.classList.remove('active');
       navOverlay.classList.remove('active');
-      document.body.style.overflow = '';
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.setAttribute('aria-label', 'Open navigation menu');
       menuIcon.classList.remove('icon-times');
