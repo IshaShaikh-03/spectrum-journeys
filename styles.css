@@ -487,11 +487,12 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 
 .hero-content .subtitle {
-  color: var(--text-inverse-muted);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.25rem;
   margin-bottom: 48px;
   margin-left: 0;
   text-align: left;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-btns {
@@ -588,11 +589,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 
 .diff-grid {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 48px;
-  align-items: flex-start;
+  align-items: start;
 }
 
 .diff-item {
@@ -1228,6 +1228,24 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
   letter-spacing: 0.02em;
   color: var(--text-inverse-muted);
   opacity: 0.6;
+}
+
+.footer-credit {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.footer-credit a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.footer-credit a:hover {
+  color: var(--brand-primary);
+  border-bottom-color: var(--brand-primary);
+  opacity: 1;
 }
 
 .social-links {
