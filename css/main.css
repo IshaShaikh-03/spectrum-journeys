@@ -168,7 +168,9 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   font-family: var(--font-ui); font-size: 11px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--ink); background: var(--cream);
-  border: none; padding: 0 22px; min-height: 44px; cursor: none;
+  border: none; padding: 0 22px; min-height: 44px;
+  display: inline-flex; align-items: center;
+  text-decoration: none;
   transition: background var(--dur-fast);
 }
 .nav-book:hover { background: var(--gold); }
@@ -947,6 +949,121 @@ footer {
 }
 
 /* ============================================================
+   CLIENTS PROSE — static AI-citable paragraph under ticker
+============================================================ */
+.clients-prose {
+  text-align: center;
+  font-family: var(--font-ui); font-size: 11px;
+  letter-spacing: 0.04em; line-height: 1.7;
+  color: oklch(94% 0.012 80 / 0.3);
+  margin-top: var(--s5); padding: 0 var(--s6);
+  max-width: 72ch; margin-inline: auto;
+}
+
+/* ============================================================
+   FLEET PRICING HINTS
+============================================================ */
+.fleet-row-price {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.06em; color: oklch(72% 0.09 75 / 0.6);
+  margin-top: var(--s1);
+}
+.fleet-featured-price {
+  font-family: var(--font-ui); font-size: 11px;
+  letter-spacing: 0.06em; color: oklch(72% 0.09 75 / 0.65);
+  margin-top: var(--s3);
+}
+
+/* ============================================================
+   TESTIMONIALS
+============================================================ */
+#testimonials.sec {
+  display: block;
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--s6);
+  margin-top: var(--s8);
+}
+.testi-card {
+  background: oklch(16% 0.008 60);
+  padding: var(--s7) var(--s6);
+  display: flex; flex-direction: column; gap: var(--s4);
+}
+.testi-body {
+  font-family: var(--font-display); font-size: 15px;
+  font-style: italic; font-weight: 300;
+  line-height: 1.75; color: oklch(88% 0.01 80 / 0.85);
+  flex: 1;
+}
+.testi-attr {
+  display: flex; flex-direction: column; gap: var(--s1);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--rule);
+}
+.testi-name {
+  font-family: var(--font-ui); font-size: 12px;
+  font-weight: 600; letter-spacing: 0.06em;
+  color: var(--gold);
+}
+.testi-role {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: oklch(94% 0.012 80 / 0.35);
+}
+
+/* ============================================================
+   FAQ
+============================================================ */
+#faq.sec { display: block; }
+.faq-list {
+  margin-top: var(--s8);
+  display: flex; flex-direction: column;
+  max-width: 72ch;
+}
+.faq-item {
+  border-top: 1px solid var(--rule);
+}
+.faq-item:last-child { border-bottom: 1px solid var(--rule); }
+.faq-q {
+  font-family: var(--font-ui); font-size: 14px;
+  font-weight: 600; letter-spacing: 0.02em;
+  color: var(--cream); cursor: pointer;
+  padding: var(--s5) 0;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: var(--s4);
+  transition: color 0.2s var(--ease-out);
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: '+';
+  font-family: var(--font-ui); font-size: 18px; font-weight: 300;
+  color: oklch(72% 0.09 75 / 0.7);
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease-out);
+}
+details[open] .faq-q { color: var(--gold); }
+details[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 0 var(--s5);
+}
+.faq-a p {
+  font-family: var(--font-ui); font-size: 13px;
+  line-height: 1.85; color: var(--cream-dim);
+  max-width: 60ch;
+}
+
+/* Why quote attribution */
+.why-quote-attr {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: oklch(94% 0.012 80 / 0.35);
+  margin-top: var(--s3);
+}
+
+/* ============================================================
    REDUCED MOTION
 ============================================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -1021,6 +1138,9 @@ footer {
 
   /* About credentials: single column on phones */
   .about-creds { grid-template-columns: 1fr; gap: var(--s3); }
+
+  /* Testimonials: single column on phones */
+  .testi-grid { grid-template-columns: 1fr; gap: var(--s5); }
 
   /* Footer: full single column */
   .footer-grid { grid-template-columns: 1fr; }

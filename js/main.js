@@ -27,11 +27,6 @@ document.querySelectorAll(hoverEls).forEach(el => {
   el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
 });
 
-// ── NAV BOOK BUTTON ───────────────────────────────────────────
-document.querySelector('.nav-book').addEventListener('click', () => {
-  document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
-});
-
 // ── SCROLL PROGRESS ──────────────────────────────────────────
 const sb = document.getElementById('scroll-bar');
 window.addEventListener('scroll', () => {
@@ -105,8 +100,8 @@ document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDe
   ticker.addEventListener('mouseenter', () => { paused = true; });
   ticker.addEventListener('mouseleave', () => { paused = false; });
 
-  // Wait two frames to ensure flex layout is fully resolved in all browsers
-  requestAnimationFrame(() => requestAnimationFrame(() => {
+  // Wait for fonts to load before measuring width — avoids CLS flash when font-display:swap kicks in
+  document.fonts.ready.then(() => {
     halfWidth = ticker.scrollWidth / 2;
 
     function step(ts) {
@@ -120,7 +115,7 @@ document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDe
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  }));
+  });
 })();
 
 // ── FORM ─────────────────────────────────────────────────────

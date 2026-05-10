@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#110f0d" />
+  <title>Page Not Found — Spectrum Tour &amp; Travel</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Spectrum Tour & Travel — Ahmedabad's trusted travel agency since 2008." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" href="assets/img/brand/spectrum-favicon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Epilogue:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .notfound-wrap {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--s9) var(--s6);
+      gap: var(--s5);
+    }
+    .notfound-code {
+      font-family: var(--font-display);
+      font-size: clamp(96px, 20vw, 200px);
+      font-weight: 400;
+      line-height: 1;
+      color: oklch(94% 0.012 80 / 0.06);
+      letter-spacing: -0.04em;
+      user-select: none;
+    }
+    .notfound-rule {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+    }
+    .notfound-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .notfound-h1 em { color: var(--gold); font-style: italic; }
+    .notfound-p {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--cream-dim);
+      max-width: 42ch;
+    }
+    .notfound-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s4);
+      justify-content: center;
+      margin-top: var(--s4);
+    }
+    .notfound-actions .btn-solid {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: var(--s3) var(--s6);
+      background: var(--gold);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.2s;
+    }
+    .notfound-actions .btn-solid:hover { opacity: 0.85; }
+    .notfound-actions .btn-ghost {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: var(--s3) var(--s6);
+      color: var(--cream-dim);
+      border: 1px solid var(--rule-strong);
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .notfound-actions .btn-ghost:hover {
+      color: var(--cream);
+      border-color: oklch(94% 0.012 80 / 0.35);
+    }
+    .notfound-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s3) var(--s6);
+      justify-content: center;
+      margin-top: var(--s2);
+    }
+    .notfound-links a {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: oklch(94% 0.012 80 / 0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .notfound-links a:hover { color: var(--gold); }
+    .notfound-brand {
+      position: fixed;
+      top: var(--s5);
+      left: var(--s7);
+    }
+    .notfound-brand img {
+      height: 32px;
+      width: auto;
+      opacity: 0.7;
+    }
+    @media (max-width: 600px) {
+      .notfound-brand { left: var(--s5); }
+      .notfound-wrap { padding: var(--s7) var(--s5); }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <a href="index.html" class="notfound-brand" aria-label="Spectrum Tours &amp; Travels — back to home">
+    <img src="assets/img/brand/logo-white.png" alt="Spectrum Tours &amp; Travels" />
+  </a>
+
+  <main id="main-content" class="notfound-wrap">
+    <p class="notfound-code" aria-hidden="true">404</p>
+    <div class="notfound-rule" aria-hidden="true"></div>
+    <h1 class="notfound-h1">This road leads<br/><em>nowhere</em></h1>
+    <p class="notfound-p">The page you're looking for has moved, been renamed, or never existed. Let us get you back on the right route.</p>
+
+    <div class="notfound-actions">
+      <a href="index.html" class="btn-solid">Back to Home</a>
+      <a href="index.html#booking" class="btn-ghost">Book a Journey</a>
+    </div>
+
+    <nav class="notfound-links" aria-label="Quick links">
+      <a href="index.html#fleet">Our Fleet</a>
+      <a href="index.html#tours">Tour Packages</a>
+      <a href="route-chardham-yatra.html">Chardham Yatra</a>
+      <a href="route-somnath-dwarka.html">Somnath &amp; Dwarka</a>
+      <a href="route-statue-of-unity.html">Statue of Unity</a>
+      <a href="index.html#booking">Contact</a>
+    </nav>
+  </main>
+
+</body>
+</html>

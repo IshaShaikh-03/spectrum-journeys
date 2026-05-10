@@ -1,16 +1,31 @@
 User-agent: *
 Allow: /
+Disallow: /backup/
 
-User-agent: facebookexternalhit
+# AI search crawlers — explicitly permitted
+User-agent: GPTBot
 Allow: /
 
-User-agent: Twitterbot
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: LinkedInBot
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: WhatsApp
+User-agent: PerplexityBot
 Allow: /
+
+# Training-only scrapers — blocked
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
 
 Sitemap: https://spectrumtourandtravels.in/sitemap.xml
+
+# IndexNow key — submit to https://api.indexnow.org/indexnow after launch
+# Key file: https://spectrumtourandtravels.in/b9e4c7d1a2f053e8612d4b7c9a0f3e52.txt
