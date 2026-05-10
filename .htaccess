@@ -1,0 +1,18 @@
+Options -Indexes
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slash (except root)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Clean URL rewrites — serve .html files at slug paths
+RewriteRule ^chardham-yatra/?$       /route-chardham-yatra.html  [L]
+RewriteRule ^somnath-dwarka/?$       /route-somnath-dwarka.html  [L]
+RewriteRule ^statue-of-unity/?$      /route-statue-of-unity.html [L]
+
+# Custom 404
+ErrorDocument 404 /404.html
