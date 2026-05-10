@@ -1,21 +1,21 @@
-# Development files
+# Development & unnecessary files
 node_modules/
 .git/
 .env*
 .vscode/
 .idea/
 *.log
-
-# Build artifacts  
 backup/
 old/
-overhaul-source/
 
-# Documentation
+# Documentation (not needed for deployment)
 ACTION-PLAN.md
 CLIENT-CHECKLIST.md
 FULL-AUDIT-REPORT.md
 AUDIT.md
+README.md
 
-# Source files (if not needed for runtime)
+# Source/build scripts
 scripts/
+package.json
+package-lock.json
