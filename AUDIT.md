@@ -1,5 +1,6 @@
 # spectrum audit — internal fix tracker
-# score: 20/20 ALL PAGES — COMPLETE
+# v1 score: 20/20 ALL PAGES — COMPLETE
+# v2 score: pending integration into main index.html
 # format: [x] = done, [ ] = pending, [~] = partial
 
 ---
@@ -159,3 +160,30 @@
 - OG image URLs URL-encoded on all route pages
 - Chardham sidebar inline styles → CSS classes
 - hero--route min-height 55vh → 55svh
+
+---
+
+## V2 DESIGN OVERHAUL (May 2026)
+
+- file: `index-v2.html` — complete redesign, not yet replacing index.html
+- fonts: Libre Caslon Display (display) + Epilogue (UI) + Source Serif 4 (body)
+  - all three off the impeccable ban list
+  - previous fonts Cormorant Garamond / Syne / DM Sans were all banned reflex picks
+- design direction: unhurried luxury editorial × warm human precision
+  - dark ink theme (oklch-based, ink-tinted neutrals — not pure black)
+  - rainbow used in exactly 3 places: scroll progress bar, tour row hover rule, footer cap
+- anti-patterns fixed:
+  - [x] gradient text (background-clip:text) removed from hero h1 em
+  - [x] border-left stripe on .why-quote → replaced with background-tint blockquote
+  - [x] border-left stripe on .about-mission → replaced with gold background tint
+  - [x] border-left stripe on contact cards → replaced with gold vertical divider
+  - [x] hero metric stat panel (big-num grid) removed
+  - [x] identical 6-card fleet grid → restructured: 1 featured hero + row list
+  - [x] bounce easing (ease-back) removed
+  - [x] rainbow overuse (12+ instances) → reduced to 3 structural uses
+  - [x] cursor ring animated width/height → fixed to transform only
+- asset changes:
+  - logos consolidated: assets/img/brand/ (8 files, clean kebab-case names)
+  - business card scans: assets/img/overhaul-source/ (6 files, for reference)
+  - old logos/: still in place for v1 compatibility
+- [ ] when ready to ship: swap index-v2.html → index.html, update sitemap lastmod
