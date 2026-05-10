@@ -5,25 +5,26 @@
    Rainbow: structural accent ONLY, not decorative everywhere
 ============================================================ */
 :root {
-  /* Colours — OKLCH, ink-tinted neutrals */
-  --ink:       oklch(8% 0.008 60);
-  --ink-mid:   oklch(14% 0.008 60);
-  --surface:   oklch(11% 0.007 60);
+  /* Colours — OKLCH, ink-tinted neutrals
+     Lifted from near-black to ~13% so content is readable at low screen brightness */
+  --ink:       oklch(13% 0.008 60);
+  --ink-mid:   oklch(19% 0.009 60);
+  --surface:   oklch(16% 0.008 60);
   --cream:     oklch(94% 0.012 80);
   --cream-dim: oklch(94% 0.012 80 / 0.55);
-  --cream-faint: oklch(94% 0.012 80 / 0.12);
-  --cream-ghost: oklch(94% 0.012 80 / 0.06);
-  --gold:      oklch(72% 0.09 75);
-  --gold-dim:  oklch(72% 0.09 75 / 0.5);
-  --rule:      oklch(94% 0.012 80 / 0.08);
-  --rule-strong: oklch(94% 0.012 80 / 0.15);
+  --cream-faint: oklch(94% 0.012 80 / 0.14);
+  --cream-ghost: oklch(94% 0.012 80 / 0.07);
+  --gold:      oklch(74% 0.10 72);
+  --gold-dim:  oklch(74% 0.10 72 / 0.55);
+  --rule:      oklch(94% 0.012 80 / 0.10);
+  --rule-strong: oklch(94% 0.012 80 / 0.18);
 
   /* Rainbow — used in 3 places max */
   --r1:#e63329;--r2:#f47c2b;--r3:#f5c518;--r4:#4caf50;--r5:#1976d2;--r6:#7b1fa2;
   --rainbow: linear-gradient(90deg,var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6));
 
   /* Fonts */
-  --font-display: 'Libre Caslon Display', Georgia, serif;
+  --font-display: 'Geologica', sans-serif;
   --font-ui:      'Epilogue', sans-serif;
   --font-body:    'Source Serif 4', Georgia, serif;
 
@@ -77,18 +78,18 @@ body {
 ============================================================ */
 html {
   scrollbar-width: thin;
-  scrollbar-color: oklch(40% 0.012 60) oklch(11% 0.007 60);
+  scrollbar-color: oklch(40% 0.012 60) oklch(16% 0.008 60);
 }
 ::-webkit-scrollbar { width: 15px; }
-::-webkit-scrollbar-track { background: oklch(11% 0.007 60); }
+::-webkit-scrollbar-track { background: oklch(16% 0.008 60); }
 ::-webkit-scrollbar-thumb {
   background: oklch(30% 0.010 60);
-  border: 3px solid oklch(11% 0.007 60);
+  border: 3px solid oklch(16% 0.008 60);
   border-radius: 8px;
   min-height: 48px;
 }
 ::-webkit-scrollbar-thumb:hover { background: oklch(40% 0.012 60); }
-::-webkit-scrollbar-corner { background: oklch(11% 0.007 60); }
+::-webkit-scrollbar-corner { background: oklch(16% 0.008 60); }
 
 /* ============================================================
    CUSTOM CURSOR — only transform/opacity, no layout props
@@ -139,12 +140,12 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   height: var(--nav-h); z-index: 100;
   display: flex; align-items: center;
   padding: 0 var(--s8);
-  background: linear-gradient(to bottom, oklch(8% 0.008 60 / 0.7) 0%, transparent 100%);
+  background: linear-gradient(to bottom, oklch(13% 0.008 60 / 0.85) 0%, transparent 100%);
   transition: background var(--dur-med), border-color var(--dur-med);
   border-bottom: 1px solid transparent;
 }
 #main-nav.scrolled {
-  background: oklch(9% 0.008 60 / 0.97);
+  background: oklch(13% 0.008 60 / 0.97);
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border-bottom: 1px solid var(--rule);
@@ -205,7 +206,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   position: absolute; inset: 0;
   background:
     radial-gradient(ellipse 50% 60% at 68% 40%, oklch(72% 0.09 75 / 0.04) 0%, transparent 65%),
-    linear-gradient(105deg, oklch(8% 0.008 60 / 0.82) 0%, oklch(8% 0.008 60 / 0.5) 55%, oklch(8% 0.008 60 / 0.3) 100%);
+    linear-gradient(105deg, oklch(13% 0.008 60 / 0.82) 0%, oklch(13% 0.008 60 / 0.5) 55%, oklch(13% 0.008 60 / 0.3) 100%);
 }
 .hero-grain {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -245,14 +246,13 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .hero-h1 {
   font-family: var(--font-display);
   font-size: clamp(56px, 8.5vw, 120px);
-  font-weight: 400; line-height: 0.93;
-  letter-spacing: -0.025em;
+  font-weight: 800; line-height: 0.95;
+  letter-spacing: -0.04em;
   color: var(--cream);
   opacity: 0; animation: slideUp 0.85s 0.42s var(--ease-out) forwards;
 }
-/* NO gradient text — italic weight shift instead */
 .hero-h1 em {
-  font-style: italic; font-weight: 300;
+  font-style: normal; font-weight: 300;
   color: var(--gold);
 }
 .hero-sub {
@@ -374,10 +374,11 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .aud-h2 {
   font-family: var(--font-display);
   font-size: clamp(34px, 4vw, 54px);
-  font-weight: 400; line-height: 1.08;
+  font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--cream); margin-bottom: var(--s5);
 }
-.aud-h2 em { font-style: italic; font-weight: 300; }
+.aud-h2 em { font-style: normal; font-weight: 300; color: var(--gold); }
 .aud-p {
   font-size: 14px; line-height: 1.8;
   color: var(--cream-dim); max-width: 38ch;
@@ -450,10 +451,10 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .sec-h2 {
   font-family: var(--font-display);
   font-size: clamp(38px, 5vw, 68px);
-  font-weight: 400; line-height: 1.04;
-  letter-spacing: -0.02em; color: var(--cream);
+  font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.03em; color: var(--cream);
 }
-.sec-h2 em { font-style: italic; font-weight: 300; }
+.sec-h2 em { font-style: normal; font-weight: 300; color: var(--gold); }
 .sec-rule {
   display: block; width: 32px; height: 1px;
   background: var(--gold-dim); margin: var(--s4) 0 var(--s5);
@@ -570,7 +571,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, oklch(8% 0.008 60 / 0.92) 40%, oklch(8% 0.008 60 / 0.55) 100%);
+  background: linear-gradient(to right, oklch(13% 0.008 60 / 0.92) 40%, oklch(13% 0.008 60 / 0.55) 100%);
   opacity: 0;
   transition: opacity 0.4s var(--ease-out);
   pointer-events: none;
@@ -649,7 +650,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   font-weight: 400; line-height: 1;
   color: var(--cream);
 }
-.why-stat-n em { font-style: italic; color: var(--gold); }
+.why-stat-n em { font-style: normal; font-weight: 300; color: var(--gold); }
 .why-stat-l {
   font-family: var(--font-ui); font-size: 9px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
@@ -704,7 +705,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .tour-row:hover::after { width: 100%; }
 .tour-row:hover { padding-left: var(--s5); }
 .tour-idx {
-  font-family: var(--font-display); font-size: 12px; font-style: italic;
+  font-family: var(--font-display); font-size: 12px; font-weight: 300;
   color: oklch(94% 0.012 80 / 0.25); text-align: right;
 }
 .tour-title {
@@ -758,7 +759,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 }
 .about-img-inner::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, oklch(8% 0.008 60 / 0.6) 0%, transparent 50%);
+  background: linear-gradient(to top, oklch(13% 0.008 60 / 0.6) 0%, transparent 50%);
 }
 .about-stamp {
   position: absolute; bottom: var(--s5); right: calc(-1 * var(--s5));
@@ -1044,9 +1045,9 @@ footer {
 }
 .testi-row:last-child { border-bottom: 1px solid var(--rule); }
 .testi-body {
-  font-family: var(--font-display); font-size: clamp(18px, 2.2vw, 28px);
+  font-family: var(--font-body); font-size: clamp(18px, 2.2vw, 26px);
   font-style: italic; font-weight: 300;
-  line-height: 1.5; color: oklch(90% 0.01 80 / 0.75);
+  line-height: 1.6; color: oklch(90% 0.01 80 / 0.8);
 }
 .testi-body::before {
   content: '"';

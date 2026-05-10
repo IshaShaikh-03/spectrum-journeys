@@ -76,20 +76,28 @@ mobMenu.addEventListener('keydown', e => {
 // If user prefers reduced motion: mark all elements visible immediately, skip observer
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const forceReveal = () => document.querySelectorAll('.r,.rl,.rr').forEach(el => el.classList.add('on'));
+
 if (prefersReducedMotion) {
-  document.querySelectorAll('.r,.rl,.rr').forEach(el => el.classList.add('on'));
+  forceReveal();
 } else {
   const revObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting) { e.target.classList.add('on'); revObs.unobserve(e.target); }
     });
-  }, {threshold:0.1, rootMargin:'0px 0px -36px 0px'});
+  }, {threshold:0.05, rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.r,.rl,.rr').forEach(el => revObs.observe(el));
 
   // Stagger delays only matter when transitions are running
   document.querySelectorAll('.fleet-row').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
   document.querySelectorAll('.pillar').forEach((el,i)     => el.style.transitionDelay=(i*80)+'ms');
   document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDelay=(i*60)+'ms');
+
+  // Safety net: if nothing revealed after 3s, IntersectionObserver likely silently failed
+  setTimeout(() => {
+    const stillHidden = document.querySelectorAll('.r:not(.on),.rl:not(.on),.rr:not(.on)');
+    if (stillHidden.length > 0) forceReveal();
+  }, 3000);
 }
 
 // ── TICKER ───────────────────────────────────────────────────
