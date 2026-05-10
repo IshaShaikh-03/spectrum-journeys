@@ -15,7 +15,6 @@ if (hasFinePonter) {
     requestAnimationFrame(animRing);
   })();
 } else {
-  // Touch device — hide custom cursor elements entirely
   dot.style.display  = 'none';
   ring.style.display = 'none';
   document.body.style.cursor = 'auto';
@@ -74,24 +73,37 @@ mobMenu.addEventListener('keydown', e => {
 });
 
 // ── SCROLL REVEAL ────────────────────────────────────────────
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) { e.target.classList.add('on'); revObs.unobserve(e.target); }
-  });
-}, {threshold:0.1, rootMargin:'0px 0px -36px 0px'});
-document.querySelectorAll('.r,.rl,.rr').forEach(el => revObs.observe(el));
+// If user prefers reduced motion: mark all elements visible immediately, skip observer
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Stagger
-document.querySelectorAll('.fleet-row').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
-document.querySelectorAll('.pillar').forEach((el,i)     => el.style.transitionDelay=(i*80)+'ms');
-document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDelay=(i*60)+'ms');
+if (prefersReducedMotion) {
+  document.querySelectorAll('.r,.rl,.rr').forEach(el => el.classList.add('on'));
+} else {
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) { e.target.classList.add('on'); revObs.unobserve(e.target); }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.r,.rl,.rr').forEach(el => revObs.observe(el));
 
-// ── TICKER — pure RAF, immune to prefers-reduced-motion CSS override ─────────
+  // Stagger delays only matter when transitions are running
+  document.querySelectorAll('.fleet-row').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
+  document.querySelectorAll('.pillar').forEach((el,i)     => el.style.transitionDelay=(i*80)+'ms');
+  document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDelay=(i*60)+'ms');
+}
+
+// ── TICKER ───────────────────────────────────────────────────
 (function initTicker() {
   const ticker = document.querySelector('.ticker');
   if (!ticker) return;
 
-  const PX_PER_SEC = 60; // scroll speed
+  // Respect reduced motion — stop the ticker entirely
+  if (prefersReducedMotion) {
+    ticker.style.transform = 'translateX(0)';
+    return;
+  }
+
+  const PX_PER_SEC = 60;
   let offset = 0;
   let halfWidth = 0;
   let lastTime = null;
@@ -100,7 +112,6 @@ document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDe
   ticker.addEventListener('mouseenter', () => { paused = true; });
   ticker.addEventListener('mouseleave', () => { paused = false; });
 
-  // Wait for fonts to load before measuring width — avoids CLS flash when font-display:swap kicks in
   document.fonts.ready.then(() => {
     halfWidth = ticker.scrollWidth / 2;
 
@@ -108,7 +119,7 @@ document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDe
       if (!paused) {
         const dt = lastTime ? (ts - lastTime) / 1000 : 0;
         offset += PX_PER_SEC * dt;
-        if (offset >= halfWidth) offset -= halfWidth; // seamless loop
+        if (offset >= halfWidth) offset -= halfWidth;
         ticker.style.transform = `translateX(${-offset}px)`;
       }
       lastTime = ts;
@@ -122,7 +133,7 @@ document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDe
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Sending…'; btn.disabled = true;
+  btn.textContent = 'Sending...'; btn.disabled = true;
   setTimeout(() => {
     btn.style.display = 'none';
     document.getElementById('form-ok').style.display = 'block';
