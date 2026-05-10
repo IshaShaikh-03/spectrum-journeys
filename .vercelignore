@@ -1,0 +1,21 @@
+# Development files
+node_modules/
+.git/
+.env*
+.vscode/
+.idea/
+*.log
+
+# Build artifacts  
+backup/
+old/
+overhaul-source/
+
+# Documentation
+ACTION-PLAN.md
+CLIENT-CHECKLIST.md
+FULL-AUDIT-REPORT.md
+AUDIT.md
+
+# Source files (if not needed for runtime)
+scripts/
