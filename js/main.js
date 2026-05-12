@@ -89,7 +89,7 @@ if (prefersReducedMotion) {
   document.querySelectorAll('.r,.rl,.rr').forEach(el => revObs.observe(el));
 
   // Stagger delays only matter when transitions are running
-  document.querySelectorAll('.fa-item').forEach((el,i) => el.style.transitionDelay=(i*50)+'ms');
+  document.querySelectorAll('.fleet-row').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
   document.querySelectorAll('.pillar').forEach((el,i)     => el.style.transitionDelay=(i*80)+'ms');
   document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDelay=(i*60)+'ms');
 
@@ -134,38 +134,6 @@ if (prefersReducedMotion) {
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  });
-})();
-
-// ── FLEET ACCORDION ──────────────────────────────────────────
-(function initFleetAccordion() {
-  const items = document.querySelectorAll('.fa-item');
-  if (!items.length) return;
-
-  // Wire up hover image via CSS custom property on the trigger
-  items.forEach(item => {
-    const img = item.dataset.img;
-    if (img) item.querySelector('.fa-trigger').style.setProperty('--fa-bg', `url(${img})`);
-  });
-
-  items.forEach(item => {
-    const trigger = item.querySelector('.fa-trigger');
-    const panel   = item.querySelector('.fa-panel');
-
-    trigger.addEventListener('click', () => {
-      const opening = !item.classList.contains('is-open');
-
-      // Close all others
-      items.forEach(other => {
-        if (other !== item) {
-          other.classList.remove('is-open');
-          other.querySelector('.fa-trigger').setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      item.classList.toggle('is-open', opening);
-      trigger.setAttribute('aria-expanded', String(opening));
-    });
   });
 })();
 

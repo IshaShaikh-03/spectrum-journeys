@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/statue-of-unity",
+      "destination": "/route-statue-of-unity.html"
+    },
+    {
+      "source": "/chardham-yatra",
+      "destination": "/route-chardham-yatra.html"
+    },
+    {
+      "source": "/somnath-dwarka",
+      "destination": "/route-somnath-dwarka.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.spectrumtourandtravels.in" }],
+      "destination": "https://spectrumtourandtravels.in/:path*",
+      "permanent": true
+    }
+  ]
+}
