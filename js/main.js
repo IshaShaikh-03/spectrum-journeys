@@ -20,7 +20,7 @@ if (hasFinePonter) {
   document.body.style.cursor = 'auto';
 }
 
-const hoverEls = 'a,button,.fleet-row,.pillar,.tour-row,.aud-pane,.ticker-item';
+const hoverEls = 'a,button,.fleet-trigger,.pillar,.tour-row,.aud-pane,.ticker-item';
 document.querySelectorAll(hoverEls).forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
@@ -105,12 +105,6 @@ if (prefersReducedMotion) {
   const ticker = document.querySelector('.ticker');
   if (!ticker) return;
 
-  // Respect reduced motion — stop the ticker entirely
-  if (prefersReducedMotion) {
-    ticker.style.transform = 'translateX(0)';
-    return;
-  }
-
   const PX_PER_SEC = 60;
   let offset = 0;
   let halfWidth = 0;
@@ -120,8 +114,9 @@ if (prefersReducedMotion) {
   ticker.addEventListener('mouseenter', () => { paused = true; });
   ticker.addEventListener('mouseleave', () => { paused = false; });
 
-  document.fonts.ready.then(() => {
+  const start = () => {
     halfWidth = ticker.scrollWidth / 2;
+    if (!halfWidth) return;
 
     function step(ts) {
       if (!paused) {
@@ -134,7 +129,14 @@ if (prefersReducedMotion) {
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  });
+  };
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(start).catch(start);
+    setTimeout(() => { if (!halfWidth) start(); }, 800);
+  } else {
+    start();
+  }
 })();
 
 // ── FLEET ACCORDION ──────────────────────────────────────────
