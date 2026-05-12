@@ -89,7 +89,7 @@ if (prefersReducedMotion) {
   document.querySelectorAll('.r,.rl,.rr').forEach(el => revObs.observe(el));
 
   // Stagger delays only matter when transitions are running
-  document.querySelectorAll('.fleet-row').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
+  document.querySelectorAll('.fleet-item').forEach((el,i) => el.style.transitionDelay=(i*60)+'ms');
   document.querySelectorAll('.pillar').forEach((el,i)     => el.style.transitionDelay=(i*80)+'ms');
   document.querySelectorAll('.tour-row').forEach((el,i)   => el.style.transitionDelay=(i*60)+'ms');
 
@@ -134,6 +134,26 @@ if (prefersReducedMotion) {
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
+  });
+})();
+
+// ── FLEET ACCORDION ──────────────────────────────────────────
+(function initFleetAccordion() {
+  const items = Array.from(document.querySelectorAll('.fleet-item'));
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const trigger = item.querySelector('.fleet-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      items.forEach(other => {
+        const otherTrigger = other.querySelector('.fleet-trigger');
+        const isTarget = other === item;
+        other.classList.toggle('is-open', isTarget);
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', String(isTarget));
+      });
+    });
   });
 })();
 

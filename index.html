@@ -339,68 +339,157 @@
       <h2 class="sec-h2 r">Every Vehicle,<br/><em>Every Occasion</em></h2>
       <p class="sec-p r">A diverse, maintained fleet for every journey. Solo executive transfers to large-group tours, always with safety and comfort as the non-negotiable.</p>
 
-      <div class="fleet-layout">
-        <div class="fleet-featured r">
-          <div class="fleet-featured-visual">
-            <img src="assets/img/luxury-mini-bus-1200.webp"
-                 srcset="assets/img/luxury-mini-bus-800.webp 800w, assets/img/luxury-mini-bus-1200.webp 1200w"
-                 sizes="(max-width: 900px) 100vw, 50vw"
-                 alt="Urbania luxury minibus interior, 13 to 17 seats, VIP configuration"
-                 loading="lazy" />
-          </div>
-          <div class="fleet-featured-info">
-            <div>
-              <p class="fleet-featured-num" aria-hidden="true">01</p>
-              <h3 class="fleet-name">Urbania <em>Luxury</em></h3>
-              <p class="fleet-cap">13–17 Seats · VIP Configuration</p>
-              <p class="fleet-desc">Premium Urbania minibuses with push-back seats, curtains, and refined interiors. The vehicle of choice for high-value delegations, VIP groups, weddings, and premium pilgrimage circuits.</p>
-              <p class="fleet-featured-price">From ₹32/km · Min 300 km/day</p>
-              <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+      <div class="fleet-accordion r" role="list" aria-label="Vehicle options">
+        <article class="fleet-item is-open" role="listitem">
+          <button class="fleet-trigger" type="button" aria-expanded="true">
+            <span class="fleet-row-num" aria-hidden="true">01</span>
+            <span class="fleet-row-copy">
+              <span class="fleet-row-name">Urbania <em>Luxury</em></span>
+              <span class="fleet-row-sub">VIP groups, weddings, premium pilgrimage circuits</span>
+              <span class="fleet-row-price">From ₹32/km · Min 300 km/day</span>
+            </span>
+            <span class="fleet-row-tag">13–17 Seats</span>
+          </button>
+          <div class="fleet-panel">
+            <div class="fleet-panel-inner">
+              <div class="fleet-panel-visual">
+                <img src="assets/img/luxury-mini-bus-1200.webp"
+                     srcset="assets/img/luxury-mini-bus-800.webp 800w, assets/img/luxury-mini-bus-1200.webp 1200w"
+                     sizes="(max-width: 900px) 100vw, 50vw"
+                     alt="Urbania luxury minibus interior, 13 to 17 seats, VIP configuration"
+                     loading="lazy" />
+              </div>
+              <div class="fleet-panel-info">
+                <p class="fleet-panel-num" aria-hidden="true">01</p>
+                <h3 class="fleet-name">Urbania <em>Luxury</em></h3>
+                <p class="fleet-cap">13–17 Seats · VIP Configuration</p>
+                <p class="fleet-desc">Premium Urbania minibuses with push-back seats, curtains, and refined interiors. The vehicle of choice for high-value delegations, VIP groups, weddings, and premium pilgrimage circuits.</p>
+                <p class="fleet-featured-price">From ₹32/km · Min 300 km/day</p>
+                <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+              </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="fleet-rows r" role="list" aria-label="Additional vehicle options">
-          <div class="fleet-row fleet-row--img" role="listitem">
+        <article class="fleet-item" role="listitem">
+          <button class="fleet-trigger" type="button" aria-expanded="false">
             <span class="fleet-row-num" aria-hidden="true">02</span>
-            <div>
-              <p class="fleet-row-name">Sedan <em>&amp; SUV</em></p>
-              <p class="fleet-row-sub">Executive transfers, airport runs, corporate daily hire</p>
-              <p class="fleet-row-price">From ₹14/km · Min 250 km/day</p>
-            </div>
+            <span class="fleet-row-copy">
+              <span class="fleet-row-name">Sedan <em>&amp; SUV</em></span>
+              <span class="fleet-row-sub">Executive transfers, airport runs, corporate daily hire</span>
+              <span class="fleet-row-price">From ₹14/km · Min 250 km/day</span>
+            </span>
             <span class="fleet-row-tag">4–7 Seats</span>
-            <img src="assets/img/innova-crysta-800.webp" alt="" aria-hidden="true" loading="lazy" class="fleet-row-preview" />
+          </button>
+          <div class="fleet-panel">
+            <div class="fleet-panel-inner">
+              <div class="fleet-panel-visual">
+                <img src="assets/img/innova-crysta-1200.webp"
+                     srcset="assets/img/innova-crysta-800.webp 800w, assets/img/innova-crysta-1200.webp 1200w"
+                     sizes="(max-width: 900px) 100vw, 50vw"
+                     alt="Innova Crysta SUV, executive configuration"
+                     loading="lazy" />
+              </div>
+              <div class="fleet-panel-info">
+                <p class="fleet-panel-num" aria-hidden="true">02</p>
+                <h3 class="fleet-name">Sedan <em>&amp; SUV</em></h3>
+                <p class="fleet-cap">4–7 Seats · Executive Transfers</p>
+                <p class="fleet-desc">Innova Crysta and premium sedans for individual executives, small families, and corporate pickups. Punctual, clean, and always on time: the daily workhorse of the corporate fleet.</p>
+                <p class="fleet-featured-price">From ₹14/km · Min 250 km/day</p>
+                <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+              </div>
+            </div>
           </div>
-          <div class="fleet-row fleet-row--img" role="listitem">
+        </article>
+
+        <article class="fleet-item" role="listitem">
+          <button class="fleet-trigger" type="button" aria-expanded="false">
             <span class="fleet-row-num" aria-hidden="true">03</span>
-            <div>
-              <p class="fleet-row-name">Tempo <em>Traveller</em></p>
-              <p class="fleet-row-sub">Family trips, wedding convoys, outstation groups</p>
-              <p class="fleet-row-price">From ₹20/km · Min 300 km/day</p>
-            </div>
+            <span class="fleet-row-copy">
+              <span class="fleet-row-name">Tempo <em>Traveller</em></span>
+              <span class="fleet-row-sub">Family trips, wedding convoys, outstation groups</span>
+              <span class="fleet-row-price">From ₹20/km · Min 300 km/day</span>
+            </span>
             <span class="fleet-row-tag">9–14 Seats</span>
-            <img src="assets/img/tempo-traveller-800.webp" alt="" aria-hidden="true" loading="lazy" class="fleet-row-preview" />
+          </button>
+          <div class="fleet-panel">
+            <div class="fleet-panel-inner">
+              <div class="fleet-panel-visual">
+                <img src="assets/img/tempo-traveller-1200.webp"
+                     srcset="assets/img/tempo-traveller-800.webp 800w, assets/img/tempo-traveller-1200.webp 1200w"
+                     sizes="(max-width: 900px) 100vw, 50vw"
+                     alt="Force Traveller tempo, group seating"
+                     loading="lazy" />
+              </div>
+              <div class="fleet-panel-info">
+                <p class="fleet-panel-num" aria-hidden="true">03</p>
+                <h3 class="fleet-name">Tempo <em>Traveller</em></h3>
+                <p class="fleet-cap">9–14 Seats · Group Travel</p>
+                <p class="fleet-desc">AC Force Travellers with comfortable seating, ample luggage space, and drivers experienced on both highway and hill routes including Chardham Yatra circuits.</p>
+                <p class="fleet-featured-price">From ₹20/km · Min 300 km/day</p>
+                <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+              </div>
+            </div>
           </div>
-          <div class="fleet-row fleet-row--img" role="listitem">
+        </article>
+
+        <article class="fleet-item" role="listitem">
+          <button class="fleet-trigger" type="button" aria-expanded="false">
             <span class="fleet-row-num" aria-hidden="true">04</span>
-            <div>
-              <p class="fleet-row-name">Mini <em>Bus</em></p>
-              <p class="fleet-row-sub">Team outings, pilgrimages, weekend escapes</p>
-              <p class="fleet-row-price">From ₹28/km · Min 300 km/day</p>
-            </div>
+            <span class="fleet-row-copy">
+              <span class="fleet-row-name">Mini <em>Bus</em></span>
+              <span class="fleet-row-sub">Team outings, pilgrimages, weekend escapes</span>
+              <span class="fleet-row-price">From ₹28/km · Min 300 km/day</span>
+            </span>
             <span class="fleet-row-tag">20–32 Seats</span>
-            <img src="assets/img/luxury-mini-bus-800.webp" alt="" aria-hidden="true" loading="lazy" class="fleet-row-preview" />
-          </div>
-          <div class="fleet-row" role="listitem">
-            <span class="fleet-row-num" aria-hidden="true">05</span>
-            <div>
-              <p class="fleet-row-name">Coach <em>Bus</em></p>
-              <p class="fleet-row-sub">Large delegations, pilgrimages, college tours</p>
-              <p class="fleet-row-price">From ₹38/km · Min 400 km/day</p>
+          </button>
+          <div class="fleet-panel">
+            <div class="fleet-panel-inner">
+              <div class="fleet-panel-visual">
+                <img src="assets/img/luxury-mini-bus-1200.webp"
+                     srcset="assets/img/luxury-mini-bus-800.webp 800w, assets/img/luxury-mini-bus-1200.webp 1200w"
+                     sizes="(max-width: 900px) 100vw, 50vw"
+                     alt="Luxury mini bus, 20 to 32 seats"
+                     loading="lazy" />
+              </div>
+              <div class="fleet-panel-info">
+                <p class="fleet-panel-num" aria-hidden="true">04</p>
+                <h3 class="fleet-name">Mini <em>Bus</em></h3>
+                <p class="fleet-cap">20–32 Seats · Comfortable Group Hire</p>
+                <p class="fleet-desc">For mid-to-large groups who want more space and comfort than a tempo traveller. Fully AC with reclining seats, ideal for corporate outings, wedding party transport, and pilgrimage groups.</p>
+                <p class="fleet-featured-price">From ₹28/km · Min 300 km/day</p>
+                <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+              </div>
             </div>
-            <span class="fleet-row-tag">35–50 Seats</span>
           </div>
-        </div>
+        </article>
+
+        <article class="fleet-item" role="listitem">
+          <button class="fleet-trigger" type="button" aria-expanded="false">
+            <span class="fleet-row-num" aria-hidden="true">05</span>
+            <span class="fleet-row-copy">
+              <span class="fleet-row-name">Coach <em>Bus</em></span>
+              <span class="fleet-row-sub">Large delegations, pilgrimages, college tours</span>
+              <span class="fleet-row-price">From ₹38/km · Min 400 km/day</span>
+            </span>
+            <span class="fleet-row-tag">35–50 Seats</span>
+          </button>
+          <div class="fleet-panel">
+            <div class="fleet-panel-inner">
+              <div class="fleet-panel-visual fleet-panel-visual--type">
+                <span aria-hidden="true">35–50</span>
+              </div>
+              <div class="fleet-panel-info">
+                <p class="fleet-panel-num" aria-hidden="true">05</p>
+                <h3 class="fleet-name">Coach <em>Bus</em></h3>
+                <p class="fleet-cap">35–50 Seats · Large Delegations</p>
+                <p class="fleet-desc">Full-size luxury coaches for long-distance comfort. Used by corporate clients for annual outings, MICE events, college tours, and large pilgrimage yatras.</p>
+                <p class="fleet-featured-price">From ₹38/km · Min 400 km/day</p>
+                <a href="#booking" class="fleet-quote">Request This Vehicle</a>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 

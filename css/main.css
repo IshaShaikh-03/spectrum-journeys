@@ -466,32 +466,84 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .sec-p--mt { margin-top: var(--s4); }
 
 /* ============================================================
-   FLEET — one feature row, then compact numbered rows
+   FLEET — accordion. One vehicle open, the others stay compact.
 ============================================================ */
-.fleet-layout { margin-top: var(--s8); }
-
-.fleet-featured {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--rule); margin-bottom: 2px;
+.fleet-accordion {
+  margin-top: var(--s8);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
 }
-.fleet-featured-visual {
+.fleet-item + .fleet-item { border-top: 1px solid var(--rule); }
+.fleet-trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: var(--s6);
+  align-items: center;
+  padding: var(--s6);
+  background: var(--cream-ghost);
+  border: 0;
+  color: var(--cream);
+  text-align: left;
+  cursor: none;
+  transition: background var(--dur-fast), padding-left var(--dur-med) var(--ease-out);
+}
+.fleet-trigger:hover { background: oklch(94% 0.012 80 / 0.05); padding-left: var(--s7); }
+.fleet-trigger:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.fleet-item.is-open > .fleet-trigger { display: none; }
+
+.fleet-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-slow) var(--ease-out);
+}
+.fleet-item.is-open > .fleet-panel { grid-template-rows: 1fr; }
+.fleet-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.fleet-panel-visual {
   background: oklch(16% 0.010 75);
   min-height: 320px;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-.fleet-featured-visual img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.78;
+.fleet-panel-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.78;
 }
-.fleet-featured-info {
+.fleet-panel-visual--type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fleet-panel-visual--type span {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 10vw, 132px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: oklch(94% 0.012 80 / 0.08);
+}
+.fleet-panel-info {
   padding: var(--s7);
-  display: flex; flex-direction: column; justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.fleet-featured-num {
-  font-family: var(--font-display); font-size: 72px;
-  font-weight: 300; color: oklch(94% 0.012 80 / 0.08);
-  line-height: 1; margin-bottom: var(--s5);
+.fleet-panel-num {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 300;
+  color: oklch(94% 0.012 80 / 0.08);
+  line-height: 1;
+  margin-bottom: var(--s5);
 }
 .fleet-name {
   font-family: var(--font-display); font-size: 38px;
@@ -520,21 +572,7 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
 .fleet-quote:hover { background: var(--gold); }
 .fleet-quote:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-.fleet-rows { display: flex; flex-direction: column; gap: 2px; }
-.fleet-row {
-  display: grid; grid-template-columns: 56px 1fr auto;
-  gap: var(--s6); align-items: center;
-  padding: var(--s6);
-  background: var(--cream-ghost);
-  border: 1px solid var(--rule);
-  cursor: none;
-  transition: background var(--dur-fast), padding-left var(--dur-med) var(--ease-out);
-  position: relative; overflow: hidden;
-}
-.fleet-row:hover {
-  background: oklch(94% 0.012 80 / 0.05);
-  padding-left: var(--s7);
-}
+.fleet-row-copy { display: flex; flex-direction: column; gap: var(--s1); }
 .fleet-row-num {
   font-family: var(--font-display); font-size: 20px;
   font-weight: 300; color: oklch(94% 0.012 80 / 0.25);
@@ -561,23 +599,6 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   margin-top: var(--s1);
 }
 .fleet-featured-price { font-size: 11px; margin-top: var(--s3); }
-
-.fleet-row-preview {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transition: opacity 0.45s var(--ease-out);
-  pointer-events: none; z-index: 0;
-}
-.fleet-row--img > :not(.fleet-row-preview) { position: relative; z-index: 2; }
-.fleet-row--img::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, oklch(13% 0.008 60 / 0.94) 40%, oklch(13% 0.008 60 / 0.62) 100%);
-  opacity: 0; transition: opacity 0.45s var(--ease-out);
-  pointer-events: none; z-index: 1;
-}
-.fleet-row--img:hover .fleet-row-preview,
-.fleet-row--img:hover::after { opacity: 1; }
 
 /* ============================================================
    WHY — two-column: header + pillars left, quote panel right
@@ -1192,8 +1213,8 @@ details[open] .faq-q::after { transform: rotate(45deg); color: var(--gold); }
 
   #clients { padding: var(--s7) var(--s5); }
 
-  .fleet-featured { grid-template-columns: 1fr; }
-  .fleet-featured-visual { min-height: 240px; }
+  .fleet-panel-inner { grid-template-columns: 1fr; }
+  .fleet-panel-visual { min-height: 240px; }
 
   #why.sec { grid-template-columns: 1fr; gap: var(--s7); }
   .why-right { position: static; }
@@ -1231,8 +1252,8 @@ details[open] .faq-q::after { transform: rotate(45deg); color: var(--gold); }
   /* Tours & fleet: hide tags to reduce horizontal crunch */
   .tour-row { grid-template-columns: 40px 1fr; }
   .tour-tag { display: none; }
-  .fleet-row { grid-template-columns: 40px 1fr; gap: var(--s4); padding: var(--s5); }
-  .fleet-row:hover { padding-left: var(--s5); }
+  .fleet-trigger { grid-template-columns: 40px 1fr; gap: var(--s4); padding: var(--s5); }
+  .fleet-trigger:hover { padding-left: var(--s5); }
   .fleet-row-tag { display: none; }
 
   /* About credentials: single column on phones */
