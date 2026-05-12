@@ -18,7 +18,7 @@ Spectrum Tours & Travels is a premium travel agency based in Ahmedabad, Gujarat 
 ## Features
 
 - **Conversion-optimised UX** — Sticky mobile CTA bar (Call Now + WhatsApp), one-click booking modal, and prominent inline quotes.
-- **Premium fleet showcase** — Browse Innova SUVs, Sedans, Tempo Travellers, and Luxury Mini Buses with live price, capacity, and feature chips.
+- **Premium fleet showcase** — Browse Innova SUVs, Sedans, Tempo Travellers, and Luxury Mini Buses with capacity and feature details.
 - **Scroll-reveal animations** — Every section fades and slides in using a custom `IntersectionObserver` — zero libraries.
 - **Fully responsive** — Complete mobile layout overhaul. Tested from 320px to 4K. Isolated in `mobile.css`, desktop untouched.
 - **SEO ready** — Full meta tag suite, Open Graph, Twitter Card, JSON-LD `TravelAgency` structured data.
@@ -32,8 +32,8 @@ Spectrum Tours & Travels is a premium travel agency based in Ahmedabad, Gujarat 
 | **Hero** | Full-viewport dark hero with left-aligned headline, animated badge, and stacked CTAs |
 | **Trust Marquee** | Infinite scrolling strip — Verified Drivers, Clean & Sanitized, No Hidden Costs |
 | **Stats Ribbon** | 4 key stats — 15+ years, 50+ vehicles, 10K+ clients, 24/7 |
-| **Fleet** | Vehicle cards with image, capacity chips, price badges, and quote CTA |
-| **Routes & Packages** | Popular route cards with pricing and itinerary teasers |
+| **Fleet** | Vehicle cards with image, capacity chips, and enquiry CTA |
+| **Routes & Packages** | Popular route cards with itinerary teasers |
 | **Services** | 6 service cards — Airport, Outstation, Pilgrimage, Corporate, Wedding, Sightseeing |
 | **How it Works** | 3-step dark journey grid with numbered badges |
 | **Testimonials** | Dark card grid with star ratings, quotes, and author avatars |

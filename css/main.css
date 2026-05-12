@@ -592,14 +592,6 @@ body.is-hovering #cur-ring { border-color: var(--gold); width: 30px; height: 30p
   color: oklch(94% 0.012 80 / 0.35);
   white-space: nowrap;
 }
-.fleet-row-price,
-.fleet-featured-price {
-  font-family: var(--font-ui); font-size: 10px;
-  letter-spacing: 0.06em; color: oklch(74% 0.10 72 / 0.65);
-  margin-top: var(--s1);
-}
-.fleet-featured-price { font-size: 11px; margin-top: var(--s3); }
-
 /* ============================================================
    WHY — two-column: header + pillars left, quote panel right
    Right panel is self-contained — no sticky/overflow issues
