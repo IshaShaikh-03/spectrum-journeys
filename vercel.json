@@ -15,13 +15,5 @@
       "source": "/somnath-dwarka",
       "destination": "/route-somnath-dwarka.html"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.spectrumtourandtravels.in" }],
-      "destination": "https://spectrumtourandtravels.in/:path*",
-      "permanent": true
-    }
   ]
 }
