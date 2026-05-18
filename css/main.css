@@ -1179,16 +1179,6 @@ details[open] .faq-q::after { transform: rotate(45deg); color: var(--gold); }
 }
 
 /* ============================================================
-   REDUCED MOTION
-============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ============================================================
    RESPONSIVE
 ============================================================ */
 @media (max-width: 900px) {
