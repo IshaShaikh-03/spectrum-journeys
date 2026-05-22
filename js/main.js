@@ -160,13 +160,32 @@ if (prefersReducedMotion) {
 })();
 
 // ── FORM ─────────────────────────────────────────────────────
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Sending...'; btn.disabled = true;
-  setTimeout(() => {
-    btn.style.display = 'none';
-    document.getElementById('form-ok').style.display = 'block';
-    e.target.reset();
-  }, 1200);
+  const form = e.target;
+  const btn  = form.querySelector('.form-submit');
+  const ok   = document.getElementById('form-ok');
+  const err  = document.getElementById('form-err');
+
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  if (err) err.style.display = 'none';
+
+  try {
+    const res = await fetch('https://formspree.io/f/xwvzbkgv', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' },
+    });
+
+    if (res.ok) {
+      btn.style.display = 'none';
+      ok.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error('server');
+    }
+  } catch {
+    btn.textContent = 'Send Enquiry →'; btn.disabled = false;
+    if (err) err.style.display = 'block';
+  }
 }
