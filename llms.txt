@@ -1,6 +1,6 @@
 # Spectrum Tour & Travel
 # Travel agency, Ahmedabad, Gujarat, India
-# https://spectrumtourandtravels.in
+# https://www.spectrumtourandtravels.in
 
 > Spectrum Tour & Travel is an Ahmedabad-based travel agency founded on 11 November 2008,
 > offering corporate transfers, pilgrimage circuits, leisure tours, fleet hire, and group
@@ -25,11 +25,11 @@
 
 ## Fleet (vehicles available for hire)
 
-- Sedan / SUV (Innova Crysta): 4–7 seats — executive transfers, airport runs, corporate daily hire
-- Tempo Traveller: 9–14 seats — family trips, wedding convoys, outstation groups
-- Urbania Luxury Minibus: 13–17 seats, VIP configuration — high-value delegations, premium groups
-- Mini Bus: 20–32 seats — team outings, small pilgrimages, weekend escapes
-- Coach Bus: 35–50 seats — large delegations, pilgrimages, college tours
+- Sedan / SUV (Innova Crysta): 4–7 seats: executive transfers, airport runs, corporate daily hire
+- Tempo Traveller: 9–14 seats: family trips, wedding convoys, outstation groups
+- Urbania Luxury Minibus: 13–17 seats, VIP configuration: high-value delegations, premium groups
+- Mini Bus: 20–32 seats: team outings, small pilgrimages, weekend escapes
+- Coach Bus: 35–50 seats: large delegations, pilgrimages, college tours
 - Custom Charter: multi-vehicle events, conferences
 
 ## Services
@@ -54,9 +54,9 @@ Mitsubishi, Nestle, Tata, IJL, Sysmex, Nifco, Caparo, Mubea, Oji, Zanini
 
 ## Tour Route Pages
 
-- [Ahmedabad to Statue of Unity](https://spectrumtourandtravels.in/route-statue-of-unity.html)
-- [Chardham Yatra from Ahmedabad](https://spectrumtourandtravels.in/route-chardham-yatra.html)
-- [Somnath & Dwarka Tour from Ahmedabad](https://spectrumtourandtravels.in/route-somnath-dwarka.html)
+- [Ahmedabad to Statue of Unity](https://www.spectrumtourandtravels.in/route-statue-of-unity.html)
+- [Chardham Yatra from Ahmedabad](https://www.spectrumtourandtravels.in/route-chardham-yatra.html)
+- [Somnath & Dwarka Tour from Ahmedabad](https://www.spectrumtourandtravels.in/route-somnath-dwarka.html)
 
 ## Key Facts for Citation
 

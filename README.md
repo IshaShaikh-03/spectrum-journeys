@@ -1,124 +1,116 @@
-<div align="center">
+<p align="center">
+  <img src="docs/readme/hero.png" alt="Spectrum Tour &amp; Travel: corporate mobility and travel from Ahmedabad" width="100%">
+</p>
 
-# Spectrum Tours & Travels
+<p align="center">
+  <strong>The public website of Spectrum Tour &amp; Travel, Ahmedabad.</strong><br>
+  Corporate transfers, staff transport, pilgrimage circuits and group tours, turned into calls, WhatsApp chats and enquiries.
+</p>
 
-### *Gujarat's Cabs, Done Right.*
+<p align="center">
+  <a href="https://www.spectrumtourandtravels.in"><strong>Open the site</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#whats-on-it">What's on it</a>
+  &nbsp;·&nbsp;
+  <a href="#how-its-built">How it's built</a>
+  &nbsp;·&nbsp;
+  <a href="#run-it-locally">Run it locally</a>
+</p>
 
-[![Live Site](https://img.shields.io/badge/Live-spectrumtourandtravels.in-e8a838?style=flat-square&labelColor=111111)](https://www.spectrumtourandtravels.in)
-[![Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML%20·%20CSS%20·%20JS-e8a838?style=flat-square&labelColor=111111)](https://github.com/IshaShaikh-03/spectrum-journeys)
-[![Version](https://img.shields.io/badge/Version-v2.2.1-e8a838?style=flat-square&labelColor=111111)](https://github.com/IshaShaikh-03/spectrum-journeys)
-[![Last Commit](https://img.shields.io/github/last-commit/IshaShaikh-03/spectrum-journeys?style=flat-square&color=e8a838&labelColor=111111)](https://github.com/IshaShaikh-03/spectrum-journeys/commits/main)
+<p align="center">
+  <img alt="Vanilla HTML, CSS and JS" src="https://img.shields.io/badge/stack-HTML%20%C2%B7%20CSS%20%C2%B7%20JS-d8a55c?style=flat-square&labelColor=0f0d0b">
+  <img alt="No build step" src="https://img.shields.io/badge/build%20step-none-d8a55c?style=flat-square&labelColor=0f0d0b">
+  <img alt="Vercel" src="https://img.shields.io/badge/hosting-Vercel-d8a55c?style=flat-square&labelColor=0f0d0b">
+  <img alt="Structured data" src="https://img.shields.io/badge/schema.org-TravelAgency-d8a55c?style=flat-square&labelColor=0f0d0b">
+</p>
 
-</div>
+## Why it looks like this
 
-![Hero](./docs/assets/hero.png)
+Spectrum sells reliable movement: daily staff transport and executive cabs for companies like Mitsubishi Electric, Nestlé and Tata, and organised pilgrimage and leisure trips for families and groups. The site has two readers. A corporate travel desk wants proof (the fleet, the compliance numbers, the clients already served) and a fast way to ask for a quote. A family planning Chardham wants to see the vehicle and talk to a person.
 
-Spectrum Tours & Travels is a premium travel agency based in Ahmedabad, Gujarat — serving customers since 2008 with a fleet of Tempo Travellers, Innova SUVs, and Luxury Buses. This website is their complete digital presence: a fast, conversion-focused single-page site that showcases the fleet, services, and trust signals, turning visitors into WhatsApp leads and bookings in under two clicks. Built with zero framework overhead — pure Vanilla HTML, CSS, and JavaScript deployed directly to Vercel.
+So the design is calm and editorial rather than a tourism template: deep ink, warm cream and gold, with the rainbow of the Spectrum logo used once as a thin accent. Every section ends in a call, a WhatsApp chat or the enquiry form.
 
-## Features
+## Screenshots
 
-- **Conversion-optimised UX** — Sticky mobile CTA bar (Call Now + WhatsApp), one-click booking modal, and prominent inline quotes.
-- **Premium fleet showcase** — Browse Innova SUVs, Sedans, Tempo Travellers, and Luxury Mini Buses with capacity and feature details.
-- **Scroll-reveal animations** — Every section fades and slides in using a custom `IntersectionObserver` — zero libraries.
-- **Fully responsive** — Complete mobile layout overhaul. Tested from 320px to 4K. Isolated in `mobile.css`, desktop untouched.
-- **SEO ready** — Full meta tag suite, Open Graph, Twitter Card, JSON-LD `TravelAgency` structured data.
-- **Zero build step** — Open `index.html`, done.
-- **Accessible** — Semantic HTML5, ARIA labels, focus-visible outlines, skip-to-content link.
+<table>
+  <tr>
+    <td align="center"><img src="docs/readme/home.png" width="180" alt="The home page on a phone"><br><sub>The first screen</sub></td>
+    <td align="center"><img src="docs/readme/fleet.png" width="180" alt="The fleet"><br><sub>The fleet, vehicle by vehicle</sub></td>
+    <td align="center"><img src="docs/readme/tours.png" width="180" alt="Tour offerings"><br><sub>Where people go</sub></td>
+    <td align="center"><img src="docs/readme/booking.png" width="180" alt="The enquiry form"><br><sub>The enquiry form</sub></td>
+    <td align="center"><img src="docs/readme/route.png" width="180" alt="The Chardham Yatra route page"><br><sub>A route page</sub></td>
+  </tr>
+</table>
 
-## Live Sections
+## What's on it
 
-| Section | What It Does |
-| --- | --- |
-| **Hero** | Full-viewport dark hero with left-aligned headline, animated badge, and stacked CTAs |
-| **Trust Marquee** | Infinite scrolling strip — Verified Drivers, Clean & Sanitized, No Hidden Costs |
-| **Stats Ribbon** | 4 key stats — 15+ years, 50+ vehicles, 10K+ clients, 24/7 |
-| **Fleet** | Vehicle cards with image, capacity chips, and enquiry CTA |
-| **Routes & Packages** | Popular route cards with itinerary teasers |
-| **Services** | 6 service cards — Airport, Outstation, Pilgrimage, Corporate, Wedding, Sightseeing |
-| **How it Works** | 3-step dark journey grid with numbered badges |
-| **Testimonials** | Dark card grid with star ratings, quotes, and author avatars |
-| **Contact** | Bento-style layout — 3 info cards + full contact form |
+- **Corporate and leisure, side by side.** Two doors from the first screen: account-managed corporate travel, and tours for families and groups.
+- **The fleet.** Urbania, sedans and SUVs, Tempo Travellers, mini buses and coaches, each with seats and what it is used for.
+- **Why Spectrum.** Trained, ID-verified drivers, GPS on every vehicle, CCTV in staff buses, the Motor Transport Act registration, GST and PAN, and 24/7 support.
+- **Tours.** Pilgrimage circuits, Rajasthan, the Himalayas, Kerala, Goa and corporate retreats.
+- **Route pages** for Chardham Yatra, Somnath and Dwarka, and the Statue of Unity, each with its own itinerary, FAQ and booking buttons.
+- **Trust.** The companies served, client stories, the company story since 2008 and a FAQ.
+- **Enquiries.** Call, WhatsApp, or a form that sends straight to the office's inbox.
 
-## Stack
+## How it's built
 
-| Layer | Technology |
-| --- | --- |
+- **No framework, no build step.** `index.html`, `css/main.css` and `js/main.js`, served as they are. The only tooling is `scripts/convert-images.mjs`, which uses sharp to turn the source PNGs into 400, 800 and 1200 px WebP files for `srcset`.
+- **Motion with plain JavaScript.** Sections reveal on scroll with an `IntersectionObserver`, and the custom cursor only runs on devices with a fine pointer.
+- **Enquiries through Formspree.** The form posts to Formspree, which emails the office, so the site has no server to run.
+- **Search and AI readers.** `TravelAgency`, `LocalBusiness`, `FAQPage` and service offers in JSON-LD, Open Graph and Twitter cards, a sitemap, a `robots.txt` that welcomes search and answer engines but turns away training-only scrapers, and an `llms.txt` with the company facts.
+- **Clean addresses.** `vercel.json` serves `/chardham-yatra` and the other routes without `.html`, and `.htaccess` does the same on Apache hosting.
+- **Canonical host** is `https://www.spectrumtourandtravels.in`; the bare domain redirects to it.
+
+| Layer | Choice |
+|---|---|
 | Markup | Semantic HTML5 |
-| Styling | Vanilla CSS with CSS Custom Properties |
-| Mobile | Dedicated `mobile.css` — media queries isolated from desktop styles |
-| Interactivity | Vanilla JavaScript (ES6+) |
-| Icons | [Font Awesome 6](https://fontawesome.com/) (CDN) |
-| Typography | Plus Jakarta Sans (display) · Inter (body) |
-| SEO | Schema.org `TravelAgency` JSON-LD + full Open Graph suite |
-| Hosting | [Vercel](https://vercel.com/) |
+| Style | One CSS file with custom properties: ink, cream, gold, and a rainbow accent |
+| Type | Geologica for display, Epilogue for UI, Source Serif 4 for reading |
+| Script | Vanilla JavaScript, no dependencies |
+| Forms | Formspree |
+| Images | WebP in three sizes, made with sharp |
+| Hosting | Vercel |
 
-## Design System
+## Run it locally
 
-All design tokens are defined as CSS custom properties at the top of `styles.css`:
-
-```css
---brand-primary:   #E8A838;   /* Warm Amber Gold */
---surface-dark:    #111111;   /* Deep black — hero, CTA strip, footer */
---surface-mid:     #1F1F1F;   /* Dark charcoal — testimonials, stats */
---surface-light:   #F5F0E8;   /* Warm off-white page background */
-```
-
-<details>
-<summary>Quick Start</summary>
-
-No build step required.
+No build step.
 
 ```bash
 git clone https://github.com/IshaShaikh-03/spectrum-journeys.git
 cd spectrum-journeys
-```
-
-Open directly:
-
-```bash
-start index.html   # Windows
-open index.html    # macOS
-```
-
-Or with a local dev server:
-
-```bash
-python -m http.server 8080
-# or
 npx serve .
 ```
 
-Open `http://localhost:8080`.
+Open http://localhost:3000. Opening `index.html` directly also works, but the clean route addresses need a server.
 
-</details>
+To refresh the README images: `python scripts/readme-shots.py` (Python with Playwright and Chrome).
 
-<details>
-<summary>Changelog</summary>
+## Project structure
 
-### v2.2.1 — 2026-04-22
-- fix: revert testimonial cards to dark charcoal background
+```text
+index.html                 the one-page site
+chardham-yatra.html        route pages (served at /chardham-yatra, /somnath-dwarka, /statue-of-unity)
+somnath-dwarka.html
+statue-of-unity.html
+404.html
+css/main.css               every style
+js/main.js                 reveals, menu, cursor, the enquiry form
+assets/img/                photos (PNG sources and WebP sizes) and the brand marks
+sitemap.xml robots.txt llms.txt site.webmanifest
+vercel.json .htaccess      clean URLs on Vercel and Apache
+scripts/                   image conversion, README screenshots
+```
 
-### v2.2.0 — 2026-04-22
-- feat: complete mobile responsive overhaul — all sections stack gracefully on ≤768px
-- fix: eliminated horizontal scrolling on mobile
-- fix: nav hamburger menu properly isolated, desktop CTA hidden on mobile
-- fix: contact bento box collapses to single column on mobile
-- fix: footer columns stack with proper spacing
+## Deploy
 
-### v2.1.0 — 2026-04-22
-- feat: premium "Soft Premium Light" design system — Warm Amber-Gold palette, CSS tokens
-- feat: hero, trust marquee, stats ribbon, fleet cards, route cards, services grid
-- feat: "How it Works" dark 3-step journey, testimonials, CTA strip, contact bento box
-- feat: sticky mobile CTA bar — Call Now + WhatsApp
-- feat: booking modal — full quote capture form
+Pushing to `main` deploys to Vercel. `scripts/`, `docs/` and the README are left out of the deployment by `.vercelignore`.
 
-### v2.0.0 — 2026-04-21
-- refactor: full migration from React 19 + Tailwind v4 + Vite to Vanilla HTML/CSS/JS
+## The operations app
 
-</details>
+Spectrum's drivers and office use a separate internal app for duties, fuel and live fleet GPS: `TheAlgo7/spectrum-operations-app` (private).
 
-<div align="center">
+## Licence
 
-Designed & developed by **[The Algothrim](https://thealgothrim.com)** for Spectrum Tours & Travels, Ahmedabad.
+Built for Spectrum Tour &amp; Travel by Gaurav Kumar, [The Algothrim](https://thealgothrim.com). All rights reserved.
 
-</div>
+The code is public to read and learn from. It is not licensed for reuse, and the photos, logo and company details belong to Spectrum Tour &amp; Travel.
